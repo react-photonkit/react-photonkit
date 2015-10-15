@@ -12,6 +12,15 @@ $ npm install
 ```
 
 
+## Build
+
+```sh
+$ npm run build
+```
+
+See `./dist/` directory
+
+
 ## Example
 
 ```sh
