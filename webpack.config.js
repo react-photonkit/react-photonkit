@@ -5,21 +5,20 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: 'dist/',
-    filename: 'photon.js'
+    filename: 'photon.js',
+    library: 'ReactPhotonKit',
+    libraryTarget: 'umd'
   },
   module: {
     loaders: [
+      { test: /\.json$/, loader: 'json-loader' },
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel-loader'] },
       { test: /\.coffee$/, exclude: /node_modules/, loader: 'coffee-loader' },
       { test: /\.cjsx$/, exclude: /node_modules/, loaders: ['coffee', 'cjsx']},
       { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
-      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
-      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' },
+      { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=1000000&mimetype=application/font-woff" },
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
     ]
   }
 };
