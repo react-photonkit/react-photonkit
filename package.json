@@ -1,5 +1,5 @@
 {
-  "name": "react-photon",
+  "name": "react-photonkit",
   "version": "v0.1.0",
   "description": "Photon components built with React",
   "main": "dist/photon.js",
@@ -10,17 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/react-photon/react-photon.git"
+    "url": "git+https://github.com/react-photon/react-photonkit.git"
   },
   "keywords": [
+    "react",
     "photon"
   ],
   "author": "Jaewe Heo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/react-photon/react-photon/issues"
+    "url": "https://github.com/react-photon/react-photonkit/issues"
   },
-  "homepage": "https://github.com/react-photon/react-photon#readme",
+  "homepage": "https://github.com/react-photon/react-photonkit#readme",
   "devDependencies": {
     "babel-core": "^5.8.25",
     "babel-loader": "^5.3.2",
