@@ -30,6 +30,12 @@ $ npm start
 ![example][example]
 
 
+## test
+
+```sh
+$ npm test
+```
+
 
 
 
