@@ -3,5 +3,7 @@ React = require 'react'
 Proton = require '../src/photon.coffee'
 
 describe 'proton', () ->
-  it 'should exist components', () ->
+
+  it 'should have components', () ->
     expect(Proton).to.be.ok()
+    expect(Proton.Toolbar).to.be.ok()
