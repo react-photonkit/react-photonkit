@@ -2,13 +2,14 @@ React = require 'react'
 { Icon, Pane, Button } = require '../src/photon.coffee'
 
 module.exports = React.createClass
-  onClick: (event) ->
-    alert 'clicked "close"'
+  onClick: (param) ->
+    alert "Hello, #{param}"
 
   render: ->
     <Pane>
       <div className="padded-more">
-        <Button style="default" text="default" />
+        <Button style="default" text="default"
+                onClick={@onClick.bind(@, 'World')}/>
         <Button style="primary" text="primary" />
         <Button style="positive" text="positive" />
         <Button style="negative" text="negative" />

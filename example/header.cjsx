@@ -15,7 +15,7 @@ module.exports = React.createClass
       <Actionbar>
         <ButtonGroup>
           <Button icon="home" />
-          <Button icon="github" />
+          <Button icon="github" active />
           <Button icon="folder" text="hello" />
         </ButtonGroup>
       </Actionbar>
