@@ -8,4 +8,4 @@ module.exports = React.createClass
     glyph: React.PropTypes.string.isRequired
 
   render: ->
-    <span className="icon #{@props.glyph}" />
+    <span className="icon icon-#{@props.glyph}" />

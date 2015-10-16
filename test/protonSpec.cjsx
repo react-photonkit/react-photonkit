@@ -7,3 +7,4 @@ describe 'proton', () ->
   it 'should have components', () ->
     expect(Proton).to.be.ok()
     expect(Proton.Toolbar).to.be.ok()
+    expect(Proton.Button).to.be.ok()

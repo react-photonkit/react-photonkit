@@ -1,31 +1,42 @@
 React = require 'react'
 Icon = require './icon.cjsx'
-{ ButtonStyle, ButtonSize } = require './buttonInfo.coffee'
 
 window.React = React
 
 module.exports = React.createClass
 
+  styles: ['default', 'primary', 'positive', 'negative', 'warning']
+  sizes: ['large', 'mini']
+
   propTypes:
+    active: React.PropTypes.bool
     style: React.PropTypes.string
     size: React.PropTypes.string
-    right: React.PropTypes.bool
+    pullRight: React.PropTypes.bool
     text: React.PropTypes.string
     icon: React.PropTypes.string
 
   getDefaultProps: ->
-    style: ButtonStyle.default
-    size: ButtonSize.default
-    right: false
+    active: false
+    style: 'default'
+    size: ''
+    pullRight: false
     text: null
     icon: null
 
+  getIconComponent: ->
+    text = if @props.text then 'icon-text' else ''
+    <Icon glyph="#{@props.icon} #{text}" /> if @props.icon?
+
   render: ->
-    leftOrRight = if @props.right then 'pull-right' else 'pull-left'
-    textGlyph = if @props.text then 'icon-text' else ''
-    icon = <Icon glyph="#{@props.icon} #{textGlyph}" /> if @props.icon?
+    active = if @props.active then 'active' else ''
+    right = if @props.pullRight then 'pull-right' else ''
+    icon = @getIconComponent()
+    style = if @props.style in @styles then "btn-#{@props.style}" else ''
+    size = if @props.size in @sizes then "btn-#{@props.size}" else ''
+
     <button
-      className="#{@props.style} #{@props.size} #{leftOrRight}"
+      className="btn #{style} #{size} #{right} #{active}"
       onClick={@props.onClick}>
-        {icon} {@props.text}
+        {icon}{@props.text}
     </button>
