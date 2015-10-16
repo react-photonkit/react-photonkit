@@ -1,9 +1,6 @@
 React = require 'react'
 
-window.React = React
-
 module.exports = React.createClass
-
   propTypes:
     glyph: React.PropTypes.string.isRequired
 

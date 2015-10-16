@@ -1,10 +1,7 @@
 React = require 'react'
 Icon = require './icon.cjsx'
 
-window.React = React
-
 module.exports = React.createClass
-
   styles: ['default', 'primary', 'positive', 'negative', 'warning']
   sizes: ['large', 'mini']
 

@@ -1,13 +1,7 @@
 React = require 'react'
-{
-  Pane
-  NavGroup, NavTitle, NavGroupItem
-} = require '../src/photon.coffee'
-
-window.React = React
+{ Pane, NavGroup, NavTitle, NavGroupItem } = require '../src/photon.coffee'
 
 module.exports = React.createClass
-
   onClick: (event) ->
     alert 'clicked "close"'
 
@@ -15,8 +9,8 @@ module.exports = React.createClass
     <Pane size={"sm"} sidebar={true}>
       <NavGroup>
         <NavTitle>nav group icon &amp; text</NavTitle>
-        <NavGroupItem icon="icon-home" text="home" />
-        <NavGroupItem icon="icon-cc" text="cc" />
+        <NavGroupItem icon="home" text="home" />
+        <NavGroupItem icon="cc" text="cc" />
 
         <NavTitle>nav group text</NavTitle>
         <NavGroupItem text="download" />

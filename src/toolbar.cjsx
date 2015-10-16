@@ -1,9 +1,6 @@
 React = require 'react'
 
-window.React = React
-
 module.exports = React.createClass
-
   propTypes:
     type: React.PropTypes.oneOf ['header', 'footer']
 

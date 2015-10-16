@@ -1,9 +1,6 @@
 React = require 'react'
 
-window.React = React
-
 module.exports = React.createClass
-
   propTypes:
     size: React.PropTypes.string
     sidebar: React.PropTypes.bool

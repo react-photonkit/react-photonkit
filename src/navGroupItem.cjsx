@@ -1,10 +1,7 @@
 React = require 'react'
 Icon = require './icon.cjsx'
 
-window.React = React
-
 module.exports = React.createClass
-
   propTypes:
     text: React.PropTypes.string.isRequired
     icon: React.PropTypes.string

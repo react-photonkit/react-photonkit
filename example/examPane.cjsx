@@ -1,45 +1,38 @@
 React = require 'react'
-{
-  Icon, Pane
-  Button, ButtonInfo
-} = require '../src/photon.coffee'
-{ ButtonStyle, ButtonSize } = ButtonInfo
-
-window.React = React
+{ Icon, Pane, Button } = require '../src/photon.coffee'
 
 module.exports = React.createClass
-
   onClick: (event) ->
     alert 'clicked "close"'
 
   render: ->
     <Pane>
       <div className="padded-more">
-        <Button style={ButtonStyle.default} text="default" />
-        <Button style={ButtonStyle.primary} text="primary" />
-        <Button style={ButtonStyle.positive} text="positive" />
-        <Button style={ButtonStyle.negative} text="negative" />
-        <Button style={ButtonStyle.warning} text="warning" />
+        <Button style="default" text="default" />
+        <Button style="primary" text="primary" />
+        <Button style="positive" text="positive" />
+        <Button style="negative" text="negative" />
+        <Button style="warning" text="warning" />
       </div>
 
       <div className="padded-more">
-        <Button size={ButtonSize.mini} style={ButtonStyle.default} text="default" />
-        <Button size={ButtonSize.mini} style={ButtonStyle.primary} text="primary" />
-        <Button size={ButtonSize.mini} style={ButtonStyle.positive} text="positive" />
-        <Button size={ButtonSize.mini} style={ButtonStyle.negative} text="negative" />
-        <Button size={ButtonSize.mini} style={ButtonStyle.warning} text="warning" />
+        <Button size="mini" style="default" text="default" />
+        <Button size="mini" style="primary" text="primary" />
+        <Button size="mini" style="positive" text="positive" />
+        <Button size="mini" style="negative" text="negative" />
+        <Button size="mini" style="warning" text="warning" />
       </div>
 
       <div className="padded-more">
-        <Button size={ButtonSize.large} style={ButtonStyle.default} text="default" />
-        <Button size={ButtonSize.large} style={ButtonStyle.primary} text="primary" />
-        <Button size={ButtonSize.large} style={ButtonStyle.positive} text="positive" />
-        <Button size={ButtonSize.large} style={ButtonStyle.negative} text="negative" />
-        <Button size={ButtonSize.large} style={ButtonStyle.warning} text="warning" />
+        <Button size="large" style="default" text="default" />
+        <Button size="large" style="primary" text="primary" />
+        <Button size="large" style="positive" text="positive" />
+        <Button size="large" style="negative" text="negative" />
+        <Button size="large" style="warning" text="warning" />
       </div>
 
       <div className="padded-more">
-        <Button icon="icon-download" />
-        <Button icon="icon-cc" />
+        <Button icon="download" />
+        <Button icon="cc" />
       </div>
     </Pane>

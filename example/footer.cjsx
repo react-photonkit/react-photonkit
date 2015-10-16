@@ -1,19 +1,7 @@
 React = require 'react'
-{
-  Icon
-  Toolbar, Actionbar
-  Button, ButtonInfo
-} = require '../src/photon.coffee'
-
-{
-  ButtonStyle,
-  ButtonSize
-} = ButtonInfo
-
-window.React = React
+{ Toolbar, Actionbar, Button } = require '../src/photon.coffee'
 
 module.exports = React.createClass
-
   onClick: (event) ->
     alert 'clicked "close"'
 
@@ -21,8 +9,8 @@ module.exports = React.createClass
     <Toolbar type="footer">
       <Actionbar>
         <Button
-          style={ButtonStyle.negative}
-          right={true}
+          style='negative'
+          pullRight
           text="close"
           onClick={@onClick} />
       </Actionbar>
