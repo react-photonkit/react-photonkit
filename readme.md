@@ -40,6 +40,7 @@ $ npm start
 $ npm test
 ```
 
+And open http://localhost:8000
 
 
 
