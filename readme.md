@@ -27,11 +27,10 @@ See `./dist/` directory
 $ npm start
 ```
 
-| buttons        | buttons / icons |
-| -------------- | --------------- |
-| ![screenshot1] | ![screenshot2]  |
-| table          |                 |
-| ![screenshot3] |                 |
+| screenshot     | screenshot     |
+| -------------- | -------------- |
+| ![screenshot1] | ![screenshot2] |
+| ![screenshot3] |                |
 
 
 ## test
