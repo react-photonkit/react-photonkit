@@ -6,10 +6,10 @@ module.exports = React.createClass
     alert 'clicked "close"'
 
   render: ->
-    <Toolbar type="footer">
+    <Toolbar ptType="footer">
       <Actionbar>
         <Button
-          style='negative'
+          ptStyle='negative'
           pullRight
           text="close"
           onClick={@onClick} />

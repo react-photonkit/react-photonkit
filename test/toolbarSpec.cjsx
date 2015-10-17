@@ -17,7 +17,7 @@ describe 'toolbar', () ->
 
 
   it 'Should create toolbar(header) element', () ->
-    instance = ReactTestUtils.renderIntoDocument <Toolbar type='header' />
+    instance = ReactTestUtils.renderIntoDocument <Toolbar ptType='header' />
     toolbar = ReactDOM.findDOMNode instance
     classNames = toolbar.className.split(/\s+/)
 
@@ -26,7 +26,7 @@ describe 'toolbar', () ->
 
 
   it 'Should create toolbar(footer) element', () ->
-    instance = ReactTestUtils.renderIntoDocument <Toolbar type='footer' />
+    instance = ReactTestUtils.renderIntoDocument <Toolbar ptType='footer' />
     toolbar = ReactDOM.findDOMNode instance
     classNames = toolbar.className.split(/\s+/)
 

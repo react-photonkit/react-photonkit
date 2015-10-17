@@ -6,11 +6,11 @@ module.exports = React.createClass
     alert 'clicked "close"'
 
   render: ->
-    <Pane size={"sm"} sidebar={true}>
+    <Pane ptSize="sm" sidebar>
       <NavGroup>
         <NavTitle>nav group icon &amp; text</NavTitle>
-        <NavGroupItem icon="home" text="home" />
-        <NavGroupItem icon="cc" text="cc" />
+        <NavGroupItem glyph="home" text="home" active />
+        <NavGroupItem glyph="cc" text="cc" />
 
         <NavTitle>nav group text</NavTitle>
         <NavGroupItem text="download" />

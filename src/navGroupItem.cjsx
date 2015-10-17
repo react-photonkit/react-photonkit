@@ -1,18 +1,29 @@
 React = require 'react'
+classNames = require 'classnames'
+PhotonMixin = require './photonMixin.coffee'
 Icon = require './icon.cjsx'
 
 module.exports = React.createClass
+  mixins: [PhotonMixin],
+
   propTypes:
+    active: React.PropTypes.bool
     text: React.PropTypes.string.isRequired
-    icon: React.PropTypes.string
+    glyph: React.PropTypes.string
 
   getDefaultProps: ->
-    text: null
-    icon: null
+    ptClass: 'nav-group-item'
+    active: false
+
+  getIconComponent: ->
+    <Icon glyph={@props.glyph} withText /> if @props.glyph?
 
   render: ->
-    textGlyph = if @props.text then 'icon-text' else ''
-    icon = <Icon glyph="#{@props.icon} #{textGlyph}" /> if @props.icon?
-    <a className="nav-group-item">
-      {icon} {@props.text}
+    classes = @getPtClassSet()
+    classes['active'] = @props.active
+    className = classNames @props.className, classes
+    icon = @getIconComponent()
+
+    <a {...@props} className={className}>
+      {icon}{@props.text}
     </a>

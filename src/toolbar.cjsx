@@ -1,13 +1,18 @@
 React = require 'react'
+classNames = require 'classnames'
+PhotonMixin = require './photonMixin.coffee'
 
 module.exports = React.createClass
-  propTypes:
-    type: React.PropTypes.oneOf ['header', 'footer']
+  mixins: [PhotonMixin],
 
   getDefaultProps: ->
-    type: 'header'
+    ptClass: 'toolbar'
+    ptType: 'header'
 
   render: ->
-    <div className="toolbar toolbar-#{@props.type}">
+    classes = @getPtClassSet()
+    className = classNames @props.className, classes
+
+    <div className={className}>
       {@props.children}
     </div>

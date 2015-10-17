@@ -9,7 +9,7 @@ describe 'button', () ->
   it 'Should create default element', () ->
     instance = ReactTestUtils.renderIntoDocument <Button />
     button = ReactDOM.findDOMNode instance
-    classNames = button.className.split(' ')
+    classNames = button.className.split(/\s+/)
 
     expect(button.nodeName).to.be('BUTTON')
     expect(classNames).to.contain('btn')
@@ -27,14 +27,14 @@ describe 'button', () ->
   it 'Should create default element with size', () ->
     sizes = ['large', 'mini']
     for size in sizes
-      instance = ReactTestUtils.renderIntoDocument <Button size={size}/>
+      instance = ReactTestUtils.renderIntoDocument <Button ptSize={size}/>
       button = ReactDOM.findDOMNode instance
 
       classNames = button.className.split(/\s+/)
       expect(classNames).to.contain("btn-#{size}")
 
     size = 'another'
-    instance = ReactTestUtils.renderIntoDocument <Button size={size}/>
+    instance = ReactTestUtils.renderIntoDocument <Button btSize={size}/>
     button = ReactDOM.findDOMNode instance
 
     classNames = button.className.split(/\s+/)
@@ -44,14 +44,14 @@ describe 'button', () ->
   it 'Should create default element with style', () ->
     styles = ['default', 'primary', 'positive', 'negative', 'warning']
     for style in styles
-      instance = ReactTestUtils.renderIntoDocument <Button style={style}/>
+      instance = ReactTestUtils.renderIntoDocument <Button ptStyle={style}/>
       button = ReactDOM.findDOMNode instance
 
       classNames = button.className.split(/\s+/)
       expect(classNames).to.contain("btn-#{style}")
 
     style = 'another'
-    instance = ReactTestUtils.renderIntoDocument <Button style={style}/>
+    instance = ReactTestUtils.renderIntoDocument <Button ptStyle={style}/>
     button = ReactDOM.findDOMNode instance
 
     classNames = button.className.split(/\s+/)
@@ -60,7 +60,7 @@ describe 'button', () ->
 
   it 'Should create default element with icon', () ->
     name = 'home'
-    element = <Button icon={name} />
+    element = <Button glyph={name} />
     instance = ReactTestUtils.renderIntoDocument element
     button = ReactDOM.findDOMNode instance
 
@@ -72,7 +72,7 @@ describe 'button', () ->
   it 'Should create default element with icon and text', () ->
     name = 'home'
     text = 'button'
-    element = <Button icon={name} text={text}/>
+    element = <Button glyph={name} text={text}/>
     instance = ReactTestUtils.renderIntoDocument element
     button = ReactDOM.findDOMNode instance
 

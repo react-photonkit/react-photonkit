@@ -14,9 +14,9 @@ module.exports = React.createClass
       <Title>{Package.name}</Title>
       <Actionbar>
         <ButtonGroup>
-          <Button icon="home" />
-          <Button icon="github" active />
-          <Button icon="folder" text="hello" />
+          <Button glyph="home" />
+          <Button glyph="github" active />
+          <Button glyph="folder" text="hello" />
         </ButtonGroup>
       </Actionbar>
     </Toolbar>

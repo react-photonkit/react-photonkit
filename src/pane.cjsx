@@ -1,17 +1,22 @@
 React = require 'react'
+classNames = require 'classnames'
+PhotonMixin = require './photonMixin.coffee'
 
 module.exports = React.createClass
+  mixins: [PhotonMixin],
+
   propTypes:
-    size: React.PropTypes.string
     sidebar: React.PropTypes.bool
 
   getDefaultProps: ->
-    size: null
+    ptClass: 'pane'
     sidebar: false
 
   render: ->
-    size = if @props.size then "pane-#{@props.size}" else ""
-    sidebar = if @props.sidebar then "sidebar" else ""
-    <div className="pane #{size} #{sidebar}">
+    classes = @getPtClassSet()
+    classes["sidebar"] = @props.sidebar
+    className = classNames @props.className, classes
+
+    <div className={className}>
       {@props.children}
     </div>

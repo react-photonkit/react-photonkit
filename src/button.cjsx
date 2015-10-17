@@ -1,39 +1,36 @@
 React = require 'react'
+classNames = require 'classnames'
 Icon = require './icon.cjsx'
+PhotonMixin = require './photonMixin.coffee'
+
 
 module.exports = React.createClass
-  styles: ['default', 'primary', 'positive', 'negative', 'warning']
-  sizes: ['large', 'mini']
+  mixins: [PhotonMixin],
 
   propTypes:
     active: React.PropTypes.bool
-    style: React.PropTypes.string
-    size: React.PropTypes.string
-    pullRight: React.PropTypes.bool
-    text: React.PropTypes.string
-    icon: React.PropTypes.string
+    onClick: React.PropTypes.func
 
   getDefaultProps: ->
+    ptClass: 'button'
+    ptStyle: 'default'
     active: false
-    style: 'default'
-    size: ''
     pullRight: false
-    text: null
-    icon: null
 
   getIconComponent: ->
-    text = if @props.text then 'icon-text' else ''
-    <Icon glyph="#{@props.icon} #{text}" /> if @props.icon?
+    withText = if @props.text then true else false
+    <Icon glyph={@props.glyph} withText={withText} /> if @props.glyph?
 
   render: ->
-    active = if @props.active then 'active' else ''
-    right = if @props.pullRight then 'pull-right' else ''
     icon = @getIconComponent()
-    style = if @props.style in @styles then "btn-#{@props.style}" else ''
-    size = if @props.size in @sizes then "btn-#{@props.size}" else ''
+    classes = @getPtClassSet()
+    classes['active'] = @props.active
+    classes['pull-right'] = @props.pullRight
+    className = classNames @props.className, classes
 
     <button
-      className="btn #{style} #{size} #{right} #{active}"
+      {...@props}
+      className={className}
       onClick={@props.onClick}>
         {icon}{@props.text}
     </button>

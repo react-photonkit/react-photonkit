@@ -1,11 +1,18 @@
 React = require 'react'
+classNames = require 'classnames'
+PhotonMixin = require './photonMixin.coffee'
+{ PaneGroup } = require '../src/photon.coffee'
 
 module.exports = React.createClass
+  mixins: [PhotonMixin],
+
+  getDefaultProps: ->
+    ptClass: 'nav-group'
+
   render: ->
-    <div className="pane-group">
-      <div className="pane pane-sm sidebar">
-        <nav className="nav-group">
-          {@props.children}
-        </nav>
-      </div>
-    </div>
+    classes = @getPtClassSet()
+    className = classNames @props.className, classes
+
+    <nav className={className}>
+      {@props.children}
+    </nav>
