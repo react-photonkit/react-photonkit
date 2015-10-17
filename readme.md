@@ -27,7 +27,11 @@ See `./dist/` directory
 $ npm start
 ```
 
-![example][example]
+| buttons        | buttons / icons |
+| -------------- | --------------- |
+| ![screenshot1] | ![screenshot2]  |
+| table          |                 |
+| ![screenshot3] |                 |
 
 
 ## test
@@ -42,4 +46,6 @@ $ npm test
 
 
 [photon]: http://photonkit.com/
-[example]: assets/example.png
+[screenshot1]: assets/screenshot1.png
+[screenshot2]: assets/screenshot2.png
+[screenshot3]: assets/screenshot3.png
