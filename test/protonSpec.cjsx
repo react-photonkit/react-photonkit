@@ -5,6 +5,16 @@ Proton = require '../src/photon.coffee'
 describe 'proton', () ->
 
   it 'should have components', () ->
-    expect(Proton).to.be.ok()
-    expect(Proton.Toolbar).to.be.ok()
+    expect(Proton.Actionbar).to.be.ok()
     expect(Proton.Button).to.be.ok()
+    expect(Proton.ButtonGroup).to.be.ok()
+    expect(Proton.Content).to.be.ok()
+    expect(Proton.Icon).to.be.ok()
+    expect(Proton.NavGroup).to.be.ok()
+    expect(Proton.NavGroupItem).to.be.ok()
+    expect(Proton.NavTitle).to.be.ok()
+    expect(Proton.Pane).to.be.ok()
+    expect(Proton.PaneGroup).to.be.ok()
+    expect(Proton.Title).to.be.ok()
+    expect(Proton.Toolbar).to.be.ok()
+    expect(Proton.Window).to.be.ok()
