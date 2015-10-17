@@ -2,17 +2,17 @@ React = require 'react'
 { Pane, NavGroup, NavTitle, NavGroupItem } = require '../src/photon.coffee'
 
 module.exports = React.createClass
-  onClick: (event) ->
-    alert 'clicked "close"'
+  onSelect: (index) ->
+    console.log "tab clicked with #{index}"
 
   render: ->
     <Pane ptSize="sm" sidebar>
-      <NavGroup>
+      <NavGroup activeKey={2} onSelect={@onSelect}>
         <NavTitle>nav group icon &amp; text</NavTitle>
-        <NavGroupItem glyph="home" text="home" active />
-        <NavGroupItem glyph="cc" text="cc" />
+        <NavGroupItem eventKey={1} glyph="home" text="home" />
+        <NavGroupItem eventKey={2} glyph="cc" text="cc" />
 
         <NavTitle>nav group text</NavTitle>
-        <NavGroupItem text="download" />
+        <NavGroupItem eventKey={3} text="download" />
       </NavGroup>
     </Pane>
