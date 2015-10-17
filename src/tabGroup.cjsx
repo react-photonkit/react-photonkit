@@ -13,16 +13,23 @@ module.exports = React.createClass
     activeKey: @props.activeKey
 
   getDefaultProps: ->
-    ptClass: 'nav-group'
+    ptClass: 'tab-group'
 
   renderTab: (child, index) ->
     active = @state.activeKey == child.props.eventKey
     React.cloneElement child,
       active: active
-      key: "nav-group-item-#{index}"
+      key: "tab-item-#{index}"
       onClick: () =>
         @setState activeKey: child.props.eventKey
         @props.onSelect child.props.eventKey if @props.onSelect
+
+  renderPane: (child, index) ->
+    active = @state.activeKey == child.props.eventKey
+    try
+      child.props.children if active
+    catch
+      null
 
   render: ->
     classes = @getPtClassSet()
@@ -30,8 +37,17 @@ module.exports = React.createClass
 
     renderTab = (child, index) =>
       @renderTab child, index
-    childTabs = @props.children.map renderTab if @props.children
+    renderPane = (child, index) =>
+      @renderPane child, index
 
-    <nav className={className}>
-      {childTabs}
-    </nav>
+    childTabs = @props.children.map renderTab if @props.children
+    childPane = @props.children.map renderPane if @props.children
+
+    <div>
+      <nav className={className}>
+        {childTabs}
+      </nav>
+      <div>
+        {childPane}
+      </div>
+    </div>

@@ -8,15 +8,16 @@ module.exports = React.createClass
 
   propTypes:
     active: React.PropTypes.bool
-    text: React.PropTypes.string.isRequired
+    title: React.PropTypes.string.isRequired
     glyph: React.PropTypes.string
 
   getDefaultProps: ->
-    ptClass: 'nav-group-item'
+    ptClass: 'tab-item'
     active: false
 
   getIconComponent: ->
-    <Icon glyph={@props.glyph} withText /> if @props.glyph
+    <Icon glyph='cancel' tab />
+    null  # TODO(importre)
 
   render: ->
     classes = @getPtClassSet()
@@ -25,5 +26,5 @@ module.exports = React.createClass
     icon = @getIconComponent()
 
     <a {...@props} className={className}>
-      {icon}{@props.text}
+      {icon}{@props.title}
     </a>

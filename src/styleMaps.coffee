@@ -7,6 +7,8 @@ module.exports =
     'pane': 'pane'
     'nav-group': 'nav-group'
     'nav-group-item': 'nav-group-item'
+    'tab-group': 'tab-group'
+    'tab-item': 'tab-item'
 
   STYLES: [
     'default'

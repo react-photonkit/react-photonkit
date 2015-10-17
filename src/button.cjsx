@@ -19,7 +19,7 @@ module.exports = React.createClass
 
   getIconComponent: ->
     withText = if @props.text then true else false
-    <Icon glyph={@props.glyph} withText={withText} /> if @props.glyph?
+    <Icon glyph={@props.glyph} withText={withText} /> if @props.glyph
 
   render: ->
     icon = @getIconComponent()

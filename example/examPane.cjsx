@@ -1,43 +1,27 @@
 React = require 'react'
-{ Icon, Pane, Button } = require '../src/photon.coffee'
+{
+  Icon, Pane, Button
+  TabGroup, TabItem
+} = require '../src/photon.coffee'
+ExamTabPane1 = require './examTabPane1.cjsx'
+ExamTabPane2 = require './examTabPane2.cjsx'
+ExamTabPane3 = require './examTabPane3.cjsx'
 
 module.exports = React.createClass
-  onClick: (param) ->
-    alert "Hello, #{param}"
+  onSelect: (index) ->
+    console.log "tab clicked with #{index}"
 
   render: ->
     <Pane>
-      <div className="padded-more">
-        <Button ptStyle="default" text="default"
-                onClick={@onClick.bind(@, 'World')}/>
-        <Button ptStyle="primary" text="primary" />
-        <Button ptStyle="positive" text="positive" />
-        <Button ptStyle="negative" text="negative" />
-        <Button ptStyle="warning" text="warning" />
-      </div>
-
-      <div className="padded-more">
-        <Button ptSize="mini" ptStyle="default" text="default" />
-        <Button ptSize="mini" ptStyle="primary" text="primary" />
-        <Button ptSize="mini" ptStyle="positive" text="positive" />
-        <Button ptSize="mini" ptStyle="negative" text="negative" />
-        <Button ptSize="mini" ptStyle="warning" text="warning" />
-      </div>
-
-      <div className="padded-more">
-        <Button ptSize="large" ptStyle="default" text="default" />
-        <Button ptSize="large" ptStyle="primary" text="primary" />
-        <Button ptSize="large" ptStyle="positive" text="positive" />
-        <Button ptSize="large" ptStyle="negative" text="negative" />
-        <Button ptSize="large" ptStyle="warning" text="warning" />
-      </div>
-
-      <div className="padded-more">
-        <Button glyph="download" />
-        <Button glyph="cc" />
-      </div>
-      
-      <div className="padded-more">
-        <Icon glyph="download" />
-      </div>
+      <TabGroup activeKey={1} onSelect={@onSelect}>
+        <TabItem eventKey={1} title="buttons">
+          <ExamTabPane1 />
+        </TabItem>
+        <TabItem eventKey={2} title="icon buttons">
+          <ExamTabPane2 />
+        </TabItem>
+        <TabItem eventKey={3} title="tables">
+          <ExamTabPane3 />
+        </TabItem>
+      </TabGroup>
     </Pane>
