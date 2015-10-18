@@ -44,10 +44,10 @@ module.exports = React.createClass
     childPane = @props.children.map renderPane if @props.children
 
     <div>
-      <nav className={className}>
+      <div className={className}>
         {childTabs}
-      </nav>
-      <div>
+      </div>
+      <div ref='contents'>
         {childPane}
       </div>
     </div>
