@@ -1,3 +1,5 @@
+![icon][icon]
+
 # react-photonkit
 
 [Photon][photon] components built with React
@@ -42,5 +44,6 @@ $ npm test
 
 
 
+[icon]: assets/photonkit.png
 [photon]: http://photonkit.com/
 [gif]: assets/photonkit.gif
