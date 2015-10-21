@@ -6,6 +6,7 @@ React = require 'react'
 ExamTabPane1 = require './examTabPane1.cjsx'
 ExamTabPane2 = require './examTabPane2.cjsx'
 ExamTabPane3 = require './examTabPane3.cjsx'
+ExamTabPane4 = require './examTabPane4.cjsx'
 
 module.exports = React.createClass
   onSelect: (index) ->
@@ -22,6 +23,9 @@ module.exports = React.createClass
         </TabItem>
         <TabItem eventKey={3} title="tables">
           <ExamTabPane3 />
+        </TabItem>
+        <TabItem eventKey={4} title="list">
+          <ExamTabPane4 />
         </TabItem>
       </TabGroup>
     </Pane>

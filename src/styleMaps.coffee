@@ -9,6 +9,8 @@ module.exports =
     'nav-group-item': 'nav-group-item'
     'tab-group': 'tab-group'
     'tab-item': 'tab-item'
+    'list-group': 'list-group'
+    'list-group-item': 'list-group-item'
 
   STYLES: [
     'default'

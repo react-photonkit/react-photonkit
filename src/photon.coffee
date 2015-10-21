@@ -6,6 +6,8 @@ module.exports =
   ButtonGroup: require './buttonGroup.cjsx'
   Content: require './content.cjsx'
   Icon: require './icon.cjsx'
+  ListGroup: require './listGroup.cjsx'
+  ListItem: require './listItem.cjsx'
   NavGroup: require './navGroup.cjsx'
   NavGroupItem: require './navGroupItem.cjsx'
   NavTitle: require './navTitle.cjsx'
