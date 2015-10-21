@@ -27,6 +27,8 @@ See `./dist/` directory
 $ npm start
 ```
 
+And open http://localhost:8000
+
 ![gif]
 
 
@@ -35,8 +37,6 @@ $ npm start
 ```sh
 $ npm test
 ```
-
-And open http://localhost:8000
 
 
 
