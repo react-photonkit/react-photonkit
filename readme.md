@@ -27,10 +27,7 @@ See `./dist/` directory
 $ npm start
 ```
 
-| screenshot     | screenshot     |
-| -------------- | -------------- |
-| ![screenshot1] | ![screenshot2] |
-| ![screenshot3] |                |
+![gif]
 
 
 ## test
@@ -46,6 +43,4 @@ And open http://localhost:8000
 
 
 [photon]: http://photonkit.com/
-[screenshot1]: assets/screenshot1.png
-[screenshot2]: assets/screenshot2.png
-[screenshot3]: assets/screenshot3.png
+[gif]: assets/photonkit.gif
