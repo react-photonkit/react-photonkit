@@ -9,6 +9,7 @@ module.exports = React.createClass
 
   propTypes:
     active: React.PropTypes.bool
+    form: React.PropTypes.bool
     onClick: React.PropTypes.func
 
   getDefaultProps: ->
@@ -25,6 +26,7 @@ module.exports = React.createClass
     icon = @getIconComponent()
     classes = @getPtClassSet()
     classes['active'] = @props.active
+    classes['btn-form'] = @props.form
     classes['pull-right'] = @props.pullRight
     className = classNames @props.className, classes
 
