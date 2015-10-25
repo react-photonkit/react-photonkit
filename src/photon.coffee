@@ -12,6 +12,7 @@ module.exports =
   NavGroup: require './navGroup.cjsx'
   NavGroupItem: require './navGroupItem.cjsx'
   NavTitle: require './navTitle.cjsx'
+  Options: require './options.cjsx'
   Pane: require './pane.cjsx'
   PaneGroup: require './paneGroup.cjsx'
   RadioGroup: require './radioGroup.cjsx'
