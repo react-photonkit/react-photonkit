@@ -63,7 +63,7 @@ module.exports = React.createClass
   render: ->
     icons = @iconNames.map (name, index) ->
       <div key="#{name}-#{index}">
-        <Button glyph={name} text={name} />
+        <Button glyph={name} title={name} text={name} />
       </div>
 
     <div className="padded-more">
