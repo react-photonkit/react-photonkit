@@ -3,7 +3,7 @@ React = require "react"
 
 module.exports = React.createClass
   onSelect: (index) ->
-    console.log "tab clicked with #{index}"
+    console.log "sidebar clicked with #{index}"
 
   render: ->
     <Pane ptSize="sm" sidebar>
