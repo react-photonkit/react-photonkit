@@ -7,7 +7,7 @@ Package = require "../package.json"
 
 module.exports = React.createClass
   onClick: (event) ->
-    alert "clicked "close""
+    alert "clicked 'close'"
 
   render: ->
     <Toolbar title={Package.name}>

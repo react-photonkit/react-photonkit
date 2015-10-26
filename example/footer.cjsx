@@ -3,7 +3,7 @@ React = require "react"
 
 module.exports = React.createClass
   onClick: (event) ->
-    alert "clicked "close""
+    alert "clicked 'close'"
 
   render: ->
     <Toolbar ptType="footer">
