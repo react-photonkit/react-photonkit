@@ -22,7 +22,7 @@ github.authenticate({
 
 var owner = 'react-photonkit';
 var repo = 'react-photonkit';
-var version = '0.2.0';
+var version = 'v0.2.0';
 var note = 'create components (tab, table, and list)';
 
 github.releases.createRelease({
