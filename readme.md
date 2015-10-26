@@ -23,18 +23,12 @@ $ npm run build
 See `./dist/` directory
 
 
-## Example
+## Example with Electron
 
-```sh
-$ npm start
-```
-
-And open http://localhost:8000
-
-![gif]
+See https://github.com/react-photonkit/epp
 
 
-## test
+## Test
 
 ```sh
 $ npm test
