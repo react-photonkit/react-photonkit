@@ -10,5 +10,9 @@ module.exports = _.extend({}, baseConfig, {
     filename: 'photon.js',
     library: 'ReactPhotonKit',
     libraryTarget: 'umd'
-  }
+  },
+  externals: [
+    'react',
+    'react-dom'
+  ]
 });
