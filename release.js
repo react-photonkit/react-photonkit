@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var GitHubApi = require('github');
+var Package = require('./package.json');
 
 var github = new GitHubApi({
   version: '3.0.0',
@@ -22,8 +23,8 @@ github.authenticate({
 
 var owner = 'react-photonkit';
 var repo = 'react-photonkit';
-var version = 'v0.2.1';
-var note = 'create components (tab, table, and list)';
+var version = Package.version;
+var note = 'split input into input, checkbox, textarea and radio';
 
 github.releases.createRelease({
   owner: owner,
@@ -32,3 +33,4 @@ github.releases.createRelease({
   prerelease: true,
   body: note
 });
+console.log(version);
