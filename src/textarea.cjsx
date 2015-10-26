@@ -6,6 +6,7 @@ module.exports = React.createClass
   mixins: [PhotonMixin],
 
   propTypes:
+    placeholder: React.PropTypes.string
     label: React.PropTypes.string
 
   getValue: ->
@@ -14,9 +15,10 @@ module.exports = React.createClass
   render: ->
     <div className="form-group">
       <label>{@props.label}</label>
-      <input {...@props}
+      <textarea {...@props}
         ref="text"
         className="form-control"
-        placeholder={@props.placeholder}
-        type="text" />
+        placeholder={@props.placeholder} >
+        {@props.children}
+      </textarea>
     </div>
