@@ -1,22 +1,27 @@
 expect = require "expect.js"
 React = require "react"
-Proton = require "../src/photon.coffee"
+Photon = require "../src/photon.coffee"
 
 describe "photon", () ->
 
   it "should have components", () ->
-    expect(Proton.Actionbar).to.be.ok()
-    expect(Proton.Button).to.be.ok()
-    expect(Proton.ButtonGroup).to.be.ok()
-    expect(Proton.Content).to.be.ok()
-    expect(Proton.Icon).to.be.ok()
-    expect(Proton.NavGroup).to.be.ok()
-    expect(Proton.NavGroupItem).to.be.ok()
-    expect(Proton.NavTitle).to.be.ok()
-    expect(Proton.Pane).to.be.ok()
-    expect(Proton.PaneGroup).to.be.ok()
-    expect(Proton.TabGroup).to.be.ok()
-    expect(Proton.TabItem).to.be.ok()
-    expect(Proton.Table).to.be.ok()
-    expect(Proton.Toolbar).to.be.ok()
-    expect(Proton.Window).to.be.ok()
+    expect(Photon.Actionbar).to.be.ok()
+    expect(Photon.Button).to.be.ok()
+    expect(Photon.ButtonGroup).to.be.ok()
+    expect(Photon.Content).to.be.ok()
+    expect(Photon.Icon).to.be.ok()
+    expect(Photon.Input).to.be.ok()
+    expect(Photon.ListGroup).to.be.ok()
+    expect(Photon.ListItem).to.be.ok()
+    expect(Photon.NavGroup).to.be.ok()
+    expect(Photon.NavGroupItem).to.be.ok()
+    expect(Photon.NavTitle).to.be.ok()
+    expect(Photon.Options).to.be.ok()
+    expect(Photon.Pane).to.be.ok()
+    expect(Photon.PaneGroup).to.be.ok()
+    expect(Photon.RadioGroup).to.be.ok()
+    expect(Photon.TabGroup).to.be.ok()
+    expect(Photon.TabItem).to.be.ok()
+    expect(Photon.Table).to.be.ok()
+    expect(Photon.Toolbar).to.be.ok()
+    expect(Photon.Window).to.be.ok()
