@@ -1,12 +1,13 @@
 {
   "name": "react-photonkit",
-  "version": "v0.1.1",
+  "version": "v0.2.0",
   "description": "Photon components built with React",
   "main": "dist/photon.js",
   "scripts": {
     "test": "karma start karma.config.js",
     "start": "webpack-dev-server --config webpack.example.config.js --hot --inline",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "release": "node release.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "css-loader": "^0.19.0",
     "expect.js": "^0.3.1",
     "file-loader": "^0.8.4",
+    "github": "^0.2.4",
     "json-loader": "^0.5.3",
     "karma": "^0.13.11",
     "karma-chrome-launcher": "^0.2.1",
