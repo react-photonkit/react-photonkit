@@ -1,23 +1,23 @@
-require '../photon/dist/css/photon.min.css'
+require "../photon/dist/css/photon.min.css"
 
 module.exports =
-  Actionbar: require './actionbar.cjsx'
-  Button: require './button.cjsx'
-  ButtonGroup: require './buttonGroup.cjsx'
-  Content: require './content.cjsx'
-  Icon: require './icon.cjsx'
-  Input: require './input.cjsx'
-  ListGroup: require './listGroup.cjsx'
-  ListItem: require './listItem.cjsx'
-  NavGroup: require './navGroup.cjsx'
-  NavGroupItem: require './navGroupItem.cjsx'
-  NavTitle: require './navTitle.cjsx'
-  Options: require './options.cjsx'
-  Pane: require './pane.cjsx'
-  PaneGroup: require './paneGroup.cjsx'
-  RadioGroup: require './radioGroup.cjsx'
-  TabGroup: require './tabGroup.cjsx'
-  TabItem: require './tabItem.cjsx'
-  Table: require './table.cjsx'
-  Toolbar: require './toolbar.cjsx'
-  Window: require './window.cjsx'
+  Actionbar: require "./actionbar.cjsx"
+  Button: require "./button.cjsx"
+  ButtonGroup: require "./buttonGroup.cjsx"
+  Content: require "./content.cjsx"
+  Icon: require "./icon.cjsx"
+  Input: require "./input.cjsx"
+  ListGroup: require "./listGroup.cjsx"
+  ListItem: require "./listItem.cjsx"
+  NavGroup: require "./navGroup.cjsx"
+  NavGroupItem: require "./navGroupItem.cjsx"
+  NavTitle: require "./navTitle.cjsx"
+  Options: require "./options.cjsx"
+  Pane: require "./pane.cjsx"
+  PaneGroup: require "./paneGroup.cjsx"
+  RadioGroup: require "./radioGroup.cjsx"
+  TabGroup: require "./tabGroup.cjsx"
+  TabItem: require "./tabItem.cjsx"
+  Table: require "./table.cjsx"
+  Toolbar: require "./toolbar.cjsx"
+  Window: require "./window.cjsx"

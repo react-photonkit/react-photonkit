@@ -1,5 +1,5 @@
-React = require 'react'
-styleMaps = require './styleMaps.coffee'
+React = require "react"
+styleMaps = require "./styleMaps.coffee"
 
 module.exports =
   getPtClassSet: ->

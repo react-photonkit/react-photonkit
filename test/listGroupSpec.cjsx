@@ -1,21 +1,21 @@
-expect = require 'expect.js'
-React = require 'react'
-ReactTestUtils = require 'react/lib/ReactTestUtils'
-ReactDOM = require 'react-dom'
-ListGroup = require '../src/listGroup.cjsx'
-ListItem = require '../src/listItem.cjsx'
+expect = require "expect.js"
+React = require "react"
+ReactTestUtils = require "react/lib/ReactTestUtils"
+ReactDOM = require "react-dom"
+ListGroup = require "../src/listGroup.cjsx"
+ListItem = require "../src/listItem.cjsx"
 
-describe 'listgroup', () ->
+describe "listgroup", () ->
 
-  it 'Should create default element', () ->
+  it "Should create default element", () ->
     instance = ReactTestUtils.renderIntoDocument <ListGroup />
     node = ReactDOM.findDOMNode instance
 
-    expect(node.nodeName).to.be('UL')
-    expect(node.className).to.be('list-group')
+    expect(node.nodeName).to.be("UL")
+    expect(node.className).to.be("list-group")
 
 
-  it 'Should hide img element if no image prop', () ->
+  it "Should hide img element if no image prop", () ->
     tree = (
       <ListGroup>
         <ListItem title="item" />
@@ -23,11 +23,11 @@ describe 'listgroup', () ->
     )
 
     instance = ReactTestUtils.renderIntoDocument tree
-    items = ReactTestUtils.scryRenderedDOMComponentsWithTag instance, 'img'
+    items = ReactTestUtils.scryRenderedDOMComponentsWithTag instance, "img"
     expect(items.length).to.be(0)
 
 
-  it 'Should hide img element if image prop exists', () ->
+  it "Should hide img element if image prop exists", () ->
     tree = (
       <ListGroup>
         <ListItem title="item" image="no.png" />
@@ -35,5 +35,5 @@ describe 'listgroup', () ->
     )
 
     instance = ReactTestUtils.renderIntoDocument tree
-    items = ReactTestUtils.scryRenderedDOMComponentsWithTag instance, 'img'
+    items = ReactTestUtils.scryRenderedDOMComponentsWithTag instance, "img"
     expect(items.length).to.be(1)

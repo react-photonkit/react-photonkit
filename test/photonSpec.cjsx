@@ -1,10 +1,10 @@
-expect = require 'expect.js'
-React = require 'react'
-Proton = require '../src/photon.coffee'
+expect = require "expect.js"
+React = require "react"
+Proton = require "../src/photon.coffee"
 
-describe 'photon', () ->
+describe "photon", () ->
 
-  it 'should have components', () ->
+  it "should have components", () ->
     expect(Proton.Actionbar).to.be.ok()
     expect(Proton.Button).to.be.ok()
     expect(Proton.ButtonGroup).to.be.ok()

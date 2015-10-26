@@ -1,13 +1,13 @@
-React = require 'react'
+React = require "react"
 {
   Toolbar, Actionbar
   Button, ButtonGroup
-} = require '../src/photon.coffee'
-Package = require '../package.json'
+} = require "../src/photon.coffee"
+Package = require "../package.json"
 
 module.exports = React.createClass
   onClick: (event) ->
-    alert 'clicked "close"'
+    alert "clicked "close""
 
   render: ->
     <Toolbar title={Package.name}>

@@ -1,7 +1,7 @@
-React = require 'react'
-classNames = require 'classnames'
-PhotonMixin = require './photonMixin.coffee'
-Icon = require './icon.cjsx'
+React = require "react"
+classNames = require "classnames"
+PhotonMixin = require "./photonMixin.coffee"
+Icon = require "./icon.cjsx"
 
 module.exports = React.createClass
   mixins: [PhotonMixin],
@@ -12,7 +12,7 @@ module.exports = React.createClass
     glyph: React.PropTypes.string
 
   getDefaultProps: ->
-    ptClass: 'nav-group-item'
+    ptClass: "nav-group-item"
     active: false
 
   getIconComponent: ->
@@ -20,7 +20,7 @@ module.exports = React.createClass
 
   render: ->
     classes = @getPtClassSet()
-    classes['active'] = @props.active
+    classes["active"] = @props.active
     className = classNames @props.className, classes
     icon = @getIconComponent()
 

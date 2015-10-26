@@ -1,13 +1,13 @@
-expect = require 'expect.js'
-React = require 'react'
-ReactTestUtils = require 'react/lib/ReactTestUtils'
-ReactDOM = require 'react-dom'
-TabGroup = require '../src/tabGroup.cjsx'
-TabItem = require '../src/tabItem.cjsx'
+expect = require "expect.js"
+React = require "react"
+ReactTestUtils = require "react/lib/ReactTestUtils"
+ReactDOM = require "react-dom"
+TabGroup = require "../src/tabGroup.cjsx"
+TabItem = require "../src/tabItem.cjsx"
 
-describe 'tab', () ->
+describe "tab", () ->
 
-  it 'Should create default element', () ->
+  it "Should create default element", () ->
     tree = <TabGroup />
     instance = ReactTestUtils.renderIntoDocument tree
     node = ReactDOM.findDOMNode instance
@@ -25,7 +25,7 @@ describe 'tab', () ->
     expect(node).to.be.ok()
 
 
-  it 'Should be active when clicked', (done) ->
+  it "Should be active when clicked", (done) ->
     onSelect = (key) ->
       expect(2).to.be(key)
 
@@ -37,9 +37,9 @@ describe 'tab', () ->
     )
 
     instance = ReactTestUtils.renderIntoDocument tree
-    items = ReactTestUtils.scryRenderedDOMComponentsWithTag instance, 'a'
+    items = ReactTestUtils.scryRenderedDOMComponentsWithTag instance, "a"
     ReactTestUtils.Simulate.click items[1]
 
     contents = instance.refs.contents
-    expect(contents.textContent).to.be('contents2')
+    expect(contents.textContent).to.be("contents2")
     done()

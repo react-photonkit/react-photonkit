@@ -1,31 +1,31 @@
-expect = require 'expect.js'
-React = require 'react'
-ReactTestUtils = require 'react/lib/ReactTestUtils'
-ReactDOM = require 'react-dom'
-Button = require '../src/button.cjsx'
+expect = require "expect.js"
+React = require "react"
+ReactTestUtils = require "react/lib/ReactTestUtils"
+ReactDOM = require "react-dom"
+Button = require "../src/button.cjsx"
 
-describe 'button', () ->
+describe "button", () ->
 
-  it 'Should create default element', () ->
+  it "Should create default element", () ->
     instance = ReactTestUtils.renderIntoDocument <Button />
     button = ReactDOM.findDOMNode instance
     classNames = button.className.split(/\s+/)
 
-    expect(button.nodeName).to.be('BUTTON')
-    expect(classNames).to.contain('btn')
-    expect(classNames).to.contain('btn-default')
+    expect(button.nodeName).to.be("BUTTON")
+    expect(classNames).to.contain("btn")
+    expect(classNames).to.contain("btn-default")
 
 
-  it 'Should create element with text', () ->
-    text = 'button'
+  it "Should create element with text", () ->
+    text = "button"
     instance = ReactTestUtils.renderIntoDocument <Button text={text} />
     button = ReactDOM.findDOMNode instance
 
     expect(button.textContent).to.be(text)
 
 
-  it 'Should create default element with size', () ->
-    sizes = ['large', 'mini']
+  it "Should create default element with size", () ->
+    sizes = ["large", "mini"]
     for size in sizes
       instance = ReactTestUtils.renderIntoDocument <Button ptSize={size}/>
       button = ReactDOM.findDOMNode instance
@@ -33,7 +33,7 @@ describe 'button', () ->
       classNames = button.className.split(/\s+/)
       expect(classNames).to.contain("btn-#{size}")
 
-    size = 'another'
+    size = "another"
     instance = ReactTestUtils.renderIntoDocument <Button btSize={size}/>
     button = ReactDOM.findDOMNode instance
 
@@ -41,8 +41,8 @@ describe 'button', () ->
     expect(classNames).to.not.contain("btn-#{size}")
 
 
-  it 'Should create default element with style', () ->
-    styles = ['default', 'primary', 'positive', 'negative', 'warning']
+  it "Should create default element with style", () ->
+    styles = ["default", "primary", "positive", "negative", "warning"]
     for style in styles
       instance = ReactTestUtils.renderIntoDocument <Button ptStyle={style}/>
       button = ReactDOM.findDOMNode instance
@@ -50,7 +50,7 @@ describe 'button', () ->
       classNames = button.className.split(/\s+/)
       expect(classNames).to.contain("btn-#{style}")
 
-    style = 'another'
+    style = "another"
     instance = ReactTestUtils.renderIntoDocument <Button ptStyle={style}/>
     button = ReactDOM.findDOMNode instance
 
@@ -58,8 +58,8 @@ describe 'button', () ->
     expect(classNames).to.not.contain("btn-#{style}")
 
 
-  it 'Should create default element with icon', () ->
-    name = 'home'
+  it "Should create default element with icon", () ->
+    name = "home"
     element = <Button glyph={name} />
     instance = ReactTestUtils.renderIntoDocument element
     button = ReactDOM.findDOMNode instance
@@ -69,9 +69,9 @@ describe 'button', () ->
     expect(classNames).to.contain("icon-#{name}")
 
 
-  it 'Should create default element with icon and text', () ->
-    name = 'home'
-    text = 'button'
+  it "Should create default element with icon and text", () ->
+    name = "home"
+    text = "button"
     element = <Button glyph={name} text={text}/>
     instance = ReactTestUtils.renderIntoDocument element
     button = ReactDOM.findDOMNode instance
@@ -82,7 +82,7 @@ describe 'button', () ->
     expect(button.textContent).to.be(text)
 
 
-  it 'Should call onClick callback', (done) ->
+  it "Should call onClick callback", (done) ->
     onClick = () ->
       done()
 
@@ -91,7 +91,7 @@ describe 'button', () ->
     ReactTestUtils.Simulate.click button
 
 
-  it 'Should be active', () ->
+  it "Should be active", () ->
     instance = ReactTestUtils.renderIntoDocument <Button active />
     button = ReactDOM.findDOMNode instance
 

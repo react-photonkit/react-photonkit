@@ -1,12 +1,12 @@
-React = require 'react'
-classNames = require 'classnames'
-PhotonMixin = require './photonMixin.coffee'
+React = require "react"
+classNames = require "classnames"
+PhotonMixin = require "./photonMixin.coffee"
 
 module.exports = React.createClass
   mixins: [PhotonMixin],
 
   getDefaultProps: ->
-    ptClass: 'list-group'
+    ptClass: "list-group"
 
   render: ->
     classes = @getPtClassSet()

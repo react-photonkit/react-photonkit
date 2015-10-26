@@ -1,6 +1,6 @@
-React = require 'react'
-classNames = require 'classnames'
-PhotonMixin = require './photonMixin.coffee'
+React = require "react"
+classNames = require "classnames"
+PhotonMixin = require "./photonMixin.coffee"
 
 module.exports = React.createClass
   mixins: [PhotonMixin],
@@ -9,8 +9,8 @@ module.exports = React.createClass
     title: React.PropTypes.string
 
   getDefaultProps: ->
-    ptClass: 'toolbar'
-    ptType: 'header'
+    ptClass: "toolbar"
+    ptType: "header"
 
   render: ->
     classes = @getPtClassSet()

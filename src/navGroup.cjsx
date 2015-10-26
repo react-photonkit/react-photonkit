@@ -1,6 +1,6 @@
-React = require 'react'
-classNames = require 'classnames'
-PhotonMixin = require './photonMixin.coffee'
+React = require "react"
+classNames = require "classnames"
+PhotonMixin = require "./photonMixin.coffee"
 
 module.exports = React.createClass
   mixins: [PhotonMixin],
@@ -13,7 +13,7 @@ module.exports = React.createClass
     activeKey: @props.activeKey
 
   getDefaultProps: ->
-    ptClass: 'nav-group'
+    ptClass: "nav-group"
 
   renderTab: (child, index) ->
     active = @state.activeKey == child.props.eventKey

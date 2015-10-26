@@ -1,21 +1,21 @@
-expect = require 'expect.js'
-React = require 'react'
-ReactTestUtils = require 'react/lib/ReactTestUtils'
-ReactDOM = require 'react-dom'
-NavGroup = require '../src/navGroup.cjsx'
-NavGroupItem = require '../src/navGroupItem.cjsx'
+expect = require "expect.js"
+React = require "react"
+ReactTestUtils = require "react/lib/ReactTestUtils"
+ReactDOM = require "react-dom"
+NavGroup = require "../src/navGroup.cjsx"
+NavGroupItem = require "../src/navGroupItem.cjsx"
 
-describe 'navgroup', () ->
+describe "navgroup", () ->
 
-  it 'Should create default element', () ->
+  it "Should create default element", () ->
     instance = ReactTestUtils.renderIntoDocument <NavGroup />
     node = ReactDOM.findDOMNode instance
 
-    expect(node.nodeName).to.be('NAV')
-    expect(node.className).to.be('nav-group')
+    expect(node.nodeName).to.be("NAV")
+    expect(node.className).to.be("nav-group")
 
 
-  it 'Should be active', () ->
+  it "Should be active", () ->
     tree = (
       <NavGroup activeKey={1}>
         <NavGroupItem eventKey={1} glyph="home" text="home" />
@@ -30,7 +30,7 @@ describe 'navgroup', () ->
     expect(items[1].props.active).to.not.ok()
 
 
-  it 'Should be active when clicked', (done) ->
+  it "Should be active when clicked", (done) ->
     onSelect = (key) ->
       expect(2).to.be(key)
       done()
@@ -43,5 +43,5 @@ describe 'navgroup', () ->
     )
 
     instance = ReactTestUtils.renderIntoDocument tree
-    items = ReactTestUtils.scryRenderedDOMComponentsWithTag instance, 'a'
+    items = ReactTestUtils.scryRenderedDOMComponentsWithTag instance, "a"
     ReactTestUtils.Simulate.click items[1]

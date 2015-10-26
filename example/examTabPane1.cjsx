@@ -1,5 +1,5 @@
-React = require 'react'
-{ Button } = require '../src/photon.coffee'
+React = require "react"
+{ Button } = require "../src/photon.coffee"
 
 module.exports = React.createClass
   onClick: (param) ->
@@ -10,7 +10,7 @@ module.exports = React.createClass
       <h3>default buttons</h3>
       <div>
         <Button ptStyle="default" text="default"
-                onClick={@onClick.bind(@, 'World')}/>
+                onClick={@onClick.bind(@, "World")}/>
         <Button ptStyle="primary" text="primary" />
         <Button ptStyle="positive" text="positive" />
         <Button ptStyle="negative" text="negative" />

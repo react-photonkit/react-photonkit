@@ -1,7 +1,7 @@
-React = require 'react'
+React = require "react"
 {
   ListGroup, ListItem
-} = require '../src/photon.coffee'
+} = require "../src/photon.coffee"
 
 module.exports = React.createClass
   render: ->

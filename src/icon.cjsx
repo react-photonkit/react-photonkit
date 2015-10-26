@@ -1,6 +1,6 @@
-React = require 'react'
-classNames = require 'classnames'
-PhotonMixin = require './photonMixin.coffee'
+React = require "react"
+classNames = require "classnames"
+PhotonMixin = require "./photonMixin.coffee"
 
 module.exports = React.createClass
   mixins: [PhotonMixin],
@@ -11,7 +11,7 @@ module.exports = React.createClass
     tab: React.PropTypes.bool
 
   getDefaultProps: ->
-    ptClass: 'icon'
+    ptClass: "icon"
     withText: false
     tab: false
 

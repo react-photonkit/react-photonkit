@@ -1,7 +1,7 @@
-React = require 'react'
-classNames = require 'classnames'
-Icon = require './icon.cjsx'
-PhotonMixin = require './photonMixin.coffee'
+React = require "react"
+classNames = require "classnames"
+Icon = require "./icon.cjsx"
+PhotonMixin = require "./photonMixin.coffee"
 
 
 module.exports = React.createClass
@@ -13,8 +13,8 @@ module.exports = React.createClass
     onClick: React.PropTypes.func
 
   getDefaultProps: ->
-    ptClass: 'button'
-    ptStyle: 'default'
+    ptClass: "button"
+    ptStyle: "default"
     active: false
     pullRight: false
 
@@ -25,9 +25,9 @@ module.exports = React.createClass
   render: ->
     icon = @getIconComponent()
     classes = @getPtClassSet()
-    classes['active'] = @props.active
-    classes['btn-form'] = @props.form
-    classes['pull-right'] = @props.pullRight
+    classes["active"] = @props.active
+    classes["btn-form"] = @props.form
+    classes["pull-right"] = @props.pullRight
     className = classNames @props.className, classes
 
     <button

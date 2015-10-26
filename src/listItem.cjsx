@@ -1,6 +1,6 @@
-React = require 'react'
-classNames = require 'classnames'
-PhotonMixin = require './photonMixin.coffee'
+React = require "react"
+classNames = require "classnames"
+PhotonMixin = require "./photonMixin.coffee"
 
 module.exports = React.createClass
   mixins: [PhotonMixin],
@@ -12,12 +12,12 @@ module.exports = React.createClass
     subtitle: React.PropTypes.string
 
   getDefaultProps: ->
-    ptClass: 'list-group-item'
+    ptClass: "list-group-item"
     active: false
 
   render: ->
     classes = @getPtClassSet()
-    classes['active'] = @props.active
+    classes["active"] = @props.active
     className = classNames @props.className, classes
     img = <img className="img-circle media-object pull-left"
       src={@props.image} width="32" height="32" /> if @props.image

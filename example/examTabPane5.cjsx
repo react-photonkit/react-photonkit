@@ -1,7 +1,7 @@
-React = require 'react'
+React = require "react"
 {
   Input, RadioGroup, Button, Options
-} = require '../src/photon.coffee'
+} = require "../src/photon.coffee"
 
 module.exports = React.createClass
   submit: ->

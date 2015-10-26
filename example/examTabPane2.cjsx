@@ -1,5 +1,5 @@
-React = require 'react'
-{ Button } = require '../src/photon.coffee'
+React = require "react"
+{ Button } = require "../src/photon.coffee"
 
 module.exports = React.createClass
   iconNames: ["address", "adjust", "air", "alert", "archive",

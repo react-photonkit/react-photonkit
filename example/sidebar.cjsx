@@ -1,5 +1,5 @@
-React = require 'react'
-{ Pane, NavGroup, NavTitle, NavGroupItem } = require '../src/photon.coffee'
+React = require "react"
+{ Pane, NavGroup, NavTitle, NavGroupItem } = require "../src/photon.coffee"
 
 module.exports = React.createClass
   onSelect: (index) ->
