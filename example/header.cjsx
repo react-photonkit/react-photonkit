@@ -1,6 +1,6 @@
 React = require 'react'
 {
-  Title, Toolbar, Actionbar
+  Toolbar, Actionbar
   Button, ButtonGroup
 } = require '../src/photon.coffee'
 Package = require '../package.json'
@@ -10,8 +10,7 @@ module.exports = React.createClass
     alert 'clicked "close"'
 
   render: ->
-    <Toolbar>
-      <Title>{Package.name}</Title>
+    <Toolbar title={Package.name}>
       <Actionbar>
         <ButtonGroup>
           <Button glyph="home" />

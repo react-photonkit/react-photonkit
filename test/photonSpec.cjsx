@@ -2,7 +2,7 @@ expect = require 'expect.js'
 React = require 'react'
 Proton = require '../src/photon.coffee'
 
-describe 'proton', () ->
+describe 'photon', () ->
 
   it 'should have components', () ->
     expect(Proton.Actionbar).to.be.ok()
@@ -18,6 +18,5 @@ describe 'proton', () ->
     expect(Proton.TabGroup).to.be.ok()
     expect(Proton.TabItem).to.be.ok()
     expect(Proton.Table).to.be.ok()
-    expect(Proton.Title).to.be.ok()
     expect(Proton.Toolbar).to.be.ok()
     expect(Proton.Window).to.be.ok()

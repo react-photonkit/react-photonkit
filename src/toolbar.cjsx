@@ -5,6 +5,9 @@ PhotonMixin = require './photonMixin.coffee'
 module.exports = React.createClass
   mixins: [PhotonMixin],
 
+  propTypes:
+    title: React.PropTypes.string
+
   getDefaultProps: ->
     ptClass: 'toolbar'
     ptType: 'header'
@@ -12,7 +15,15 @@ module.exports = React.createClass
   render: ->
     classes = @getPtClassSet()
     className = classNames @props.className, classes
+    title = <h1 className="title">{@props.title}</h1> if @props.title
 
-    <div className={className}>
-      {@props.children}
-    </div>
+    if @props.ptType == "footer"
+      <footer className={className}>
+        {title}
+        {@props.children}
+      </footer>
+    else
+      <header className={className}>
+        {title}
+        {@props.children}
+      </header>

@@ -11,7 +11,7 @@ describe 'toolbar', () ->
     toolbar = ReactDOM.findDOMNode instance
     classNames = toolbar.className.split(/\s+/)
 
-    expect(toolbar.nodeName).to.be('DIV')
+    expect(toolbar.nodeName).to.be('HEADER')
     expect(classNames).to.contain('toolbar')
     expect(classNames).to.contain('toolbar-header')
 
@@ -21,6 +21,7 @@ describe 'toolbar', () ->
     toolbar = ReactDOM.findDOMNode instance
     classNames = toolbar.className.split(/\s+/)
 
+    expect(toolbar.nodeName).to.be('HEADER')
     expect(classNames).to.contain('toolbar')
     expect(classNames).to.contain('toolbar-header')
 
@@ -30,5 +31,6 @@ describe 'toolbar', () ->
     toolbar = ReactDOM.findDOMNode instance
     classNames = toolbar.className.split(/\s+/)
 
+    expect(toolbar.nodeName).to.be('FOOTER')
     expect(classNames).to.contain('toolbar')
     expect(classNames).to.contain('toolbar-footer')

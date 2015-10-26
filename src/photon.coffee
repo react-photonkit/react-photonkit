@@ -19,6 +19,5 @@ module.exports =
   TabGroup: require './tabGroup.cjsx'
   TabItem: require './tabItem.cjsx'
   Table: require './table.cjsx'
-  Title: require './title.cjsx'
   Toolbar: require './toolbar.cjsx'
   Window: require './window.cjsx'
