@@ -1,10 +1,8 @@
 ![icon][icon]
 
-# react-photonkit
+# [react-photonkit]
 
 [Photon][photon] components built with React
-
-> Developing...
 
 
 ## Install
@@ -37,7 +35,7 @@ $ npm test
 
 
 
-
+[react-photonkit]: http://react-photonkit.github.io/
 [icon]: assets/photonkit.png
 [photon]: http://photonkit.com/
 [gif]: assets/photonkit.gif
