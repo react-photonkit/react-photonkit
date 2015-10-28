@@ -23,7 +23,7 @@ See `./dist/` directory
 
 ## Example with Electron
 
-See https://github.com/react-photonkit/epp
+See [epp (electron application)][epp]
 
 
 ## Test
@@ -36,6 +36,7 @@ $ npm test
 
 
 [react-photonkit]: http://react-photonkit.github.io/
+[epp]: https://github.com/react-photonkit/epp
 [icon]: assets/photonkit.png
 [photon]: http://photonkit.com/
 [gif]: assets/photonkit.gif
