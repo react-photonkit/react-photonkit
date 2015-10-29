@@ -17,16 +17,12 @@ module.exports = React.createClass
     children = []
     index = 0
     for child, i in @props.children
-      extra =
-        key: i
-      if child.props.type == "radio"
-        checked = @state.checkedIndex == index
-        extra.name = @props.name
-        extra.checked = checked
-        extra.onChange=@onChange.bind(@, index++)
-        children.push(React.cloneElement(child, extra))
-      else
-        children.push(React.cloneElement(child, extra))
+      extra = key: i
+      checked = @state.checkedIndex == index
+      extra.name = @props.name
+      extra.checked = checked
+      extra.onChange=@onChange.bind(@, index++)
+      children.push(React.cloneElement(child, extra))
     @children = children
     children
 
