@@ -2,6 +2,10 @@
 
 # [react-photonkit]
 
+[![npm-badge]][npm]
+[![deps-badge]][deps]
+[![dev-deps-badge]][dev-deps]
+
 [Photon][photon] components built with React
 
 
@@ -40,3 +44,10 @@ $ npm test
 [icon]: assets/photonkit.png
 [photon]: http://photonkit.com/
 [gif]: assets/photonkit.gif
+
+[npm-badge]: https://badge.fury.io/js/react-photonkit.svg
+[npm]: https://badge.fury.io/js/react-photonkit
+[deps-badge]: https://david-dm.org/react-photonkit/react-photonkit.svg
+[dev-deps-badge]: https://david-dm.org/react-photonkit/react-photonkit/dev-status.svg#info=devDependencies
+[deps]: https://david-dm.org/react-photonkit/react-photonkit
+[dev-deps]: https://david-dm.org/react-photonkit/react-photonkit#info=devDependencies
