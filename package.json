@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "classnames": "^2.1.5",
+    "photon": "connors/photon#v0.1.2-alpha",
     "react": "^0.14.1",
     "react-dom": "^0.14.1"
   }
