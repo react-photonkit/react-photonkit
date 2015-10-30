@@ -17,6 +17,9 @@
     "react",
     "photon"
   ],
+  "files": [
+    "dist"
+  ],
   "author": "Jaewe Heo",
   "license": "MIT",
   "bugs": {
