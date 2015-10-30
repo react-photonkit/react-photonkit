@@ -7,10 +7,12 @@ module.exports = {
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loaders: ['babel-loader']
-    }, { test: /\.coffee$/,
+    }, {
+      test: /\.coffee$/,
       exclude: /node_modules/,
       loader: 'coffee-loader'
-    }, { test: /\.cjsx$/,
+    }, {
+      test: /\.cjsx$/,
       exclude: /node_modules/,
       loaders: ['coffee', 'cjsx']
     }, {
