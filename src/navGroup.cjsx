@@ -1,9 +1,10 @@
 React = require "react"
 classNames = require "classnames"
 PhotonMixin = require "./photonMixin.coffee"
+SortableMixin = require "../node_modules/sortablejs/react-sortable-mixin"
 
 module.exports = React.createClass
-  mixins: [PhotonMixin],
+  mixins: [PhotonMixin, SortableMixin],
 
   propTypes:
     activeKey: React.PropTypes.any
@@ -11,11 +12,12 @@ module.exports = React.createClass
 
   getInitialState: ->
     activeKey: @props.activeKey
+    children: @props.children
 
   getDefaultProps: ->
     ptClass: "nav-group"
 
-  renderTab: (child, index) ->
+  renderNav: (child, index) ->
     active = @state.activeKey == child.props.eventKey
     React.cloneElement child,
       active: active
@@ -24,14 +26,18 @@ module.exports = React.createClass
         @setState activeKey: child.props.eventKey
         @props.onSelect child.props.eventKey if @props.onSelect
 
+  sortableOptions:
+    ref: "navs"
+    model: "children"
+
   render: ->
     classes = @getPtClassSet()
     className = classNames @props.className, classes
 
-    renderTab = (child, index) =>
-      @renderTab child, index
-    childTabs = @props.children.map renderTab if @props.children
+    renderNav = (child, index) =>
+      @renderNav child, index
+    childNavs = @state.children.map renderNav if @state.children
 
-    <nav className={className}>
-      {childTabs}
+    <nav className={className} ref="navs">
+      {childNavs}
     </nav>
