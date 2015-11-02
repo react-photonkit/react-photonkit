@@ -5,8 +5,8 @@
   "main": "dist/photon.js",
   "scripts": {
     "test": "node test/test-karma.js",
-    "start": "node webpacker --target=server --hot --inline",
-    "build": "rm -rf dist && node webpacker --target=build",
+    "start": "webpacking server ./webpacking.config.js --configs=modules,server",
+    "build": "rm -rf dist && webpacking compile ./webpacking.config.js --configs=modules,app",
     "release": "node release.js"
   },
   "repository": {
@@ -53,6 +53,7 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0"
+    "webpack-dev-server": "^1.12.0",
+    "webpacking": "0.0.4"
   }
 }
