@@ -15,7 +15,7 @@ module.exports = React.createClass
 
   render: ->
     <Pane>
-      <TabGroup activeKey={1} onSelect={@onSelect}>
+      <TabGroup activeKey={1} onSelect={@onSelect} draggable>
         <TabItem eventKey={1} title="buttons">
           <ExamTabPane1 />
         </TabItem>

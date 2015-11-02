@@ -1,19 +1,23 @@
 React = require "react"
 classNames = require "classnames"
 PhotonMixin = require "./photonMixin.coffee"
+SortableMixin = require "../node_modules/sortablejs/react-sortable-mixin"
 
 module.exports = React.createClass
-  mixins: [PhotonMixin],
+  mixins: [PhotonMixin, SortableMixin],
 
   propTypes:
     activeKey: React.PropTypes.any
     onSelect: React.PropTypes.func
+    draggable: React.PropTypes.bool
 
   getInitialState: ->
     activeKey: @props.activeKey
+    children: @props.children
 
   getDefaultProps: ->
     ptClass: "tab-group"
+    draggable: false
 
   renderTab: (child, index) ->
     active = @state.activeKey == child.props.eventKey
@@ -31,6 +35,14 @@ module.exports = React.createClass
     catch
       null
 
+  sortableOptions:
+    ref: "tabs"
+    model: "children"
+    disabled: true
+
+  componentWillMount: ->
+    @sortableOptions.disabled = !@props.draggable
+
   render: ->
     classes = @getPtClassSet()
     className = classNames @props.className, classes
@@ -40,11 +52,11 @@ module.exports = React.createClass
     renderPane = (child, index) =>
       @renderPane child, index
 
-    childTabs = @props.children.map renderTab if @props.children
-    childPane = @props.children.map renderPane if @props.children
+    childTabs = @state.children.map renderTab if @state.children
+    childPane = @state.children.map renderPane if @state.children
 
     <div>
-      <div className={className}>
+      <div className={className} ref="tabs">
         {childTabs}
       </div>
       <div ref="contents">
