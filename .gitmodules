@@ -1,4 +1,0 @@
-[submodule "photon"]
-	path = photon
-	url = https://github.com/connors/photon
-	branch = v0.1.1-alpha

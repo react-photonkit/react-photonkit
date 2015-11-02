@@ -1,4 +1,4 @@
-require "../photon/dist/css/photon.min.css"
+require "../node_modules/photon/dist/css/photon.min.css"
 
 module.exports =
   Actionbar: require "./actionbar.cjsx"
