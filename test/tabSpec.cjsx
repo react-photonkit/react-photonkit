@@ -43,3 +43,14 @@ describe "tab", () ->
     contents = instance.refs.contents
     expect(contents.textContent).to.be("contents2")
     done()
+
+  it "Draggable should be endabled", () ->
+    tree = (
+      <TabGroup activeKey={1} draggable>
+        <TabItem eventKey={1} title="tab1">contents1</TabItem>
+        <TabItem eventKey={2} title="tab2">contents2</TabItem>
+      </TabGroup>
+    )
+
+    instance = ReactTestUtils.renderIntoDocument tree
+    expect(instance.sortableOptions.disabled).to.be(false)

@@ -45,3 +45,14 @@ describe "navgroup", () ->
     instance = ReactTestUtils.renderIntoDocument tree
     items = ReactTestUtils.scryRenderedDOMComponentsWithTag instance, "a"
     ReactTestUtils.Simulate.click items[1]
+
+  it "Draggable should be endabled", () ->
+    tree = (
+      <NavGroup activeKey={1} draggable>
+        <NavGroupItem eventKey={1} glyph="home" text="home" />
+        <NavGroupItem eventKey={2} glyph="cc" text="cc" />
+      </NavGroup>
+    )
+
+    instance = ReactTestUtils.renderIntoDocument tree
+    expect(instance.sortableOptions.disabled).to.be(false)

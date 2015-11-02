@@ -9,6 +9,7 @@ module.exports = React.createClass
   propTypes:
     activeKey: React.PropTypes.any
     onSelect: React.PropTypes.func
+    draggable: React.PropTypes.bool
 
   getInitialState: ->
     activeKey: @props.activeKey
@@ -16,6 +17,7 @@ module.exports = React.createClass
 
   getDefaultProps: ->
     ptClass: "nav-group"
+    draggable: false
 
   renderNav: (child, index) ->
     active = @state.activeKey == child.props.eventKey
@@ -29,6 +31,10 @@ module.exports = React.createClass
   sortableOptions:
     ref: "navs"
     model: "children"
+    disabled: true
+
+  componentWillMount: ->
+    @sortableOptions.disabled = !@props.draggable
 
   render: ->
     classes = @getPtClassSet()
