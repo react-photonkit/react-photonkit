@@ -41,9 +41,8 @@ $ npm test
 
 [react-photonkit]: http://react-photonkit.github.io/
 [epp]: https://github.com/react-photonkit/epp
-[icon]: assets/photonkit.png
+[icon]: https://cloud.githubusercontent.com/assets/1744446/10875790/af4cbbac-8179-11e5-851e-556c347c08bd.png
 [photon]: http://photonkit.com/
-[gif]: assets/photonkit.gif
 
 [npm-badge]: https://badge.fury.io/js/react-photonkit.svg
 [npm]: https://badge.fury.io/js/react-photonkit
