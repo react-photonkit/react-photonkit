@@ -1,7 +1,7 @@
 React = require "react"
 classNames = require "classnames"
 Icon = require "./icon.cjsx"
-PhotonMixin = require "./photonMixin.coffee"
+PhotonMixin = require "./photon-mixin.coffee"
 
 
 module.exports = React.createClass

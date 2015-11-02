@@ -2,8 +2,8 @@ expect = require "expect.js"
 React = require "react"
 ReactTestUtils = require "react/lib/ReactTestUtils"
 ReactDOM = require "react-dom"
-NavGroup = require "../src/navGroup.cjsx"
-NavGroupItem = require "../src/navGroupItem.cjsx"
+NavGroup = require "../src/nav-group.cjsx"
+NavGroupItem = require "../src/nav-group-item.cjsx"
 
 describe "navgroup", () ->
 

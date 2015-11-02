@@ -1,6 +1,6 @@
 React = require "react"
 classNames = require "classnames"
-PhotonMixin = require "./photonMixin.coffee"
+PhotonMixin = require "./photon-mixin.coffee"
 
 module.exports = React.createClass
   mixins: [PhotonMixin],

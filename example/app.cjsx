@@ -5,7 +5,7 @@ ReactDom = require "react-dom"
 Header = require "./header.cjsx"
 Footer = require "./footer.cjsx"
 Sidebar = require "./sidebar.cjsx"
-ExamPane = require "./examPane.cjsx"
+ExamPane = require "./exam-pane.cjsx"
 
 ReactDom.render(
   <Window>

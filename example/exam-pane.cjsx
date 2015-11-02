@@ -3,11 +3,11 @@ React = require "react"
   Icon, Pane, Button
   TabGroup, TabItem
 } = require "../src/photon.coffee"
-ExamTabPane1 = require "./examTabPane1.cjsx"
-ExamTabPane2 = require "./examTabPane2.cjsx"
-ExamTabPane3 = require "./examTabPane3.cjsx"
-ExamTabPane4 = require "./examTabPane4.cjsx"
-ExamTabPane5 = require "./examTabPane5.cjsx"
+ExamTabPane1 = require "./exam-tab-pane1.cjsx"
+ExamTabPane2 = require "./exam-tab-pane2.cjsx"
+ExamTabPane3 = require "./exam-tab-pane3.cjsx"
+ExamTabPane4 = require "./exam-tab-pane4.cjsx"
+ExamTabPane5 = require "./exam-tab-pane5.cjsx"
 
 module.exports = React.createClass
   onSelect: (index) ->
