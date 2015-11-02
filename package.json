@@ -6,8 +6,7 @@
   "scripts": {
     "test": "node test/test-karma.js",
     "start": "webpacking server ./webpacking.config.js --configs=modules,server",
-    "build": "rm -rf dist && webpacking compile ./webpacking.config.js --configs=modules,app",
-    "release": "node release.js"
+    "build": "rm -rf dist && webpacking compile ./webpacking.config.js --configs=modules,app"
   },
   "repository": {
     "type": "git",
