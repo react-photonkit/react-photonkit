@@ -2,8 +2,8 @@ expect = require "expect.js"
 React = require "react"
 ReactTestUtils = require "react/lib/ReactTestUtils"
 ReactDOM = require "react-dom"
-TabGroup = require "../src/tabGroup.cjsx"
-TabItem = require "../src/tabItem.cjsx"
+TabGroup = require "../src/tab-group.cjsx"
+TabItem = require "../src/tab-item.cjsx"
 
 describe "tab", () ->
 

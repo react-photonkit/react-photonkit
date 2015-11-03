@@ -1,6 +1,6 @@
 React = require "react"
 classNames = require "classnames"
-PhotonMixin = require "./photonMixin.coffee"
+PhotonMixin = require "./photon-mixin.coffee"
 SortableMixin = require "../node_modules/sortablejs/react-sortable-mixin"
 
 module.exports = React.createClass

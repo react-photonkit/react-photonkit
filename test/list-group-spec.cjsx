@@ -2,8 +2,8 @@ expect = require "expect.js"
 React = require "react"
 ReactTestUtils = require "react/lib/ReactTestUtils"
 ReactDOM = require "react-dom"
-ListGroup = require "../src/listGroup.cjsx"
-ListItem = require "../src/listItem.cjsx"
+ListGroup = require "../src/list-group.cjsx"
+ListItem = require "../src/list-item.cjsx"
 
 describe "listgroup", () ->
 
