@@ -183,7 +183,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "2614e058b2dcb9d6e2e964730d795540.eot"
+	module.exports = __webpack_require__.p + "2614e058b2dcb9d6e2e964730d795540.eot";
 
 /***/ },
 /* 5 */
@@ -195,7 +195,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "1382c29cdb72f6c99043675d6e13b625.ttf"
+	module.exports = __webpack_require__.p + "1382c29cdb72f6c99043675d6e13b625.ttf";
 
 /***/ },
 /* 7 */
@@ -533,8 +533,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2015 Jed Watson.
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
 	  Licensed under the MIT License (MIT), see
 	  http://jedwatson.github.io/classnames
 	*/
@@ -546,7 +546,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		var hasOwn = {}.hasOwnProperty;
 
 		function classNames () {
-			var classes = '';
+			var classes = [];
 
 			for (var i = 0; i < arguments.length; i++) {
 				var arg = arguments[i];
@@ -555,28 +555,28 @@ return /******/ (function(modules) { // webpackBootstrap
 				var argType = typeof arg;
 
 				if (argType === 'string' || argType === 'number') {
-					classes += ' ' + arg;
+					classes.push(arg);
 				} else if (Array.isArray(arg)) {
-					classes += ' ' + classNames.apply(null, arg);
+					classes.push(classNames.apply(null, arg));
 				} else if (argType === 'object') {
 					for (var key in arg) {
 						if (hasOwn.call(arg, key) && arg[key]) {
-							classes += ' ' + key;
+							classes.push(key);
 						}
 					}
 				}
 			}
 
-			return classes.substr(1);
+			return classes.join(' ');
 		}
 
 		if (typeof module !== 'undefined' && module.exports) {
 			module.exports = classNames;
 		} else if (true) {
 			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 				return classNames;
-			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 		} else {
 			window.classNames = classNames;
 		}
@@ -788,6 +788,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  getValue: function() {
 	    return this.refs.text.value;
 	  },
+	  getDefaultProps: function() {
+	    return {
+	      type: "text"
+	    };
+	  },
 	  render: function() {
 	    return React.createElement("div", {
 	      "className": "form-group"
@@ -795,7 +800,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      "ref": "text",
 	      "className": "form-control",
 	      "placeholder": this.props.placeholder,
-	      "type": "text"
+	      "type": this.props.type
 	    })));
 	  }
 	});
