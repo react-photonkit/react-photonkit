@@ -5,8 +5,8 @@
   "main": "dist/photon.js",
   "scripts": {
     "test": "node test/test-karma.js",
-    "start": "webpacking server ./webpacking.config.js --configs=modules,server",
-    "build": "rm -rf dist && webpacking compile ./webpacking.config.js --configs=modules,app"
+    "postinstall": "npm run build",
+    "build": "rm -rf dist && webpack --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -52,8 +52,6 @@
     "sortablejs": "^1.4.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1",
-    "webpacking": "0.0.4"
+    "webpack": "^1.12.2"
   }
 }
