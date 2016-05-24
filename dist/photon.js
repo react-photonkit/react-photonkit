@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"));
+		module.exports = factory(require("react"), require("react-dom"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react"], factory);
+		define(["react", "react-dom"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactPhotonKit"] = factory(require("react"));
+		exports["ReactPhotonKit"] = factory(require("react"), require("react-dom"));
 	else
-		root["ReactPhotonKit"] = factory(root["react"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_9__) {
+		root["ReactPhotonKit"] = factory(root["react"], root["react-dom"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_24__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -67,19 +67,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  ListGroup: __webpack_require__(19),
 	  ListItem: __webpack_require__(20),
 	  NavGroup: __webpack_require__(21),
-	  NavGroupItem: __webpack_require__(24),
-	  NavTitle: __webpack_require__(25),
-	  Options: __webpack_require__(26),
-	  Pane: __webpack_require__(27),
-	  PaneGroup: __webpack_require__(28),
-	  Radio: __webpack_require__(29),
-	  RadioGroup: __webpack_require__(30),
-	  TabGroup: __webpack_require__(31),
-	  TabItem: __webpack_require__(32),
-	  Table: __webpack_require__(33),
-	  TextArea: __webpack_require__(34),
-	  Toolbar: __webpack_require__(35),
-	  Window: __webpack_require__(36)
+	  NavGroupItem: __webpack_require__(25),
+	  NavTitle: __webpack_require__(26),
+	  Options: __webpack_require__(27),
+	  Pane: __webpack_require__(28),
+	  PaneGroup: __webpack_require__(29),
+	  Radio: __webpack_require__(30),
+	  RadioGroup: __webpack_require__(31),
+	  TabGroup: __webpack_require__(32),
+	  TabItem: __webpack_require__(33),
+	  Table: __webpack_require__(34),
+	  TextArea: __webpack_require__(35),
+	  Toolbar: __webpack_require__(36),
+	  Window: __webpack_require__(37)
 	};
 
 
@@ -183,7 +183,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "2614e058b2dcb9d6e2e964730d795540.eot"
+	module.exports = __webpack_require__.p + "2614e058b2dcb9d6e2e964730d795540.eot";
 
 /***/ },
 /* 5 */
@@ -195,7 +195,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "1382c29cdb72f6c99043675d6e13b625.ttf"
+	module.exports = __webpack_require__.p + "1382c29cdb72f6c99043675d6e13b625.ttf";
 
 /***/ },
 /* 7 */
@@ -414,7 +414,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	function applyToTag(styleElement, obj) {
 		var css = obj.css;
 		var media = obj.media;
-		var sourceMap = obj.sourceMap;
 
 		if(media) {
 			styleElement.setAttribute("media", media)
@@ -432,7 +431,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function updateLink(linkElement, obj) {
 		var css = obj.css;
-		var media = obj.media;
 		var sourceMap = obj.sourceMap;
 
 		if(sourceMap) {
@@ -533,8 +531,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2015 Jed Watson.
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
 	  Licensed under the MIT License (MIT), see
 	  http://jedwatson.github.io/classnames
 	*/
@@ -546,7 +544,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		var hasOwn = {}.hasOwnProperty;
 
 		function classNames () {
-			var classes = '';
+			var classes = [];
 
 			for (var i = 0; i < arguments.length; i++) {
 				var arg = arguments[i];
@@ -555,28 +553,28 @@ return /******/ (function(modules) { // webpackBootstrap
 				var argType = typeof arg;
 
 				if (argType === 'string' || argType === 'number') {
-					classes += ' ' + arg;
+					classes.push(arg);
 				} else if (Array.isArray(arg)) {
-					classes += ' ' + classNames.apply(null, arg);
+					classes.push(classNames.apply(null, arg));
 				} else if (argType === 'object') {
 					for (var key in arg) {
 						if (hasOwn.call(arg, key) && arg[key]) {
-							classes += ' ' + key;
+							classes.push(key);
 						}
 					}
 				}
 			}
 
-			return classes.substr(1);
+			return classes.join(' ');
 		}
 
 		if (typeof module !== 'undefined' && module.exports) {
 			module.exports = classNames;
 		} else if (true) {
 			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 				return classNames;
-			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 		} else {
 			window.classNames = classNames;
 		}
@@ -971,16 +969,16 @@ return /******/ (function(modules) { // webpackBootstrap
 		'use strict';
 
 		if (typeof module != 'undefined' && typeof module.exports != 'undefined') {
-			module.exports = factory(__webpack_require__(23));
+			module.exports = factory(__webpack_require__(23), __webpack_require__(24));
 		}
 		else if (true) {
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23), __webpack_require__(24)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 		}
 		else {
 			/* jshint sub:true */
-			window['SortableMixin'] = factory(Sortable);
+			window['SortableMixin'] = factory(Sortable, ReactDOM);
 		}
-	})(function (/** Sortable */Sortable) {
+	})(function (/** Sortable */Sortable, /** ReactDOM */ReactDOM) {
 		'use strict';
 
 		var _nextSibling;
@@ -999,7 +997,8 @@ return /******/ (function(modules) { // webpackBootstrap
 			onRemove: 'handleRemove',
 			onSort: 'handleSort',
 			onFilter: 'handleFilter',
-			onMove: 'handleMove'
+			onMove: 'handleMove',
+			onClone: 'handleClone'
 		};
 
 
@@ -1049,8 +1048,11 @@ return /******/ (function(modules) { // webpackBootstrap
 					copyOptions = _extend({}, options),
 
 					emitEvent = function (/** string */type, /** Event */evt) {
-						var method = this[options[type]];
-						method && method.call(this, evt, this._sortableInstance);
+						var method = options[type];
+						if (method && typeof method === "string") {
+							method = this[method];
+						}
+						method && typeof method === "function" && method.call(this, evt, this._sortableInstance);
 					}.bind(this);
 
 
@@ -1084,13 +1086,13 @@ return /******/ (function(modules) { // webpackBootstrap
 							}
 
 							newState[_getModelName(this)] = items;
-							
+
 							if (copyOptions.stateHandler) {
 								this[copyOptions.stateHandler](newState);
 							} else {
 								this.setState(newState);
 							}
-							
+
 							(this !== _activeComponent) && _activeComponent.setState(remoteState);
 						}
 
@@ -1100,7 +1102,15 @@ return /******/ (function(modules) { // webpackBootstrap
 					}.bind(this);
 				}, this);
 
-				DOMNode = this.getDOMNode() ? (this.refs[options.ref] || this).getDOMNode() : this.refs[options.ref] || this;
+				if(typeof(ReactDOM) !== 'undefined')
+				{
+					DOMNode = ReactDOM.findDOMNode(this.refs[options.ref] || this);
+				}
+				else
+				{
+					DOMNode = typeof this.getDOMNode === 'function' ? (this.refs[options.ref] || this).getDOMNode() : this.refs[options.ref] || this;
+				}
+
 
 				/** @namespace this.refs — http://facebook.github.io/react/docs/more-about-refs.html */
 				this._sortableInstance = Sortable.create(DOMNode, copyOptions);
@@ -2386,6 +2396,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 24 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_24__;
+
+/***/ },
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Icon, PhotonMixin, React, classNames;
@@ -2433,7 +2449,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React;
@@ -2450,7 +2466,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React;
@@ -2491,7 +2507,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var PhotonMixin, React, classNames;
@@ -2526,7 +2542,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React;
@@ -2543,7 +2559,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var PhotonMixin, React, classNames;
@@ -2576,7 +2592,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React;
@@ -2626,7 +2642,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var PhotonMixin, React, SortableMixin, classNames;
@@ -2726,7 +2742,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Icon, PhotonMixin, React, classNames;
@@ -2773,7 +2789,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React;
@@ -2790,7 +2806,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var PhotonMixin, React, classNames;
@@ -2823,7 +2839,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var PhotonMixin, React, classNames;
@@ -2868,7 +2884,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React;
