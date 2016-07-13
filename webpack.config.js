@@ -11,17 +11,6 @@ module.exports = {
       exclude: /node_modules/,
       loaders: ['babel-loader']
     }, {
-      test: /\.coffee$/,
-      exclude: /node_modules/,
-      loader: 'coffee-loader'
-    }, {
-      test: /\.cjsx$/,
-      exclude: /node_modules/,
-      loaders: ['coffee', 'cjsx']
-    }, {
-      test: /\.less$/,
-      loader: 'style-loader!css-loader!less-loader'
-    }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
     }, {
@@ -32,7 +21,7 @@ module.exports = {
       loader: "file-loader"
     }]
   },
-  entry: path.resolve(__dirname, 'src/photon.coffee'),
+  entry: path.resolve(__dirname, 'src/photon.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: 'dist/',
