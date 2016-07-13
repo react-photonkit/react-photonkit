@@ -11,6 +11,9 @@ module.exports = React.createClass
   getValue: ->
     @refs.text.value
 
+  getDefaultProps: ->
+    type: "text"
+
   render: ->
     <div className="form-group">
       <label>{@props.label}</label>
@@ -18,5 +21,5 @@ module.exports = React.createClass
         ref="text"
         className="form-control"
         placeholder={@props.placeholder}
-        type="text" />
+        type={@props.type} />
     </div>
