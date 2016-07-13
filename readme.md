@@ -1,3 +1,5 @@
+# WARNING, We are migrating from Coffee Script to ES2015 now that result in some of breaking changes. Hence, we have decided to accept new PRs until getting done. We hope your understanding
+
 <img src="https://goo.gl/9uM3ml" width=256 />
 
 # [react-photonkit]
