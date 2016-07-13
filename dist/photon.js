@@ -67,7 +67,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	module.exports = {
-	  ActionBar: _actionbar2.default
+		PhotonStyle: _photonMin2.default,
+		ActionBar: _actionbar2.default
 	};
 
 	//
@@ -485,26 +486,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var ActionBar = function (_React$Component) {
-	  _inherits(ActionBar, _React$Component);
+		_inherits(ActionBar, _React$Component);
 
-	  function ActionBar() {
-	    _classCallCheck(this, ActionBar);
+		function ActionBar() {
+			_classCallCheck(this, ActionBar);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(ActionBar).apply(this, arguments));
-	  }
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ActionBar).apply(this, arguments));
+		}
 
-	  _createClass(ActionBar, [{
-	    key: "render",
-	    value: function render() {
-	      _react2.default.createElement(
-	        "div",
-	        { className: "toolbar-actions" },
-	        this.props.children
-	      );
-	    }
-	  }]);
+		_createClass(ActionBar, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "toolbar-actions" },
+					this.props.children
+				);
+			}
+		}]);
 
-	  return ActionBar;
+		return ActionBar;
 	}(_react2.default.Component);
 
 	module.exports = ActionBar;

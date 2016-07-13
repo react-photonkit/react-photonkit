@@ -2,7 +2,8 @@ import PhotonStyle from "../node_modules/photon/dist/css/photon.min.css";
 import ActionBar from "./actionbar.jsx";
 
 module.exports = {
-  ActionBar: ActionBar
+	PhotonStyle: PhotonStyle,
+	ActionBar: ActionBar
 };
 
 //

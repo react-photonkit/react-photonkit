@@ -3,11 +3,16 @@ var path = require('path');
 
 module.exports = {
   module: {
+    preLoaders: [{
+      test: /\.js?/,
+      exclude: /node_modules/,
+      loader: 'xo-loader'
+    }],
     loaders: [{
       test: /\.json$/,
       loader: 'json-loader'
     }, {
-      test: /\.jsx?$/,
+      test: /\.js?/,
       exclude: /node_modules/,
       loaders: ['babel-loader']
     }, {
@@ -32,5 +37,19 @@ module.exports = {
   externals: [
     'react',
     'react-dom'
-  ]
+  ],
+  xo: {
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      }
+    },
+    plugins: [
+      'react'
+    ],
+		env: {
+	    "browser": true,
+	    "es6": true
+	  }
+	}
 };
