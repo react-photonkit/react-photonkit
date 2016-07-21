@@ -1,7 +1,7 @@
 import styleMaps from './style-maps.js';
 
 export default class PhotonMixin {
-	static getPtClassSet() {
+	getPtClassSet() {
 		const classes = {};
 		const ptClass = this.props.ptClass && styleMaps.CLASSES[this.props.ptClass];
 
