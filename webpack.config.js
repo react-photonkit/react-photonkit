@@ -39,17 +39,9 @@ module.exports = {
     'react-dom'
   ],
   xo: {
-    parserOptions: {
-      ecmaFeatures: {
-        jsx: true,
-      }
-    },
-    plugins: [
-      'react'
-    ],
-		env: {
-	    "browser": true,
-	    "es6": true
-	  }
-	}
+    extends: ["xo", "xo-react"],
+    rules: {
+      "quote-props": ["error", "as-needed"]
+    }
+  }
 };

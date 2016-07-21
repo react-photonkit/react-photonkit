@@ -1,6 +1,10 @@
-import React from "react";
+import React from 'react';
 
-class ActionBar extends React.Component {
+export default class ActionBar extends React.Component {
+	propTypes = {
+		children: React.PropTypes.node
+	}
+
 	render() {
 		return (
 			<div className="toolbar-actions">
@@ -9,5 +13,3 @@ class ActionBar extends React.Component {
 		);
 	}
 }
-
-module.exports = ActionBar;
