@@ -766,12 +766,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var StyleMaps = function () {
-		function StyleMaps() {
-			_classCallCheck(this, StyleMaps);
+	var PhotonMixin = function () {
+		function PhotonMixin() {
+			_classCallCheck(this, PhotonMixin);
 		}
 
-		_createClass(StyleMaps, null, [{
+		_createClass(PhotonMixin, [{
 			key: 'getPtClassSet',
 			value: function getPtClassSet() {
 				var classes = {};
@@ -804,10 +804,10 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 		}]);
 
-		return StyleMaps;
+		return PhotonMixin;
 	}();
 
-	exports.default = StyleMaps;
+	exports.default = PhotonMixin;
 
 /***/ },
 /* 14 */

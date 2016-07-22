@@ -1,22 +1,24 @@
 import PhotonStyle from '../node_modules/photon/dist/css/photon.min.css';
 import ActionBar from './actionbar.jsx';
 import Button from './button.jsx';
+import ButtonGroup from './button-group.jsx';
+import Content from './content.jsx';
+import CheckBox from './checkbox.jsx';
+import Icon from './icon.jsx';
+import Input from './input.jsx';
 
 module.exports = {
 	PhotonStyle: PhotonStyle,
 	ActionBar: ActionBar,
-	Button: Button
+	Button: Button,
+	ButtonGroup: ButtonGroup,
+	Content: Content,
+	CheckBox: CheckBox,
+	Icon: Icon,
+	Input: Input
 };
 
-//
-// require '../node_modules/photon/dist/css/photon.min.css'
-//
 // module.exports =
-//   ButtonGroup: require './button-group.cjsx'
-//   Content: require './content.cjsx'
-//   CheckBox: require './checkbox.cjsx'
-//   Icon: require './icon.cjsx'
-//   Input: require './input.cjsx'
 //   ListGroup: require './list-group.cjsx'
 //   ListItem: require './list-item.cjsx'
 //   NavGroup: require './nav-group.cjsx'

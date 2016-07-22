@@ -1,5 +1,4 @@
 import React from 'react';
-// import classNames from 'classnames';
 import PhotonMixin from './photon-mixin.js';
 
 export default class Input extends React.createClass {
