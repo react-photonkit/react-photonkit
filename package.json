@@ -59,5 +59,8 @@
     "webpack": "^1.12.2",
     "xo": "^0.13.0",
     "xo-loader": "^0.6.0"
+  },
+  "dependencies": {
+    "react-sortable-mixin": "0.0.1"
   }
 }
