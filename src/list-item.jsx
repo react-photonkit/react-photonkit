@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PhotonMixin from './photon-mixin.js';
 
-export ListGroup class CheckBox extends React.createClass {
+export default class ListItem extends React.createClass {
 	mixins: [PhotonMixin]
 
 	propTypes: {
@@ -27,7 +27,7 @@ export ListGroup class CheckBox extends React.createClass {
 
 		if (this.props.image) {
 			img = (
-				<img className="img-circle media-object pull-left" src={this.props.image} width="32" height="32" />
+				<img className="img-circle media-object pull-left" src={this.props.image} width="32" height="32"/>
 			);
 		}
 

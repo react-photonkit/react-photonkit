@@ -2,10 +2,26 @@ import PhotonStyle from '../node_modules/photon/dist/css/photon.min.css';
 import ActionBar from './actionbar.jsx';
 import Button from './button.jsx';
 import ButtonGroup from './button-group.jsx';
-import Content from './content.jsx';
 import CheckBox from './checkbox.jsx';
+import Content from './content.jsx';
 import Icon from './icon.jsx';
 import Input from './input.jsx';
+import ListGroup from './list-group.jsx';
+import ListItem from './list-item.jsx';
+import NavGroup from './nav-group.jsx';
+import NavGroupItem from './nav-group-item.jsx';
+import NavTitle from './nav-title.jsx';
+import Options from './options.jsx';
+import Pane from './pane.jsx';
+import PaneGroup from './pane-group.jsx';
+import Radio from './radio.jsx';
+import RadioGroup from './radio-group.jsx';
+import TabGroup from './tab-group.jsx';
+import TabItem from './tab-item.jsx';
+import Table from './table.jsx';
+import TextArea from './textarea.jsx';
+import Toolbar from './toolbar.jsx';
+import Window from './window.jsx';
 
 module.exports = {
 	PhotonStyle: PhotonStyle,
@@ -15,23 +31,21 @@ module.exports = {
 	Content: Content,
 	CheckBox: CheckBox,
 	Icon: Icon,
-	Input: Input
+	Input: Input,
+	ListGroup: ListGroup,
+	ListItem: ListItem,
+	NavGroup: NavGroup,
+	NavGroupItem: NavGroupItem,
+	NavTitle: NavTitle,
+	Options: Options,
+	Pane: Pane,
+	PaneGroup: PaneGroup,
+	Radio: Radio,
+	RadioGroup: RadioGroup,
+	TabGroup: TabGroup,
+	TabItem: TabItem,
+	Table: Table,
+	TextArea: TextArea,
+	Toolbar: Toolbar,
+	Window: Window
 };
-
-// module.exports =
-//   ListGroup: require './list-group.cjsx'
-//   ListItem: require './list-item.cjsx'
-//   NavGroup: require './nav-group.cjsx'
-//   NavGroupItem: require './nav-group-item.cjsx'
-//   NavTitle: require './nav-title.cjsx'
-//   Options: require './options.cjsx'
-//   Pane: require './pane.cjsx'
-//   PaneGroup: require './pane-group.cjsx'
-//   Radio: require './radio.cjsx'
-//   RadioGroup: require './radio-group.cjsx'
-//   TabGroup: require './tab-group.cjsx'
-//   TabItem: require './tab-item.cjsx'
-//   Table: require './table.cjsx'
-//   TextArea: require './textarea.cjsx'
-//   Toolbar: require './toolbar.cjsx'
-//   Window: require './window.cjsx'

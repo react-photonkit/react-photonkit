@@ -1,39 +1,38 @@
 import React from 'react';
 import classNames from 'classnames';
 import PhotonMixin from './photon-mixin.js';
-import Icon from './icon.jsx';
 
-export default class NavGroupItem extends React.createClass {
+export default class TabItem extends React.createClass {
 	mixins: [PhotonMixin]
 
 	propTypes: {
 		active: React.PropTypes.bool,
-		text: React.PropTypes.string.isRequired,
+		title: React.PropTypes.string.isRequired,
 		glyph: React.PropTypes.string
 	}
 
 	getDefaultProps() {
 		return {
-			ptClass: 'nav-group-item',
+			ptClass: 'tab-item',
 			active: false
 		};
 	}
 
 	getIconComponent() {
-		if (this.props.glyph) {
-			return (<Icon glyph={this.props.glyph} withText/>);
-		}
+		// <Icon glyph="cancel" tab/>
+		// TODO(importre)
+		return null;
 	}
 
 	render() {
 		const classes = this.getPtClassSet();
-		classes.active = this.props.active;
 		const className = classNames(this.props.className, classes);
+		classes.active = this.props.active;
 		const icon = this.getIconComponent();
 
 		return (
 			<a {...this.props} className={className}>
-				{icon}{this.props.text}
+				{icon}{this.props.title}
 			</a>
 		);
 	}
