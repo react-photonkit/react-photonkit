@@ -1,26 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import Icon from './icon.jsx';
-import PhotonMixin from './photon-mixin.js';
+import * as Photon from './photon.jsx';
 
-export default class Button extends React.createClass {
-	mixins: [PhotonMixin]
-
-	propTypes: {
-		active: React.PropTypes.bool;
-		form: React.PropTypes.bool;
-		onClick: React.PropTypes.func;
-	}
-
-	getDefaultProps() {
-		return {
-			ptClass: 'button',
-			ptStyle: 'default',
-			active: false,
-			pullRight: false
-		};
-	}
-
+export default class Button extends Photon.Component {
 	getIconComponent() {
 		const withText = this.props.text && this.props.text.length > 0;
 		if (this.props.glyph) {
@@ -45,3 +28,23 @@ export default class Button extends React.createClass {
 		);
 	}
 }
+
+Button.defaultProps = {
+	ptClass: 'button',
+	ptStyle: 'default',
+	active: false,
+	pullRight: false
+};
+
+Button.propTypes = {
+	active: React.PropTypes.bool,
+	form: React.PropTypes.bool,
+	onClick: React.PropTypes.func
+};
+
+// reactMixin(Button.prototype, PhotonMixin.prototype);
+// reactMixin.onClass(Button, PhotonMixin);
+
+// console.log(Button.prototype);
+
+// export default class Button;
