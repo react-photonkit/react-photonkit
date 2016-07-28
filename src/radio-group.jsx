@@ -1,10 +1,6 @@
 import React from 'react';
 
 export default class RadioGroup extends React.createClass {
-	propTypes: {
-		name: React.PropTypes.string.isRequired
-	}
-
 	getInitialState() {
 		return {
 			checkedIndex: 0
@@ -48,3 +44,7 @@ export default class RadioGroup extends React.createClass {
 		);
 	}
 }
+
+RadioGroup.propTypes = {
+	name: React.PropTypes.string.isRequired
+};

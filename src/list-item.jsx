@@ -1,17 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import PhotonMixin from './photon-mixin.js';
+import * as Photon from './photon.jsx';
 
-export default class ListItem extends React.createClass {
-	mixins: [PhotonMixin]
-
-	propTypes: {
-		active: React.PropTypes.bool,
-		image: React.PropTypes.string,
-		title: React.PropTypes.string.isRequired,
-		subtitle: React.PropTypes.string
-	}
-
+export default class ListItem extends Photon.createClass {
 	getDefaultProps() {
 		return {
 			ptClass: 'list-group-item',
@@ -42,3 +33,10 @@ export default class ListItem extends React.createClass {
 		);
 	}
 }
+
+ListItem.propTypes = {
+	active: React.PropTypes.bool,
+	image: React.PropTypes.string,
+	title: React.PropTypes.string.isRequired,
+	subtitle: React.PropTypes.string
+};

@@ -1,16 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import PhotonMixin from './photon-mixin.js';
+import * as Photon from './photon.jsx';
 
-export default class TabItem extends React.createClass {
-	mixins: [PhotonMixin]
-
-	propTypes: {
-		active: React.PropTypes.bool,
-		title: React.PropTypes.string.isRequired,
-		glyph: React.PropTypes.string
-	}
-
+export default class TabItem extends Photon.createClass {
 	getDefaultProps() {
 		return {
 			ptClass: 'tab-item',
@@ -37,3 +29,9 @@ export default class TabItem extends React.createClass {
 		);
 	}
 }
+
+TabItem.propTypes = {
+	active: React.PropTypes.bool,
+	title: React.PropTypes.string.isRequired,
+	glyph: React.PropTypes.string
+};

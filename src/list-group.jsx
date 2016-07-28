@@ -1,10 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import PhotonMixin from './photon-mixin.js';
+import * as Photon from './photon.jsx';
 
-export default class ListGroup extends React.createClass {
-	mixins: [PhotonMixin]
-
+export default class ListGroup extends Photon.Component {
 	getDefaultProps() {
 		return {
 			ptClass: 'list-group'

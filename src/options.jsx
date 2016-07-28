@@ -1,10 +1,6 @@
 import React from 'react';
 
 export default class Options extends React.createClass {
-	propTypes: {
-		items: React.PropTypes.array
-	}
-
 	getDefaultProps() {
 		return {
 			items: []
@@ -38,3 +34,7 @@ export default class Options extends React.createClass {
 		);
 	}
 }
+
+Options.propTypes = {
+	items: React.PropTypes.array
+};

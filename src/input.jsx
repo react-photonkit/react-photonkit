@@ -1,13 +1,7 @@
 import React from 'react';
-import PhotonMixin from './photon-mixin.js';
+import * as Photon from './photon.jsx';
 
-export default class Input extends React.createClass {
-	mixins: [PhotonMixin]
-
-	propTypes: {
-		label: React.PropTypes.string
-	}
-
+export default class Input extends Photon.createClass {
 	getValue() {
 		return this.refs.text.value;
 	}
@@ -27,3 +21,7 @@ export default class Input extends React.createClass {
 		);
 	}
 }
+
+Input.propTypes = {
+	label: React.PropTypes.string
+};

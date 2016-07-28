@@ -1,14 +1,7 @@
 import React from 'react';
-import PhotonMixin from './photon-mixin.js';
+import * as Photon from './photon.jsx';
 
-export default class TableArea extends React.createClass {
-	mixins: [PhotonMixin]
-
-	propTypes: {
-		placeholder: React.PropTypes.string,
-		label: React.PropTypes.string
-	}
-
+export default class TableArea extends Photon.createClass {
 	getValue() {
 		return this.refs.text.value;
 	}
@@ -24,3 +17,8 @@ export default class TableArea extends React.createClass {
 		);
 	}
 }
+
+TableArea.propTypes = {
+	placeholder: React.PropTypes.string,
+	label: React.PropTypes.string
+};

@@ -1,5 +1,7 @@
-var webpack = require('webpack');
-var path = require('path');
+'use strict';
+
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   module: {

@@ -1,14 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import PhotonMixin from './photon-mixin.js';
+import * as Photon from './photon.jsx';
 
-export default class Pane extends React.createClass {
-	mixins: [PhotonMixin]
-
-	propTypes: {
-		sidebar: React.PropTypes.bool
-	}
-
+export default class Pane extends Photon.createClass {
 	getDefaultProps() {
 		return {
 			ptClass: 'pane',
@@ -28,3 +22,7 @@ export default class Pane extends React.createClass {
 		);
 	}
 }
+
+Pane.propTypes = {
+	sidebar: React.PropTypes.bool
+};

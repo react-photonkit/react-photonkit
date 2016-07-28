@@ -1,13 +1,7 @@
 import React from 'react';
-import PhotonMixin from './photon-mixin.js';
+import * as Photon from './photon.jsx';
 
-export default class Radio extends React.createClass {
-	mixins: [PhotonMixin]
-
-	propTypes: {
-		label: React.PropTypes.string
-	}
-
+export default class Radio extends Photon.createClass {
 	handleChangeRadio(event) {
 		if (this.props.onChange) {
 			this.props.onChange(event);
@@ -25,3 +19,7 @@ export default class Radio extends React.createClass {
 		);
 	}
 }
+
+Radio.propTypes = {
+	label: React.PropTypes.string
+};

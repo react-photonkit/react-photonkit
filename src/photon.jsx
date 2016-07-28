@@ -64,3 +64,10 @@ export class Component extends React.Component {
 		}
 	}
 }
+
+Component.propTypes = {
+	ptClass: React.PropTypes.string,
+	ptStyle: React.PropTypes.string,
+	ptSize: React.PropTypes.string,
+	ptType: React.PropTypes.string
+};

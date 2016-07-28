@@ -1,14 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import PhotonMixin from './photon-mixin.js';
+import * as Photon from './photon.jsx';
 
-export default class Toolbar extends React.createClass {
-	mixins: [PhotonMixin]
-
-	propTypes: {
-		title: React.PropTypes.string
-	}
-
+export default class Toolbar extends Photon.createClass {
 	getDefaultProps() {
 		return {
 			ptClass: 'toolbar',
@@ -42,3 +36,7 @@ export default class Toolbar extends React.createClass {
 		);
 	}
 }
+
+Toolbar.propTypes = {
+	title: React.PropTypes.string
+};

@@ -26,4 +26,4 @@ Icon.propTypes = {
 	glyph: React.PropTypes.string.isRequired,
 	withText: React.PropTypes.bool,
 	tab: React.PropTypes.bool
-}
+};

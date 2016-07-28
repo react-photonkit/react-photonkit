@@ -1,17 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import PhotonMixin from './photon-mixin.js';
 import Icon from './icon.jsx';
+import * as Photon from './photon.jsx';
 
-export default class NavGroupItem extends React.createClass {
-	mixins: [PhotonMixin]
-
-	propTypes: {
-		active: React.PropTypes.bool,
-		text: React.PropTypes.string.isRequired,
-		glyph: React.PropTypes.string
-	}
-
+export default class NavGroupItem extends Photon.createClass {
 	getDefaultProps() {
 		return {
 			ptClass: 'nav-group-item',
@@ -38,3 +30,9 @@ export default class NavGroupItem extends React.createClass {
 		);
 	}
 }
+
+NavGroupItem.propTypes = {
+	active: React.PropTypes.bool,
+	text: React.PropTypes.string.isRequired,
+	glyph: React.PropTypes.string
+};

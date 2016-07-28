@@ -1,16 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import PhotonMixin from './photon-mixin.js';
+import * as Photon from './photon.jsx';
 
-export default class NavGroup extends React.createClass {
-	mixins: [PhotonMixin]
-
-	propTypes: {
-		activeKey: React.PropTypes.any,
-		onSelect: React.PropTypes.func,
-		draggable: React.PropTypes.bool
-	}
-
+export default class NavGroup extends Photon.createClass {
 	getInitialState() {
 		return {
 			activeKey: this.props.activeKey,
@@ -75,3 +67,9 @@ export default class NavGroup extends React.createClass {
 		);
 	}
 }
+
+NavGroup.propTypes = {
+	activeKey: React.PropTypes.any,
+	onSelect: React.PropTypes.func,
+	draggable: React.PropTypes.bool
+};
