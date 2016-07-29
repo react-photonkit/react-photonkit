@@ -3,12 +3,6 @@ import classNames from 'classnames';
 import * as Photon from './photon.jsx';
 
 export default class ListGroup extends Photon.Component {
-	getDefaultProps() {
-		return {
-			ptClass: 'list-group'
-		};
-	}
-
 	render() {
 		const classes = this.getPtClassSet();
 		const className = classNames(this.props.className, classes);
@@ -20,3 +14,7 @@ export default class ListGroup extends Photon.Component {
 		);
 	}
 }
+
+ListGroup.defaultProps = {
+	ptClass: 'list-group'
+};

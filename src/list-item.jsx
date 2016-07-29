@@ -2,14 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
 
-export default class ListItem extends Photon.createClass {
-	getDefaultProps() {
-		return {
-			ptClass: 'list-group-item',
-			active: false
-		};
-	}
-
+export default class ListItem extends Photon.Component {
 	render() {
 		const classes = this.getPtClassSet();
 		classes.active = this.props.active;
@@ -39,4 +32,9 @@ ListItem.propTypes = {
 	image: React.PropTypes.string,
 	title: React.PropTypes.string.isRequired,
 	subtitle: React.PropTypes.string
+};
+
+ListItem.defaultProps = {
+	ptClass: 'list-group-item',
+	active: false
 };
