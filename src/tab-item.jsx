@@ -1,25 +1,19 @@
 import React from 'react';
 import classNames from 'classnames';
+import Icon from './icon.jsx';
 import * as Photon from './photon.jsx';
 
-export default class TabItem extends Photon.createClass {
-	getDefaultProps() {
-		return {
-			ptClass: 'tab-item',
-			active: false
-		};
-	}
-
+export default class TabItem extends Photon.Component {
 	getIconComponent() {
-		// <Icon glyph="cancel" tab/>
-		// TODO(importre)
-		return null;
+		if (this.props.glyph) {
+			return (<Icon glyph={this.props.glyph} withText/>);
+		}
 	}
 
 	render() {
 		const classes = this.getPtClassSet();
-		const className = classNames(this.props.className, classes);
 		classes.active = this.props.active;
+		const className = classNames(this.props.className, classes);
 		const icon = this.getIconComponent();
 
 		return (
@@ -29,6 +23,11 @@ export default class TabItem extends Photon.createClass {
 		);
 	}
 }
+
+TabItem.defaultProps = {
+	ptClass: 'tab-item',
+	active: false
+};
 
 TabItem.propTypes = {
 	active: React.PropTypes.bool,
