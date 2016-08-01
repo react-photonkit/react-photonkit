@@ -3,14 +3,7 @@ import classNames from 'classnames';
 import Icon from './icon.jsx';
 import * as Photon from './photon.jsx';
 
-export default class NavGroupItem extends Photon.createClass {
-	getDefaultProps() {
-		return {
-			ptClass: 'nav-group-item',
-			active: false
-		};
-	}
-
+export default class NavGroupItem extends Photon.Component {
 	getIconComponent() {
 		if (this.props.glyph) {
 			return (<Icon glyph={this.props.glyph} withText/>);
@@ -30,6 +23,11 @@ export default class NavGroupItem extends Photon.createClass {
 		);
 	}
 }
+
+NavGroupItem.defaultProps = {
+	ptClass: 'nav-group-item',
+	active: false
+};
 
 NavGroupItem.propTypes = {
 	active: React.PropTypes.bool,
