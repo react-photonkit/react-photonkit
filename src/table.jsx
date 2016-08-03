@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Table extends React.createClass {
+export default class Table extends React.Component {
 	render() {
 		return (
 			<table className="table-striped">
