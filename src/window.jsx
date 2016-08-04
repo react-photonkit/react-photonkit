@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Window extends React.createClass {
+export default class Window extends React.Component {
 	render() {
 		return (
 			<div className="window">

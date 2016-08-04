@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
 
-export default class Pane extends Photon.createClass {
+export default class Pane extends Photon.Component {
 	getDefaultProps() {
 		return {
 			ptClass: 'pane',

@@ -1,16 +1,19 @@
 import React from 'react';
-import * as Photon from './photon.jsx';
 
-export default class TableArea extends Photon.createClass {
+export default class TableArea extends React.Component {
 	getValue() {
-		return this.refs.text.value;
+		return this.textArea.value;
 	}
 
 	render() {
 		return (
 			<div className="form-group">
 				<label>{this.props.label}</label>
-				<textarea {...this.props} className="form-control" placeholder={this.props.placeholder}>
+				<textarea {...this.props}
+					className="form-control"
+					placeholder={this.props.placeholder}
+					ref={c => this.textArea = c}
+				>
 					{this.props.children}
 				</textarea>
 			</div>

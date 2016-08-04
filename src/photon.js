@@ -1,5 +1,5 @@
 import PhotonStyle from '../node_modules/photon/dist/css/photon.min.css';
-import ActionBar from './actionbar.jsx';
+import Actionbar from './actionbar.jsx';
 import Button from './button.jsx';
 import ButtonGroup from './button-group.jsx';
 import CheckBox from './checkbox.jsx';
@@ -23,13 +23,13 @@ import TextArea from './textarea.jsx';
 import Toolbar from './toolbar.jsx';
 import Window from './window.jsx';
 
-module.exports = {
+export default {
 	PhotonStyle: PhotonStyle,
-	ActionBar: ActionBar,
+	Actionbar: Actionbar,
 	Button: Button,
 	ButtonGroup: ButtonGroup,
-	Content: Content,
 	CheckBox: CheckBox,
+	Content: Content,
 	Icon: Icon,
 	Input: Input,
 	ListGroup: ListGroup,

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Photon from './photon.jsx';
 
-export default class CheckBox extends Photon.createClass {
+export default class CheckBox extends Photon.Component {
 	getInitialState() {
 		return {
 			checked: this.props.checked

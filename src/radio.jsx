@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Photon from './photon.jsx';
 
-export default class Radio extends Photon.createClass {
+export default class Radio extends Photon.Component {
 	handleChangeRadio(event) {
 		if (this.props.onChange) {
 			this.props.onChange(event);

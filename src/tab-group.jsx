@@ -68,7 +68,7 @@ export default class TabGroup extends Photon.Component {
 
 		return (
 			<div>
-				<div className={className} ref={(c) => this.childTabs = c}>
+				<div className={className} ref={c => this.childTabs = c}>
 					{childTabs}
 				</div>
 				<div ref={(c) => this.childPanes = c}>
