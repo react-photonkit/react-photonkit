@@ -1,9 +1,8 @@
 import expect from 'expect.js';
-import React from 'react';
 import Photon from '../src/photon.js';
 
 describe('photon', () => {
-	it ('should have components', () => {
+	it('should have components', () => {
 		expect(Photon.Actionbar).to.be.ok();
 		expect(Photon.Button).to.be.ok();
 		expect(Photon.ButtonGroup).to.be.ok();

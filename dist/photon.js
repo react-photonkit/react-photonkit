@@ -68,15 +68,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _button2 = _interopRequireDefault(_button);
 
-	var _buttonGroup = __webpack_require__(15);
+	var _buttonGroup = __webpack_require__(14);
 
 	var _buttonGroup2 = _interopRequireDefault(_buttonGroup);
 
-	var _checkbox = __webpack_require__(16);
+	var _checkbox = __webpack_require__(15);
 
 	var _checkbox2 = _interopRequireDefault(_checkbox);
 
-	var _content = __webpack_require__(17);
+	var _content = __webpack_require__(16);
 
 	var _content2 = _interopRequireDefault(_content);
 
@@ -84,71 +84,71 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _icon2 = _interopRequireDefault(_icon);
 
-	var _input = __webpack_require__(18);
+	var _input = __webpack_require__(17);
 
 	var _input2 = _interopRequireDefault(_input);
 
-	var _listGroup = __webpack_require__(19);
+	var _listGroup = __webpack_require__(18);
 
 	var _listGroup2 = _interopRequireDefault(_listGroup);
 
-	var _listItem = __webpack_require__(20);
+	var _listItem = __webpack_require__(19);
 
 	var _listItem2 = _interopRequireDefault(_listItem);
 
-	var _navGroup = __webpack_require__(21);
+	var _navGroup = __webpack_require__(20);
 
 	var _navGroup2 = _interopRequireDefault(_navGroup);
 
-	var _navGroupItem = __webpack_require__(22);
+	var _navGroupItem = __webpack_require__(21);
 
 	var _navGroupItem2 = _interopRequireDefault(_navGroupItem);
 
-	var _navTitle = __webpack_require__(23);
+	var _navTitle = __webpack_require__(22);
 
 	var _navTitle2 = _interopRequireDefault(_navTitle);
 
-	var _options = __webpack_require__(24);
+	var _options = __webpack_require__(23);
 
 	var _options2 = _interopRequireDefault(_options);
 
-	var _pane = __webpack_require__(25);
+	var _pane = __webpack_require__(24);
 
 	var _pane2 = _interopRequireDefault(_pane);
 
-	var _paneGroup = __webpack_require__(26);
+	var _paneGroup = __webpack_require__(25);
 
 	var _paneGroup2 = _interopRequireDefault(_paneGroup);
 
-	var _radio = __webpack_require__(27);
+	var _radio = __webpack_require__(26);
 
 	var _radio2 = _interopRequireDefault(_radio);
 
-	var _radioGroup = __webpack_require__(28);
+	var _radioGroup = __webpack_require__(27);
 
 	var _radioGroup2 = _interopRequireDefault(_radioGroup);
 
-	var _tabGroup = __webpack_require__(29);
+	var _tabGroup = __webpack_require__(28);
 
 	var _tabGroup2 = _interopRequireDefault(_tabGroup);
 
-	var _tabItem = __webpack_require__(30);
+	var _tabItem = __webpack_require__(29);
 
 	var _tabItem2 = _interopRequireDefault(_tabItem);
 
-	var _table = __webpack_require__(31);
+	var _table = __webpack_require__(30);
 
 	var _table2 = _interopRequireDefault(_table);
 
-	var _textarea = __webpack_require__(32);
+	var _textarea = __webpack_require__(31);
 
 	var _textarea2 = _interopRequireDefault(_textarea);
 
-	var _toolbar = __webpack_require__(33);
+	var _toolbar = __webpack_require__(32);
 
 	var _toolbar2 = _interopRequireDefault(_toolbar);
 
-	var _window = __webpack_require__(34);
+	var _window = __webpack_require__(33);
 
 	var _window2 = _interopRequireDefault(_window);
 
@@ -575,19 +575,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		_inherits(ActionBar, _React$Component);
 
 		function ActionBar() {
-			var _Object$getPrototypeO;
-
-			var _temp, _this, _ret;
-
 			_classCallCheck(this, ActionBar);
 
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
-
-			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(ActionBar)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.propTypes = {
-				children: _react2.default.PropTypes.node
-			}, _temp), _possibleConstructorReturn(_this, _ret);
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ActionBar).apply(this, arguments));
 		}
 
 		_createClass(ActionBar, [{
@@ -605,6 +595,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	}(_react2.default.Component);
 
 	exports.default = ActionBar;
+
+
+	ActionBar.propTypes = {
+		children: _react2.default.PropTypes.node
+	};
 
 /***/ },
 /* 9 */
@@ -638,9 +633,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _icon2 = _interopRequireDefault(_icon);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -650,8 +647,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Button = function (_React$createClass) {
-		_inherits(Button, _React$createClass);
+	var Button = function (_Photon$Component) {
+		_inherits(Button, _Photon$Component);
 
 		function Button() {
 			_classCallCheck(this, Button);
@@ -660,16 +657,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 
 		_createClass(Button, [{
-			key: 'getDefaultProps',
-			value: function getDefaultProps() {
-				return {
-					ptClass: 'button',
-					ptStyle: 'default',
-					active: false,
-					pullRight: false
-				};
-			}
-		}, {
 			key: 'getIconComponent',
 			value: function getIconComponent() {
 				var withText = this.props.text && this.props.text.length > 0;
@@ -697,9 +684,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Button;
-	}(_react2.default.createClass);
+	}(Photon.Component);
 
 	exports.default = Button;
+
+
+	Button.defaultProps = {
+		ptClass: 'button',
+		ptStyle: 'default',
+		active: false,
+		pullRight: false
+	};
+
+	Button.propTypes = {
+		active: _react2.default.PropTypes.bool,
+		form: _react2.default.PropTypes.bool,
+		onClick: _react2.default.PropTypes.func
+	};
 
 /***/ },
 /* 11 */
@@ -777,9 +778,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -789,8 +792,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Icon = function (_React$createClass) {
-		_inherits(Icon, _React$createClass);
+	var Icon = function (_Photon$Component) {
+		_inherits(Icon, _Photon$Component);
 
 		function Icon() {
 			_classCallCheck(this, Icon);
@@ -799,19 +802,10 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 
 		_createClass(Icon, [{
-			key: 'getDefaultProps',
-			value: function getDefaultProps() {
-				return {
-					ptClass: 'icon',
-					withText: false,
-					tab: false
-				};
-			}
-		}, {
 			key: 'render',
 			value: function render() {
 				var classes = this.getPtClassSet();
-				classes['icon-#{this.props.glyph}'] = true;
+				classes['icon-' + this.props.glyph] = true;
 				classes['icon-text'] = this.props.withText;
 				classes['icon-close-tab'] = this.props.tab;
 				var className = (0, _classnames2.default)(this.props.className, classes);
@@ -821,9 +815,22 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Icon;
-	}(_react2.default.createClass);
+	}(Photon.Component);
 
 	exports.default = Icon;
+
+
+	Icon.defaultProps = {
+		ptClass: 'icon',
+		withText: false,
+		tab: false
+	};
+
+	Icon.propTypes = {
+		glyph: _react2.default.PropTypes.string.isRequired,
+		withText: _react2.default.PropTypes.bool,
+		tab: _react2.default.PropTypes.bool
+	};
 
 /***/ },
 /* 13 */
@@ -834,67 +841,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.Component = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _styleMaps = __webpack_require__(14);
+	var _react = __webpack_require__(9);
 
-	var _styleMaps2 = _interopRequireDefault(_styleMaps);
+	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var PhotonMixin = function () {
-		function PhotonMixin() {
-			_classCallCheck(this, PhotonMixin);
-		}
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-		_createClass(PhotonMixin, [{
-			key: 'getPtClassSet',
-			value: function getPtClassSet() {
-				var classes = {};
-				var ptClass = this.props.ptClass && _styleMaps2.default.CLASSES[this.props.ptClass];
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-				if (ptClass) {
-					classes[ptClass] = true;
-					var prefix = '#{ptClass}-';
-					var ptSize = this.props.ptSize && _styleMaps2.default.SIZES[this.props.ptSize];
-
-					if (ptSize) {
-						classes[prefix + ptSize] = true;
-					}
-
-					if (this.props.ptStyle) {
-						if (_styleMaps2.default.STYLES.indexOf(this.props.ptStyle) >= 0) {
-							classes[prefix + this.props.ptStyle] = true;
-						} else {
-							classes[this.props.ptStyle] = true;
-						}
-					}
-
-					var ptType = this.props.ptType && _styleMaps2.default.TYPES[this.props.ptType];
-					if (ptType) {
-						classes[prefix + ptType] = true;
-					}
-
-					return classes;
-				}
-			}
-		}]);
-
-		return PhotonMixin;
-	}();
-
-	exports.default = PhotonMixin;
-
-/***/ },
-/* 14 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	module.exports = {
+	var styleMaps = {
 		CLASSES: {
 			button: 'btn',
 			icon: 'icon',
@@ -921,8 +884,60 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 	};
 
+	var Component = exports.Component = function (_React$Component) {
+		_inherits(Component, _React$Component);
+
+		function Component() {
+			_classCallCheck(this, Component);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(Component).apply(this, arguments));
+		}
+
+		_createClass(Component, [{
+			key: 'getPtClassSet',
+			value: function getPtClassSet() {
+				var classes = {};
+				var ptClass = this.props.ptClass && styleMaps.CLASSES[this.props.ptClass];
+
+				if (ptClass) {
+					classes[ptClass] = true;
+					var prefix = ptClass + '-';
+					var ptSize = this.props.ptSize && styleMaps.SIZES[this.props.ptSize];
+
+					if (ptSize) {
+						classes[prefix + ptSize] = true;
+					}
+
+					if (this.props.ptStyle) {
+						if (styleMaps.STYLES.indexOf(this.props.ptStyle) >= 0) {
+							classes[prefix + this.props.ptStyle] = true;
+						} else {
+							classes[this.props.ptStyle] = true;
+						}
+					}
+
+					var ptType = this.props.ptType && styleMaps.TYPES[this.props.ptType];
+					if (ptType) {
+						classes[prefix + ptType] = true;
+					}
+
+					return classes;
+				}
+			}
+		}]);
+
+		return Component;
+	}(_react2.default.Component);
+
+	Component.propTypes = {
+		ptClass: _react2.default.PropTypes.string,
+		ptStyle: _react2.default.PropTypes.string,
+		ptSize: _react2.default.PropTypes.string,
+		ptType: _react2.default.PropTypes.string
+	};
+
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -971,7 +986,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = ButtonGroup;
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -988,9 +1003,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1000,8 +1017,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var CheckBox = function (_React$createClass) {
-		_inherits(CheckBox, _React$createClass);
+	var CheckBox = function (_Photon$createClass) {
+		_inherits(CheckBox, _Photon$createClass);
 
 		function CheckBox() {
 			_classCallCheck(this, CheckBox);
@@ -1038,12 +1055,18 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return CheckBox;
-	}(_react2.default.createClass);
+	}(Photon.createClass);
 
 	exports.default = CheckBox;
 
+
+	CheckBox.propTypes = {
+		label: _react2.default.PropTypes.string,
+		checked: _react2.default.PropTypes.bool
+	};
+
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1092,7 +1115,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Content;
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1109,9 +1132,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1121,8 +1146,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Input = function (_React$createClass) {
-		_inherits(Input, _React$createClass);
+	var Input = function (_Photon$createClass) {
+		_inherits(Input, _Photon$createClass);
 
 		function Input() {
 			_classCallCheck(this, Input);
@@ -1159,12 +1184,17 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Input;
-	}(_react2.default.createClass);
+	}(Photon.createClass);
 
 	exports.default = Input;
 
+
+	Input.propTypes = {
+		label: _react2.default.PropTypes.string
+	};
+
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1183,9 +1213,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1195,8 +1227,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ListGroup = function (_React$createClass) {
-		_inherits(ListGroup, _React$createClass);
+	var ListGroup = function (_Photon$Component) {
+		_inherits(ListGroup, _Photon$Component);
 
 		function ListGroup() {
 			_classCallCheck(this, ListGroup);
@@ -1226,12 +1258,12 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return ListGroup;
-	}(_react2.default.createClass);
+	}(Photon.Component);
 
 	exports.default = ListGroup;
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1250,9 +1282,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1262,8 +1296,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ListItem = function (_React$createClass) {
-		_inherits(ListItem, _React$createClass);
+	var ListItem = function (_Photon$createClass) {
+		_inherits(ListItem, _Photon$createClass);
 
 		function ListItem() {
 			_classCallCheck(this, ListItem);
@@ -1314,12 +1348,20 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return ListItem;
-	}(_react2.default.createClass);
+	}(Photon.createClass);
 
 	exports.default = ListItem;
 
+
+	ListItem.propTypes = {
+		active: _react2.default.PropTypes.bool,
+		image: _react2.default.PropTypes.string,
+		title: _react2.default.PropTypes.string.isRequired,
+		subtitle: _react2.default.PropTypes.string
+	};
+
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1338,9 +1380,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1350,8 +1394,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var NavGroup = function (_React$createClass) {
-		_inherits(NavGroup, _React$createClass);
+	var NavGroup = function (_Photon$createClass) {
+		_inherits(NavGroup, _Photon$createClass);
 
 		function NavGroup() {
 			_classCallCheck(this, NavGroup);
@@ -1429,12 +1473,19 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return NavGroup;
-	}(_react2.default.createClass);
+	}(Photon.createClass);
 
 	exports.default = NavGroup;
 
+
+	NavGroup.propTypes = {
+		activeKey: _react2.default.PropTypes.any,
+		onSelect: _react2.default.PropTypes.func,
+		draggable: _react2.default.PropTypes.bool
+	};
+
 /***/ },
-/* 22 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1455,13 +1506,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _photonMixin = __webpack_require__(13);
-
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
-
 	var _icon = __webpack_require__(12);
 
 	var _icon2 = _interopRequireDefault(_icon);
+
+	var _photon = __webpack_require__(13);
+
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1471,8 +1524,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var NavGroupItem = function (_React$createClass) {
-		_inherits(NavGroupItem, _React$createClass);
+	var NavGroupItem = function (_Photon$createClass) {
+		_inherits(NavGroupItem, _Photon$createClass);
 
 		function NavGroupItem() {
 			_classCallCheck(this, NavGroupItem);
@@ -1513,12 +1566,19 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return NavGroupItem;
-	}(_react2.default.createClass);
+	}(Photon.createClass);
 
 	exports.default = NavGroupItem;
 
+
+	NavGroupItem.propTypes = {
+		active: _react2.default.PropTypes.bool,
+		text: _react2.default.PropTypes.string.isRequired,
+		glyph: _react2.default.PropTypes.string
+	};
+
 /***/ },
-/* 23 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1567,7 +1627,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = NavTitle;
 
 /***/ },
-/* 24 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1617,7 +1677,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			key: "render",
 			value: function render() {
 				if (this.props.items.length > 0) {
-					var _items = this.props.items.map(function (item, i) {
+					var items = this.props.items.map(function (item, i) {
 						var key = "option-" + i;
 						return _react2.default.createElement(
 							"option",
@@ -1629,7 +1689,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					return _react2.default.createElement(
 						"select",
 						{ className: "form-control" },
-						_items
+						items
 					);
 				}
 
@@ -1642,8 +1702,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = Options;
 
+
+	Options.propTypes = {
+		items: _react2.default.PropTypes.array
+	};
+
 /***/ },
-/* 25 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1662,9 +1727,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1674,8 +1741,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Pane = function (_React$createClass) {
-		_inherits(Pane, _React$createClass);
+	var Pane = function (_Photon$createClass) {
+		_inherits(Pane, _Photon$createClass);
 
 		function Pane() {
 			_classCallCheck(this, Pane);
@@ -1707,12 +1774,17 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Pane;
-	}(_react2.default.createClass);
+	}(Photon.createClass);
 
 	exports.default = Pane;
 
+
+	Pane.propTypes = {
+		sidebar: _react2.default.PropTypes.bool
+	};
+
 /***/ },
-/* 26 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1761,7 +1833,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = PaneGroup;
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1778,9 +1850,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1790,8 +1864,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Radio = function (_React$createClass) {
-		_inherits(Radio, _React$createClass);
+	var Radio = function (_Photon$createClass) {
+		_inherits(Radio, _Photon$createClass);
 
 		function Radio() {
 			_classCallCheck(this, Radio);
@@ -1823,12 +1897,17 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Radio;
-	}(_react2.default.createClass);
+	}(Photon.createClass);
 
 	exports.default = Radio;
 
+
+	Radio.propTypes = {
+		label: _react2.default.PropTypes.string
+	};
+
 /***/ },
-/* 28 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1917,8 +1996,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = RadioGroup;
 
+
+	RadioGroup.propTypes = {
+		name: _react2.default.PropTypes.string.isRequired
+	};
+
 /***/ },
-/* 29 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1937,9 +2021,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1949,8 +2035,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var TabGroup = function (_React$createClass) {
-		_inherits(TabGroup, _React$createClass);
+	var TabGroup = function (_Photon$createClass) {
+		_inherits(TabGroup, _Photon$createClass);
 
 		function TabGroup() {
 			_classCallCheck(this, TabGroup);
@@ -2054,12 +2140,19 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return TabGroup;
-	}(_react2.default.createClass);
+	}(Photon.createClass);
 
 	exports.default = TabGroup;
 
+
+	TabGroup.propTypes = {
+		activeKey: _react2.default.PropTypes.any,
+		onSelect: _react2.default.PropTypes.func,
+		draggable: _react2.default.PropTypes.bool
+	};
+
 /***/ },
-/* 30 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2080,9 +2173,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2092,8 +2187,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var TabItem = function (_React$createClass) {
-		_inherits(TabItem, _React$createClass);
+	var TabItem = function (_Photon$createClass) {
+		_inherits(TabItem, _Photon$createClass);
 
 		function TabItem() {
 			_classCallCheck(this, TabItem);
@@ -2134,12 +2229,19 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return TabItem;
-	}(_react2.default.createClass);
+	}(Photon.createClass);
 
 	exports.default = TabItem;
 
+
+	TabItem.propTypes = {
+		active: _react2.default.PropTypes.bool,
+		title: _react2.default.PropTypes.string.isRequired,
+		glyph: _react2.default.PropTypes.string
+	};
+
 /***/ },
-/* 31 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2188,7 +2290,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Table;
 
 /***/ },
-/* 32 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2205,9 +2307,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2217,8 +2321,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var TableArea = function (_React$createClass) {
-		_inherits(TableArea, _React$createClass);
+	var TableArea = function (_Photon$createClass) {
+		_inherits(TableArea, _Photon$createClass);
 
 		function TableArea() {
 			_classCallCheck(this, TableArea);
@@ -2252,12 +2356,18 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return TableArea;
-	}(_react2.default.createClass);
+	}(Photon.createClass);
 
 	exports.default = TableArea;
 
+
+	TableArea.propTypes = {
+		placeholder: _react2.default.PropTypes.string,
+		label: _react2.default.PropTypes.string
+	};
+
 /***/ },
-/* 33 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2276,9 +2386,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _photonMixin = __webpack_require__(13);
+	var _photon = __webpack_require__(13);
 
-	var _photonMixin2 = _interopRequireDefault(_photonMixin);
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2288,8 +2400,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Toolbar = function (_React$createClass) {
-		_inherits(Toolbar, _React$createClass);
+	var Toolbar = function (_Photon$createClass) {
+		_inherits(Toolbar, _Photon$createClass);
 
 		function Toolbar() {
 			_classCallCheck(this, Toolbar);
@@ -2339,12 +2451,17 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Toolbar;
-	}(_react2.default.createClass);
+	}(Photon.createClass);
 
 	exports.default = Toolbar;
 
+
+	Toolbar.propTypes = {
+		title: _react2.default.PropTypes.string
+	};
+
 /***/ },
-/* 34 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

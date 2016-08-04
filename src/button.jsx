@@ -20,7 +20,7 @@ export default class Button extends Photon.Component {
 		classes['btn-form'] = this.props.form;
 		classes['pull-right'] = this.props.pullRight;
 		const className = classNames(this.props.className, classes);
-		
+
 		return (
 			<button {...this.props} className={className} onClick={this.props.onClick}>
 				{icon}{this.props.text}

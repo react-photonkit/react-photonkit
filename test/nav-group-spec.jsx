@@ -6,7 +6,7 @@ import NavGroup from '../src/nav-group.jsx';
 import NavGroupItem from '../src/nav-group-item.jsx';
 
 describe('navgroup', () => {
-	it ('Should create default element', () => {
+	it('Should create default element', () => {
 		const instance = ReactTestUtils.renderIntoDocument(<NavGroup/>);
 		const node = ReactDOM.findDOMNode(instance);
 
@@ -17,8 +17,8 @@ describe('navgroup', () => {
 	it('Should be active', () => {
 		const tree = (
 			<NavGroup activeKey={1}>
-				<NavGroupItem eventKey={1} glyph="home" text="home" />
-				<NavGroupItem eventKey={2} glyph="cc" text="cc" />
+				<NavGroupItem eventKey={1} glyph="home" text="home"/>
+				<NavGroupItem eventKey={2} glyph="cc" text="cc"/>
 			</NavGroup>
 		);
 
@@ -30,7 +30,7 @@ describe('navgroup', () => {
 		expect(items[1].props.active).to.not.ok();
 	});
 
-	it ('Should be active when clicked', done => {
+	it('Should be active when clicked', done => {
 		const onSelect = key => {
 			expect(2).to.be(key);
 			done();
@@ -38,8 +38,8 @@ describe('navgroup', () => {
 
 		const tree = (
 			<NavGroup activeKey={1} onSelect={onSelect}>
-				<NavGroupItem eventKey={1} glyph="home" text="home" />
-				<NavGroupItem eventKey={2} glyph="cc" text="cc" />
+				<NavGroupItem eventKey={1} glyph="home" text="home"/>
+				<NavGroupItem eventKey={2} glyph="cc" text="cc"/>
 			</NavGroup>
 		);
 
@@ -48,13 +48,13 @@ describe('navgroup', () => {
 		ReactTestUtils.Simulate.click(items[1]);
 	});
 
-	it ('Draggable should be endabled', () => {
+	it('Draggable should be endabled', () => {
 		const tree = (
 			<NavGroup activeKey={1} draggable>
-				<NavGroupItem eventKey={1} glyph="home" text="home" />
-				<NavGroupItem eventKey={2} glyph="cc" text="cc" />
+				<NavGroupItem eventKey={1} glyph="home" text="home"/>
+				<NavGroupItem eventKey={2} glyph="cc" text="cc"/>
 			</NavGroup>
-		)
+		);
 
 		const instance = ReactTestUtils.renderIntoDocument(tree);
 		expect(instance.sortableOptions.disabled).to.be(false);

@@ -9,3 +9,7 @@ export default class Table extends React.Component {
 		);
 	}
 }
+
+Table.propTypes = {
+	children: React.PropTypes.node
+};

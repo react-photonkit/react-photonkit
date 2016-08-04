@@ -9,3 +9,7 @@ export default class Content extends React.Component {
 		);
 	}
 }
+
+Content.propTypes = {
+	children: React.PropTypes.node
+};

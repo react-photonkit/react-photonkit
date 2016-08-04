@@ -9,3 +9,7 @@ export default class Window extends React.Component {
 		);
 	}
 }
+
+Window.propTypes = {
+	children: React.PropTypes.node
+};

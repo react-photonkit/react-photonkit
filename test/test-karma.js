@@ -11,15 +11,36 @@ const server = new Server({
   webpack: {
     devtool: 'inline-source-map',
     module: {
+			preLoaders: [{
+	      test: /\.js?/,
+	      exclude: /node_modules/,
+	      loader: 'xo-loader'
+	    }],
       loaders: [{
-        test: /\.json$/,
-        loader: 'json-loader'
-      }, {
         test: /\.js?/,
         exclude: /node_modules/,
         loaders: ['babel-loader']
+	    }, {
+        test: /\.json$/,
+        loader: 'json-loader'
+    	}, {
+      	test: /\.css$/,
+      	loader: 'style-loader!css-loader'
+    	}, {
+	      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+	      loader: "url-loader?limit=1000000&mimetype=application/font-woff"
+	    }, {
+	      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+	      loader: "file-loader"
       }]
-    }
+    },
+	  xo: {
+			envs: ["mocha"],
+	    extends: ["xo", "xo-react"],
+	    rules: {
+	      "quote-props": ["error", "as-needed"]
+	    }
+	  }
   },
   webpackServer: {
     noInfo: true

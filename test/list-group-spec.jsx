@@ -17,7 +17,7 @@ describe('listgroup', () => {
 	it('Should hide img element if no image prop', () => {
 		const tree = (
 			<ListGroup>
-				<ListItem title='item'/>
+				<ListItem title="item"/>
 			</ListGroup>
 		);
 
@@ -30,7 +30,7 @@ describe('listgroup', () => {
 	it('Should hide img element if image prop exists', () => {
 		const tree = (
 			<ListGroup>
-				<ListItem title='item' image='no.png'/>
+				<ListItem title="item" image="no.png"/>
 			</ListGroup>
 		);
 

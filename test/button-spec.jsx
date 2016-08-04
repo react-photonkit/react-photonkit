@@ -13,7 +13,7 @@ describe('button', () => {
 		expect(button.nodeName).to.be('BUTTON');
 		expect(classNames).to.contain('btn');
 		expect(classNames).to.contain('btn-default');
-  });
+	});
 
 	it('Should create element with text', () => {
 		const text = 'button';
@@ -37,7 +37,7 @@ describe('button', () => {
 			expect(classNames).to.contain(`btn-${size}`);
 		});
 
-		size = 'another'
+		size = 'another';
 		instance = ReactTestUtils.renderIntoDocument(<Button btSize={size}/>);
 		button = ReactDOM.findDOMNode(instance);
 		classNames = button.className.split(/\s+/);
