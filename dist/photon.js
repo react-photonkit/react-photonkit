@@ -56,6 +56,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
 	var _photonMin = __webpack_require__(1);
 
 	var _photonMin2 = _interopRequireDefault(_photonMin);
@@ -154,13 +158,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	module.exports = {
+	exports.default = {
 		PhotonStyle: _photonMin2.default,
-		ActionBar: _actionbar2.default,
+		Actionbar: _actionbar2.default,
 		Button: _button2.default,
 		ButtonGroup: _buttonGroup2.default,
-		Content: _content2.default,
 		CheckBox: _checkbox2.default,
+		Content: _content2.default,
 		Icon: _icon2.default,
 		Input: _input2.default,
 		ListGroup: _listGroup2.default,
@@ -1017,8 +1021,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var CheckBox = function (_Photon$createClass) {
-		_inherits(CheckBox, _Photon$createClass);
+	var CheckBox = function (_Photon$Component) {
+		_inherits(CheckBox, _Photon$Component);
 
 		function CheckBox() {
 			_classCallCheck(this, CheckBox);
@@ -1055,7 +1059,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return CheckBox;
-	}(Photon.createClass);
+	}(Photon.Component);
 
 	exports.default = CheckBox;
 
@@ -1089,8 +1093,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Content = function (_React$createClass) {
-		_inherits(Content, _React$createClass);
+	var Content = function (_React$Component) {
+		_inherits(Content, _React$Component);
 
 		function Content() {
 			_classCallCheck(this, Content);
@@ -1110,9 +1114,14 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Content;
-	}(_react2.default.createClass);
+	}(_react2.default.Component);
 
 	exports.default = Content;
+
+
+	Content.propTypes = {
+		children: _react2.default.PropTypes.node
+	};
 
 /***/ },
 /* 17 */
@@ -1146,8 +1155,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Input = function (_Photon$createClass) {
-		_inherits(Input, _Photon$createClass);
+	var Input = function (_Photon$Component) {
+		_inherits(Input, _Photon$Component);
 
 		function Input() {
 			_classCallCheck(this, Input);
@@ -1184,7 +1193,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Input;
-	}(Photon.createClass);
+	}(Photon.Component);
 
 	exports.default = Input;
 
@@ -1237,13 +1246,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 
 		_createClass(ListGroup, [{
-			key: 'getDefaultProps',
-			value: function getDefaultProps() {
-				return {
-					ptClass: 'list-group'
-				};
-			}
-		}, {
 			key: 'render',
 			value: function render() {
 				var classes = this.getPtClassSet();
@@ -1261,6 +1263,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	}(Photon.Component);
 
 	exports.default = ListGroup;
+
+
+	ListGroup.defaultProps = {
+		ptClass: 'list-group'
+	};
 
 /***/ },
 /* 19 */
@@ -1296,8 +1303,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ListItem = function (_Photon$createClass) {
-		_inherits(ListItem, _Photon$createClass);
+	var ListItem = function (_Photon$Component) {
+		_inherits(ListItem, _Photon$Component);
 
 		function ListItem() {
 			_classCallCheck(this, ListItem);
@@ -1306,14 +1313,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 
 		_createClass(ListItem, [{
-			key: 'getDefaultProps',
-			value: function getDefaultProps() {
-				return {
-					ptClass: 'list-group-item',
-					active: false
-				};
-			}
-		}, {
 			key: 'render',
 			value: function render() {
 				var classes = this.getPtClassSet();
@@ -1348,7 +1347,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return ListItem;
-	}(Photon.createClass);
+	}(Photon.Component);
 
 	exports.default = ListItem;
 
@@ -1358,6 +1357,11 @@ return /******/ (function(modules) { // webpackBootstrap
 		image: _react2.default.PropTypes.string,
 		title: _react2.default.PropTypes.string.isRequired,
 		subtitle: _react2.default.PropTypes.string
+	};
+
+	ListItem.defaultProps = {
+		ptClass: 'list-group-item',
+		active: false
 	};
 
 /***/ },
@@ -1394,39 +1398,34 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var NavGroup = function (_Photon$createClass) {
-		_inherits(NavGroup, _Photon$createClass);
+	var NavGroup = function (_Photon$Component) {
+		_inherits(NavGroup, _Photon$Component);
 
-		function NavGroup() {
+		function NavGroup(props) {
 			_classCallCheck(this, NavGroup);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(NavGroup).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NavGroup).call(this, props));
+
+			_this.sortableOptions = {
+				ref: 'navs',
+				model: 'children',
+				disabled: true
+			};
+
+			_this.state = {
+				activeKey: props.activeKey,
+				children: props.children
+			};
+			return _this;
 		}
 
 		_createClass(NavGroup, [{
-			key: 'getInitialState',
-			value: function getInitialState() {
-				return {
-					activeKey: this.props.activeKey,
-					children: this.props.children
-				};
-			}
-		}, {
-			key: 'getDefaultProps',
-			value: function getDefaultProps() {
-				return {
-					ptClass: 'nav-group',
-					draggable: false
-				};
-			}
-		}, {
 			key: 'renderNav',
 			value: function renderNav(child, index) {
 				var _this2 = this;
 
 				var active = this.state.activeKey === child.props.eventKey;
-				_react2.default.cloneElement({
-					child: child,
+				return _react2.default.cloneElement(child, {
 					active: active,
 					key: 'nav-group-item-' + index,
 					onClick: function onClick() {
@@ -1453,15 +1452,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 				var classes = this.getPtClassSet();
 				var className = (0, _classnames2.default)(this.props.className, classes);
-				var renderNav = void 0;
 				var childNavs = void 0;
 
-				renderNav = function renderNav(child, index) {
-					_this3.renderNav(child, index);
-				};
-
 				if (this.state.children) {
-					childNavs = this.state.children.map(renderNav);
+					childNavs = this.state.children.map(function (child, index) {
+						return _this3.renderNav(child, index);
+					});
 				}
 
 				return _react2.default.createElement(
@@ -1473,10 +1469,16 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return NavGroup;
-	}(Photon.createClass);
+	}(Photon.Component);
 
 	exports.default = NavGroup;
 
+
+	NavGroup.defaultProps = {
+		activeKey: '',
+		ptClass: 'nav-group',
+		draggable: false
+	};
 
 	NavGroup.propTypes = {
 		activeKey: _react2.default.PropTypes.any,
@@ -1524,8 +1526,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var NavGroupItem = function (_Photon$createClass) {
-		_inherits(NavGroupItem, _Photon$createClass);
+	var NavGroupItem = function (_Photon$Component) {
+		_inherits(NavGroupItem, _Photon$Component);
 
 		function NavGroupItem() {
 			_classCallCheck(this, NavGroupItem);
@@ -1534,14 +1536,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 
 		_createClass(NavGroupItem, [{
-			key: 'getDefaultProps',
-			value: function getDefaultProps() {
-				return {
-					ptClass: 'nav-group-item',
-					active: false
-				};
-			}
-		}, {
 			key: 'getIconComponent',
 			value: function getIconComponent() {
 				if (this.props.glyph) {
@@ -1566,10 +1560,15 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return NavGroupItem;
-	}(Photon.createClass);
+	}(Photon.Component);
 
 	exports.default = NavGroupItem;
 
+
+	NavGroupItem.defaultProps = {
+		ptClass: 'nav-group-item',
+		active: false
+	};
 
 	NavGroupItem.propTypes = {
 		active: _react2.default.PropTypes.bool,
@@ -1741,8 +1740,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Pane = function (_Photon$createClass) {
-		_inherits(Pane, _Photon$createClass);
+	var Pane = function (_Photon$Component) {
+		_inherits(Pane, _Photon$Component);
 
 		function Pane() {
 			_classCallCheck(this, Pane);
@@ -1774,7 +1773,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Pane;
-	}(Photon.createClass);
+	}(Photon.Component);
 
 	exports.default = Pane;
 
@@ -1864,8 +1863,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Radio = function (_Photon$createClass) {
-		_inherits(Radio, _Photon$createClass);
+	var Radio = function (_Photon$Component) {
+		_inherits(Radio, _Photon$Component);
 
 		function Radio() {
 			_classCallCheck(this, Radio);
@@ -1897,7 +1896,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Radio;
-	}(Photon.createClass);
+	}(Photon.Component);
 
 	exports.default = Radio;
 
@@ -2035,30 +2034,40 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var TabGroup = function (_Photon$createClass) {
-		_inherits(TabGroup, _Photon$createClass);
+	var TabGroup = function (_Photon$Component) {
+		_inherits(TabGroup, _Photon$Component);
 
-		function TabGroup() {
+		function TabGroup(props) {
 			_classCallCheck(this, TabGroup);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(TabGroup).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(TabGroup).call(this, props));
+
+			_this.sortableOptions = {
+				ref: 'tabs',
+				model: 'children',
+				disabled: true
+			};
+
+			_this.state = {
+				activeKey: props.activeKey,
+				children: props.children
+			};
+
+			// ref function to avoid creating multiple instancein the path of render
+			_this.refTab = _this.refTab.bind(_this);
+			_this.refPane = _this.refPane.bind(_this);
+			return _this;
 		}
 
 		_createClass(TabGroup, [{
-			key: 'getInitialState',
-			value: function getInitialState() {
-				return {
-					activeKey: this.props.activeKey,
-					children: this.props.children
-				};
+			key: 'refTab',
+			value: function refTab(tabs) {
+				this.childTabs = tabs;
 			}
 		}, {
-			key: 'getDefaultProps',
-			value: function getDefaultProps() {
-				return {
-					ptClass: 'tab-group',
-					draggable: false
-				};
+			key: 'refPane',
+			value: function refPane(panes) {
+				this.childPanes = panes;
 			}
 		}, {
 			key: 'renderTab',
@@ -2066,13 +2075,14 @@ return /******/ (function(modules) { // webpackBootstrap
 				var _this2 = this;
 
 				var active = this.state.activeKey === child.props.eventKey;
-				_react2.default.cloneElement(child, {
+				return _react2.default.cloneElement(child, {
 					active: active,
 					key: 'tab-item-' + index,
 					onClick: function onClick() {
 						_this2.setState({
 							activeKey: child.props.eventKey
 						});
+
 						if (_this2.props.onSelect) {
 							_this2.props.onSelect(child.props.eventKey);
 						}
@@ -2083,18 +2093,17 @@ return /******/ (function(modules) { // webpackBootstrap
 			key: 'renderPane',
 			value: function renderPane(child) {
 				var active = this.state.activeKey === child.props.eventKey;
-				try {
-					if (active) {
-						return child.props.children;
-					}
-				} catch (err) {
-					return null;
+				if (active) {
+					return child.props.children;
 				}
+
+				return null;
 			}
 		}, {
 			key: 'componentWillMount',
 			value: function componentWillMount() {
 				this.sortableOptions.disabled = !this.props.draggable;
+				return this.sortableOptions.disabled;
 			}
 		}, {
 			key: 'render',
@@ -2104,22 +2113,17 @@ return /******/ (function(modules) { // webpackBootstrap
 				var classes = this.getPtClassSet();
 				var className = (0, _classnames2.default)(this.props.className, classes);
 
-				var renderTab = function renderTab(child, index) {
-					return _this3.renderTab(child, index);
-				};
-				var renderPane = function renderPane(child, index) {
-					return _this3.renderPane(child, index);
-				};
-
 				var childTabs = void 0;
 				var childPane = void 0;
 
 				if (this.state.children) {
-					childPane = this.state.children.map(renderTab);
-				}
+					childTabs = this.state.children.map(function (child, index) {
+						return _this3.renderTab(child, index);
+					});
 
-				if (this.state.children) {
-					childPane = this.state.children.map(renderPane);
+					childPane = this.state.children.map(function (child, index) {
+						return _this3.renderPane(child, index);
+					});
 				}
 
 				return _react2.default.createElement(
@@ -2127,12 +2131,12 @@ return /******/ (function(modules) { // webpackBootstrap
 					null,
 					_react2.default.createElement(
 						'div',
-						{ className: className },
+						{ className: className, ref: this.refTab },
 						childTabs
 					),
 					_react2.default.createElement(
 						'div',
-						null,
+						{ ref: this.refPane },
 						childPane
 					)
 				);
@@ -2140,10 +2144,16 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return TabGroup;
-	}(Photon.createClass);
+	}(Photon.Component);
 
 	exports.default = TabGroup;
 
+
+	TabGroup.defaultProps = {
+		activeKey: '',
+		ptClass: 'tab-group',
+		draggable: false
+	};
 
 	TabGroup.propTypes = {
 		activeKey: _react2.default.PropTypes.any,
@@ -2173,6 +2183,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
+	var _icon = __webpack_require__(12);
+
+	var _icon2 = _interopRequireDefault(_icon);
+
 	var _photon = __webpack_require__(13);
 
 	var Photon = _interopRequireWildcard(_photon);
@@ -2187,8 +2201,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var TabItem = function (_Photon$createClass) {
-		_inherits(TabItem, _Photon$createClass);
+	var TabItem = function (_Photon$Component) {
+		_inherits(TabItem, _Photon$Component);
 
 		function TabItem() {
 			_classCallCheck(this, TabItem);
@@ -2197,26 +2211,18 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 
 		_createClass(TabItem, [{
-			key: 'getDefaultProps',
-			value: function getDefaultProps() {
-				return {
-					ptClass: 'tab-item',
-					active: false
-				};
-			}
-		}, {
 			key: 'getIconComponent',
 			value: function getIconComponent() {
-				// <Icon glyph="cancel" tab/>
-				// TODO(importre)
-				return null;
+				if (this.props.glyph) {
+					return _react2.default.createElement(_icon2.default, { glyph: this.props.glyph, withText: true });
+				}
 			}
 		}, {
 			key: 'render',
 			value: function render() {
 				var classes = this.getPtClassSet();
-				var className = (0, _classnames2.default)(this.props.className, classes);
 				classes.active = this.props.active;
+				var className = (0, _classnames2.default)(this.props.className, classes);
 				var icon = this.getIconComponent();
 
 				return _react2.default.createElement(
@@ -2229,10 +2235,15 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return TabItem;
-	}(Photon.createClass);
+	}(Photon.Component);
 
 	exports.default = TabItem;
 
+
+	TabItem.defaultProps = {
+		ptClass: 'tab-item',
+		active: false
+	};
 
 	TabItem.propTypes = {
 		active: _react2.default.PropTypes.bool,
@@ -2264,8 +2275,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Table = function (_React$createClass) {
-		_inherits(Table, _React$createClass);
+	var Table = function (_React$Component) {
+		_inherits(Table, _React$Component);
 
 		function Table() {
 			_classCallCheck(this, Table);
@@ -2285,15 +2296,20 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Table;
-	}(_react2.default.createClass);
+	}(_react2.default.Component);
 
 	exports.default = Table;
+
+
+	Table.propTypes = {
+		children: _react2.default.PropTypes.node
+	};
 
 /***/ },
 /* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -2307,12 +2323,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _photon = __webpack_require__(13);
-
-	var Photon = _interopRequireWildcard(_photon);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2321,34 +2331,42 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var TableArea = function (_Photon$createClass) {
-		_inherits(TableArea, _Photon$createClass);
+	var TableArea = function (_React$Component) {
+		_inherits(TableArea, _React$Component);
 
-		function TableArea() {
+		function TableArea(props) {
 			_classCallCheck(this, TableArea);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(TableArea).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(TableArea).call(this, props));
+
+			_this.refTextArea = _this.refTextArea.bind(_this);
+			return _this;
 		}
 
 		_createClass(TableArea, [{
-			key: 'getValue',
+			key: "getValue",
 			value: function getValue() {
-				return this.refs.text.value;
+				return this.textArea.value;
 			}
 		}, {
-			key: 'render',
+			key: "refTextArea",
+			value: function refTextArea(ta) {
+				this.textArea = ta;
+			}
+		}, {
+			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
-					'div',
-					{ className: 'form-group' },
+					"div",
+					{ className: "form-group" },
 					_react2.default.createElement(
-						'label',
+						"label",
 						null,
 						this.props.label
 					),
 					_react2.default.createElement(
-						'textarea',
-						_extends({}, this.props, { className: 'form-control', placeholder: this.props.placeholder }),
+						"textarea",
+						_extends({}, this.props, { className: "form-control", placeholder: this.props.placeholder, ref: this.refTextArea }),
 						this.props.children
 					)
 				);
@@ -2356,12 +2374,13 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return TableArea;
-	}(Photon.createClass);
+	}(_react2.default.Component);
 
 	exports.default = TableArea;
 
 
 	TableArea.propTypes = {
+		children: _react2.default.PropTypes.node,
 		placeholder: _react2.default.PropTypes.string,
 		label: _react2.default.PropTypes.string
 	};
@@ -2400,8 +2419,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Toolbar = function (_Photon$createClass) {
-		_inherits(Toolbar, _Photon$createClass);
+	var Toolbar = function (_Photon$Component) {
+		_inherits(Toolbar, _Photon$Component);
 
 		function Toolbar() {
 			_classCallCheck(this, Toolbar);
@@ -2410,14 +2429,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 
 		_createClass(Toolbar, [{
-			key: 'getDefaultProps',
-			value: function getDefaultProps() {
-				return {
-					ptClass: 'toolbar',
-					ptType: 'header'
-				};
-			}
-		}, {
 			key: 'render',
 			value: function render() {
 				var classes = this.getPtClassSet();
@@ -2451,10 +2462,14 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Toolbar;
-	}(Photon.createClass);
+	}(Photon.Component);
 
 	exports.default = Toolbar;
 
+	Toolbar.defaultProps = {
+		ptClass: 'toolbar',
+		ptType: 'header'
+	};
 
 	Toolbar.propTypes = {
 		title: _react2.default.PropTypes.string
@@ -2484,8 +2499,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Window = function (_React$createClass) {
-		_inherits(Window, _React$createClass);
+	var Window = function (_React$Component) {
+		_inherits(Window, _React$Component);
 
 		function Window() {
 			_classCallCheck(this, Window);
@@ -2505,9 +2520,14 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Window;
-	}(_react2.default.createClass);
+	}(_react2.default.Component);
 
 	exports.default = Window;
+
+
+	Window.propTypes = {
+		children: _react2.default.PropTypes.node
+	};
 
 /***/ }
 /******/ ])

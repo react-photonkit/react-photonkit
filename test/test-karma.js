@@ -20,9 +20,6 @@ const server = new Server({
         test: /\.js?/,
         exclude: /node_modules/,
         loaders: ['babel-loader']
-	    }, {
-        test: /\.json$/,
-        loader: 'json-loader'
     	}, {
       	test: /\.css$/,
       	loader: 'style-loader!css-loader'
