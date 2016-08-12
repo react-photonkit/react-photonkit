@@ -51,7 +51,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
-    "xo": "^0.16.0",
+    "xo": "^0.13.0",
     "xo-loader": "^0.6.0"
   },
   "dependencies": {
