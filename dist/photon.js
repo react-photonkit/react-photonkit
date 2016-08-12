@@ -964,8 +964,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ButtonGroup = function (_React$createClass) {
-		_inherits(ButtonGroup, _React$createClass);
+	var ButtonGroup = function (_React$Component) {
+		_inherits(ButtonGroup, _React$Component);
 
 		function ButtonGroup() {
 			_classCallCheck(this, ButtonGroup);
@@ -985,9 +985,14 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return ButtonGroup;
-	}(_react2.default.createClass);
+	}(_react2.default.Component);
 
 	exports.default = ButtonGroup;
+
+
+	ButtonGroup.propTypes = {
+		children: _react2.default.PropTypes.node
+	};
 
 /***/ },
 /* 15 */
@@ -1600,8 +1605,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var NavTitle = function (_React$createClass) {
-		_inherits(NavTitle, _React$createClass);
+	var NavTitle = function (_React$Component) {
+		_inherits(NavTitle, _React$Component);
 
 		function NavTitle() {
 			_classCallCheck(this, NavTitle);
@@ -1621,9 +1626,14 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return NavTitle;
-	}(_react2.default.createClass);
+	}(_react2.default.Component);
 
 	exports.default = NavTitle;
+
+
+	NavTitle.propTypes = {
+		children: _react2.default.PropTypes.node
+	};
 
 /***/ },
 /* 23 */
@@ -1649,27 +1659,28 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Options = function (_React$createClass) {
-		_inherits(Options, _React$createClass);
+	var Options = function (_React$Component) {
+		_inherits(Options, _React$Component);
 
 		function Options() {
 			_classCallCheck(this, Options);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Options).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Options).call(this));
+
+			_this.refSelectIndex = _this.refSelectIndex.bind(_this);
+			return _this;
 		}
 
 		_createClass(Options, [{
-			key: "getDefaultProps",
-			value: function getDefaultProps() {
-				return {
-					items: []
-				};
+			key: "refSelectIndex",
+			value: function refSelectIndex(sel) {
+				this.select = sel;
 			}
 		}, {
 			key: "getSelectedIndex",
 			value: function getSelectedIndex() {
-				if (this.refs.select) {
-					return this.refs.select.selectedIndex;
+				if (this.select) {
+					return this.select.selectedIndex;
 				}
 			}
 		}, {
@@ -1687,7 +1698,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 					return _react2.default.createElement(
 						"select",
-						{ className: "form-control" },
+						{ className: "form-control", ref: this.refSelectIndex },
 						items
 					);
 				}
@@ -1697,10 +1708,14 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Options;
-	}(_react2.default.createClass);
+	}(_react2.default.Component);
 
 	exports.default = Options;
 
+
+	Options.defaultProps = {
+		items: []
+	};
 
 	Options.propTypes = {
 		items: _react2.default.PropTypes.array
@@ -1806,8 +1821,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var PaneGroup = function (_React$createClass) {
-		_inherits(PaneGroup, _React$createClass);
+	var PaneGroup = function (_React$Component) {
+		_inherits(PaneGroup, _React$Component);
 
 		function PaneGroup() {
 			_classCallCheck(this, PaneGroup);
@@ -1827,9 +1842,15 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return PaneGroup;
-	}(_react2.default.createClass);
+	}(_react2.default.Component);
 
 	exports.default = PaneGroup;
+
+
+	PaneGroup.propTypes = {
+		children: _react2.default.PropTypes.node,
+		name: _react2.default.PropTypes.string.isRequired
+	};
 
 /***/ },
 /* 26 */
@@ -1929,8 +1950,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var RadioGroup = function (_React$createClass) {
-		_inherits(RadioGroup, _React$createClass);
+	var RadioGroup = function (_React$Component) {
+		_inherits(RadioGroup, _React$Component);
 
 		function RadioGroup() {
 			_classCallCheck(this, RadioGroup);
@@ -1939,13 +1960,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 
 		_createClass(RadioGroup, [{
-			key: 'getInitialState',
-			value: function getInitialState() {
-				return {
-					checkedIndex: 0
-				};
-			}
-		}, {
 			key: 'onChange',
 			value: function onChange(index) {
 				return this.setState({
@@ -1991,12 +2005,17 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return RadioGroup;
-	}(_react2.default.createClass);
+	}(_react2.default.Component);
 
 	exports.default = RadioGroup;
 
 
+	RadioGroup.defaultProps = {
+		checkedIndex: 0
+	};
+
 	RadioGroup.propTypes = {
+		children: _react2.default.PropTypes.node,
 		name: _react2.default.PropTypes.string.isRequired
 	};
 

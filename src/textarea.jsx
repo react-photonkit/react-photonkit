@@ -6,6 +6,7 @@ export default class TableArea extends React.Component {
 
 		this.refTextArea = this.refTextArea.bind(this);
 	}
+
 	getValue() {
 		return this.textArea.value;
 	}

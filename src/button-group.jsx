@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ButtonGroup extends React.createClass {
+export default class ButtonGroup extends React.Component {
 	render() {
 		return (
 			<div className="btn-group">
@@ -9,3 +9,7 @@ export default class ButtonGroup extends React.createClass {
 		);
 	}
 }
+
+ButtonGroup.propTypes = {
+	children: React.PropTypes.node
+};

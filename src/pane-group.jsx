@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class PaneGroup extends React.createClass {
+export default class PaneGroup extends React.Component {
 	render() {
 		return (
 			<div className="pane-group">
@@ -9,3 +9,8 @@ export default class PaneGroup extends React.createClass {
 		);
 	}
 }
+
+PaneGroup.propTypes = {
+	children: React.PropTypes.node,
+	name: React.PropTypes.string.isRequired
+};

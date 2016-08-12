@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class NavTitle extends React.createClass {
+export default class NavTitle extends React.Component {
 	render() {
 		return (
 			<h5 className="nav-group-title">
@@ -9,3 +9,7 @@ export default class NavTitle extends React.createClass {
 		);
 	}
 }
+
+NavTitle.propTypes = {
+	children: React.PropTypes.node
+};

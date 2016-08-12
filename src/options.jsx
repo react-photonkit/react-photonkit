@@ -1,15 +1,19 @@
 import React from 'react';
 
-export default class Options extends React.createClass {
-	getDefaultProps() {
-		return {
-			items: []
-		};
+export default class Options extends React.Component {
+	constructor() {
+		super();
+
+		this.refSelectIndex = this.refSelectIndex.bind(this);
+	}
+
+	refSelectIndex(sel) {
+		this.select = sel;
 	}
 
 	getSelectedIndex() {
-		if (this.refs.select) {
-			return this.refs.select.selectedIndex;
+		if (this.select) {
+			return this.select.selectedIndex;
 		}
 	}
 
@@ -23,7 +27,7 @@ export default class Options extends React.createClass {
 			});
 
 			return (
-				<select className="form-control">
+				<select className="form-control" ref={this.refSelectIndex}>
 					{items}
 				</select>
 			);
@@ -34,6 +38,10 @@ export default class Options extends React.createClass {
 		);
 	}
 }
+
+Options.defaultProps = {
+	items: []
+};
 
 Options.propTypes = {
 	items: React.PropTypes.array
