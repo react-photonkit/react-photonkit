@@ -16,6 +16,12 @@ export default class NavGroup extends Photon.Component {
 			activeKey: props.activeKey,
 			children: props.children
 		};
+
+		this._node = this._node.bind(this);
+	}
+
+	_node(n) {
+		this.node = n;
 	}
 
 	renderNav(child, index) {
@@ -52,7 +58,7 @@ export default class NavGroup extends Photon.Component {
 		}
 
 		return (
-			<nav className={className}>
+			<nav className={className} ref={this._node}>
 				{childNavs}
 			</nav>
 		);

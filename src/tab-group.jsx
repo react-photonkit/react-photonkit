@@ -18,16 +18,11 @@ export default class TabGroup extends Photon.Component {
 		};
 
 		// ref function to avoid creating multiple instancein the path of render
-		this.refTab = this.refTab.bind(this);
-		this.refPane = this.refPane.bind(this);
+		this._node = this._node.bind(this);
 	}
 
-	refTab(tabs) {
-		this.childTabs = tabs;
-	}
-
-	refPane(panes) {
-		this.childPanes = panes;
+	_node(n) {
+		this.node = n;
 	}
 
 	renderTab(child, index) {
@@ -79,11 +74,11 @@ export default class TabGroup extends Photon.Component {
 		}
 
 		return (
-			<div>
-				<div className={className} ref={this.refTab}>
+			<div ref={this._node}>
+				<div className={className}>
 					{childTabs}
 				</div>
-				<div ref={this.refPane}>
+				<div>
 					{childPane}
 				</div>
 			</div>

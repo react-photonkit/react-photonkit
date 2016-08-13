@@ -1,17 +1,15 @@
 import expect from 'expect.js';
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import ReactDOM from 'react-dom';
 import NavGroup from '../src/nav-group.jsx';
 import NavGroupItem from '../src/nav-group-item.jsx';
 
 describe('navgroup', () => {
 	it('Should create default element', () => {
 		const instance = ReactTestUtils.renderIntoDocument(<NavGroup/>);
-		const node = ReactDOM.findDOMNode(instance);
 
-		expect(node.nodeName).to.be('NAV');
-		expect(node.className).to.be('nav-group');
+		expect(instance.node.nodeName).to.be('NAV');
+		expect(instance.node.className).to.be('nav-group');
 	});
 
 	it('Should be active', () => {

@@ -1,7 +1,6 @@
 import expect from 'expect.js';
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import ReactDOM from 'react-dom';
 import TabGroup from '../src/tab-group.jsx';
 import TabItem from '../src/tab-item.jsx';
 
@@ -9,8 +8,7 @@ describe('tab', () => {
 	it('Should create default element', () => {
 		let tree = <TabGroup/>;
 		let instance = ReactTestUtils.renderIntoDocument(tree);
-		let node = ReactDOM.findDOMNode(instance);
-		expect(node).to.be.ok();
+		expect(instance.node).to.be.ok();
 
 		tree = (
 			<TabGroup>
@@ -20,8 +18,7 @@ describe('tab', () => {
 		);
 
 		instance = ReactTestUtils.renderIntoDocument(tree);
-		node = ReactDOM.findDOMNode(instance);
-		expect(node).to.be.ok();
+		expect(instance.node.children.length).to.be(2);
 	});
 
 	it('Should be active when clicked', done => {
@@ -38,7 +35,7 @@ describe('tab', () => {
 		const items = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, 'a');
 		ReactTestUtils.Simulate.click(items[1]);
 
-		expect(instance.childPanes.textContent).to.be('contents2');
+		expect(instance.node.children[1].textContent).to.be('contents2');
 		done();
 	});
 

@@ -3,6 +3,16 @@ import classNames from 'classnames';
 import * as Photon from './photon.jsx';
 
 export default class Toolbar extends Photon.Component {
+	constructor(props) {
+		super(props);
+
+		this._node = this._node.bind(this);
+	}
+
+	_node(n) {
+		this.node = n;
+	}
+
 	render() {
 		const classes = this.getPtClassSet();
 		const className = classNames(this.props.className, classes);
@@ -14,7 +24,7 @@ export default class Toolbar extends Photon.Component {
 
 		if (this.props.ptType === 'footer') {
 			return (
-				<footer className={className}>
+				<footer className={className} ref={this._node}>
 					{title}
 					{this.props.children}
 				</footer>
@@ -22,7 +32,7 @@ export default class Toolbar extends Photon.Component {
 		}
 
 		return (
-			<header className={className}>
+			<header className={className} ref={this._node}>
 				{title}
 				{this.props.children}
 			</header>

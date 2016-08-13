@@ -1,6 +1,6 @@
 {
   "name": "react-photonkit",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Photon components built with React",
   "main": "dist/photon.js",
   "scripts": {
