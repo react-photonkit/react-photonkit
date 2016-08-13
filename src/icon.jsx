@@ -4,14 +4,20 @@ import * as Photon from './photon.jsx';
 
 export default class Icon extends Photon.Component {
 	render() {
+		const props = Object.assign({}, this.props);
 		const classes = this.getPtClassSet();
-		classes[`icon-${this.props.glyph}`] = true;
-		classes['icon-text'] = this.props.withText;
-		classes['icon-close-tab'] = this.props.tab;
-		const className = classNames(this.props.className, classes);
+		classes[`icon-${props.glyph}`] = true;
+		classes['icon-text'] = props.withText;
+		classes['icon-close-tab'] = props.tab;
+		const className = classNames(props.className, classes);
+
+		delete props.ptClass;
+		delete props.glyph;
+		delete props.withText;
+		delete props.tab;
 
 		return (
-			<span {...this.props} className={className}/>
+			<span {...props} className={className}/>
 		);
 	}
 }

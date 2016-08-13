@@ -11,13 +11,18 @@ export default class TabItem extends Photon.Component {
 	}
 
 	render() {
+		const props = Object.assign({}, this.props);
 		const classes = this.getPtClassSet();
-		classes.active = this.props.active;
-		const className = classNames(this.props.className, classes);
+		classes.active = props.active;
+		const className = classNames(props.className, classes);
 		const icon = this.getIconComponent();
 
+		delete props.ptClass;
+		delete props.active;
+		delete props.eventKey;
+
 		return (
-			<a {...this.props} className={className}>
+			<a {...props} className={className}>
 				{icon}{this.props.title}
 			</a>
 		);

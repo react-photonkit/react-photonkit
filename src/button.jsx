@@ -24,6 +24,7 @@ export default class Button extends Photon.Component {
 	}
 
 	render() {
+		const props = Object.assign({}, this.props);
 		const icon = this.getIconComponent();
 		const classes = this.getPtClassSet();
 		classes.active = this.props.active;
@@ -31,8 +32,18 @@ export default class Button extends Photon.Component {
 		classes['pull-right'] = this.props.pullRight;
 		const className = classNames(this.props.className, classes);
 
+		delete props.ptClass;
+		delete props.ptStyle;
+		delete props.ptSize;
+		delete props.btSize;
+		delete props.glyph;
+		delete props.withText;
+		delete props.active;
+		delete props.pullRight;
+		delete props.text;
+
 		return (
-			<button {...this.props} className={className} onClick={this.props.onClick} ref={this._node}>
+			<button {...props} className={className} onClick={this.props.onClick} ref={this._node}>
 				{icon}{this.props.text}
 			</button>
 		);
