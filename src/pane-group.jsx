@@ -11,6 +11,5 @@ export default class PaneGroup extends React.Component {
 }
 
 PaneGroup.propTypes = {
-	children: React.PropTypes.node,
-	name: React.PropTypes.string.isRequired
+	children: React.PropTypes.node
 };

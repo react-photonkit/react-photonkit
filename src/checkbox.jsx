@@ -2,19 +2,27 @@ import React from 'react';
 import * as Photon from './photon.jsx';
 
 export default class CheckBox extends Photon.Component {
-	getInitialState() {
-		return {
-			checked: this.props.checked
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			checked: props.checked
 		};
+
+		this._node = this._node.bind(this);
+	}
+
+	_node(n) {
+		this.node = n;
 	}
 
 	isChecked() {
-		return this.refs.checkbox.checked;
+		return this.node.querySelector('input').checked;
 	}
 
 	render() {
 		return (
-			<div className="checkbox">
+			<div className="checkbox" ref={this._node}>
 				<label>
 					<input {...this.props} type="checkbox"/>
 					{this.props.label}

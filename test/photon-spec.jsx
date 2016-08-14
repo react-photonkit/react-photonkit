@@ -1,5 +1,5 @@
 import expect from 'expect.js';
-import Photon from '../src/photon.js';
+import * as Photon from '../src/photon.js';
 
 describe('photon', () => {
 	it('should have components', () => {

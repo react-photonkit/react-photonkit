@@ -2,25 +2,33 @@ import React from 'react';
 import * as Photon from './photon.jsx';
 
 export default class Input extends Photon.Component {
-	getValue() {
-		return this.refs.text.value;
+	constructor(props) {
+		super(props);
+
+		this._node = this._node.bind(this);
 	}
 
-	getDefaultProps() {
-		return {
-			type: 'text'
-		};
+	_node(n) {
+		this.node = n;
+	}
+
+	getValue() {
+		return this.node.querySelector('input').value;
 	}
 
 	render() {
 		return (
-			<div className="form-group">
+			<div className="form-group" ref={this._node}>
 				<label>{this.props.label}</label>
 				<input {...this.props} className="form-control" placeholder={this.props.placeholder} type={this.props.type}/>
 			</div>
 		);
 	}
 }
+
+Input.defaultProps = {
+	type: 'text'
+};
 
 Input.propTypes = {
 	label: React.PropTypes.string

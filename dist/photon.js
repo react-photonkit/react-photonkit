@@ -59,6 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.Window = exports.Toolbar = exports.TextArea = exports.Table = exports.TabItem = exports.TabGroup = exports.RadioGroup = exports.Radio = exports.PaneGroup = exports.Pane = exports.Options = exports.NavTitle = exports.NavGroupItem = exports.NavGroup = exports.ListItem = exports.ListGroup = exports.Input = exports.Icon = exports.Content = exports.CheckBox = exports.ButtonGroup = exports.Button = exports.Actionbar = exports.PhotonStyle = undefined;
 
 	var _photonMin = __webpack_require__(1);
 
@@ -158,32 +159,30 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = {
-		PhotonStyle: _photonMin2.default,
-		Actionbar: _actionbar2.default,
-		Button: _button2.default,
-		ButtonGroup: _buttonGroup2.default,
-		CheckBox: _checkbox2.default,
-		Content: _content2.default,
-		Icon: _icon2.default,
-		Input: _input2.default,
-		ListGroup: _listGroup2.default,
-		ListItem: _listItem2.default,
-		NavGroup: _navGroup2.default,
-		NavGroupItem: _navGroupItem2.default,
-		NavTitle: _navTitle2.default,
-		Options: _options2.default,
-		Pane: _pane2.default,
-		PaneGroup: _paneGroup2.default,
-		Radio: _radio2.default,
-		RadioGroup: _radioGroup2.default,
-		TabGroup: _tabGroup2.default,
-		TabItem: _tabItem2.default,
-		Table: _table2.default,
-		TextArea: _textarea2.default,
-		Toolbar: _toolbar2.default,
-		Window: _window2.default
-	};
+	exports.PhotonStyle = _photonMin2.default;
+	exports.Actionbar = _actionbar2.default;
+	exports.Button = _button2.default;
+	exports.ButtonGroup = _buttonGroup2.default;
+	exports.CheckBox = _checkbox2.default;
+	exports.Content = _content2.default;
+	exports.Icon = _icon2.default;
+	exports.Input = _input2.default;
+	exports.ListGroup = _listGroup2.default;
+	exports.ListItem = _listItem2.default;
+	exports.NavGroup = _navGroup2.default;
+	exports.NavGroupItem = _navGroupItem2.default;
+	exports.NavTitle = _navTitle2.default;
+	exports.Options = _options2.default;
+	exports.Pane = _pane2.default;
+	exports.PaneGroup = _paneGroup2.default;
+	exports.Radio = _radio2.default;
+	exports.RadioGroup = _radioGroup2.default;
+	exports.TabGroup = _tabGroup2.default;
+	exports.TabItem = _tabItem2.default;
+	exports.Table = _table2.default;
+	exports.TextArea = _textarea2.default;
+	exports.Toolbar = _toolbar2.default;
+	exports.Window = _window2.default;
 
 /***/ },
 /* 1 */
@@ -654,13 +653,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Button = function (_Photon$Component) {
 		_inherits(Button, _Photon$Component);
 
-		function Button() {
+		function Button(props) {
 			_classCallCheck(this, Button);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Button).call(this, props));
+
+			_this._node = _this._node.bind(_this);
+			return _this;
 		}
 
 		_createClass(Button, [{
+			key: '_node',
+			value: function _node(n) {
+				this.node = n;
+			}
+		}, {
 			key: 'getIconComponent',
 			value: function getIconComponent() {
 				var withText = this.props.text && this.props.text.length > 0;
@@ -671,6 +678,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		}, {
 			key: 'render',
 			value: function render() {
+				var props = Object.assign({}, this.props);
 				var icon = this.getIconComponent();
 				var classes = this.getPtClassSet();
 				classes.active = this.props.active;
@@ -678,9 +686,19 @@ return /******/ (function(modules) { // webpackBootstrap
 				classes['pull-right'] = this.props.pullRight;
 				var className = (0, _classnames2.default)(this.props.className, classes);
 
+				delete props.ptClass;
+				delete props.ptStyle;
+				delete props.ptSize;
+				delete props.btSize;
+				delete props.glyph;
+				delete props.withText;
+				delete props.active;
+				delete props.pullRight;
+				delete props.text;
+
 				return _react2.default.createElement(
 					'button',
-					_extends({}, this.props, { className: className, onClick: this.props.onClick }),
+					_extends({}, props, { className: className, onClick: this.props.onClick, ref: this._node }),
 					icon,
 					this.props.text
 				);
@@ -701,6 +719,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Button.propTypes = {
+		pullRight: _react2.default.PropTypes.bool,
 		active: _react2.default.PropTypes.bool,
 		form: _react2.default.PropTypes.bool,
 		onClick: _react2.default.PropTypes.func
@@ -808,13 +827,19 @@ return /******/ (function(modules) { // webpackBootstrap
 		_createClass(Icon, [{
 			key: 'render',
 			value: function render() {
+				var props = Object.assign({}, this.props);
 				var classes = this.getPtClassSet();
-				classes['icon-' + this.props.glyph] = true;
-				classes['icon-text'] = this.props.withText;
-				classes['icon-close-tab'] = this.props.tab;
-				var className = (0, _classnames2.default)(this.props.className, classes);
+				classes['icon-' + props.glyph] = true;
+				classes['icon-text'] = props.withText;
+				classes['icon-close-tab'] = props.tab;
+				var className = (0, _classnames2.default)(props.className, classes);
 
-				return _react2.default.createElement('span', _extends({}, this.props, { className: className }));
+				delete props.ptClass;
+				delete props.glyph;
+				delete props.withText;
+				delete props.tab;
+
+				return _react2.default.createElement('span', _extends({}, props, { className: className }));
 			}
 		}]);
 
@@ -1029,30 +1054,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	var CheckBox = function (_Photon$Component) {
 		_inherits(CheckBox, _Photon$Component);
 
-		function CheckBox() {
+		function CheckBox(props) {
 			_classCallCheck(this, CheckBox);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(CheckBox).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CheckBox).call(this, props));
+
+			_this.state = {
+				checked: props.checked
+			};
+
+			_this._node = _this._node.bind(_this);
+			return _this;
 		}
 
 		_createClass(CheckBox, [{
-			key: 'getInitialState',
-			value: function getInitialState() {
-				return {
-					checked: this.props.checked
-				};
+			key: '_node',
+			value: function _node(n) {
+				this.node = n;
 			}
 		}, {
 			key: 'isChecked',
 			value: function isChecked() {
-				return this.refs.checkbox.checked;
+				return this.node.querySelector('input').checked;
 			}
 		}, {
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					{ className: 'checkbox' },
+					{ className: 'checkbox', ref: this._node },
 					_react2.default.createElement(
 						'label',
 						null,
@@ -1163,30 +1193,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Input = function (_Photon$Component) {
 		_inherits(Input, _Photon$Component);
 
-		function Input() {
+		function Input(props) {
 			_classCallCheck(this, Input);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Input).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Input).call(this, props));
+
+			_this._node = _this._node.bind(_this);
+			return _this;
 		}
 
 		_createClass(Input, [{
-			key: 'getValue',
-			value: function getValue() {
-				return this.refs.text.value;
+			key: '_node',
+			value: function _node(n) {
+				this.node = n;
 			}
 		}, {
-			key: 'getDefaultProps',
-			value: function getDefaultProps() {
-				return {
-					type: 'text'
-				};
+			key: 'getValue',
+			value: function getValue() {
+				return this.node.querySelector('input').value;
 			}
 		}, {
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					{ className: 'form-group' },
+					{ className: 'form-group', ref: this._node },
 					_react2.default.createElement(
 						'label',
 						null,
@@ -1202,6 +1233,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = Input;
 
+
+	Input.defaultProps = {
+		type: 'text'
+	};
 
 	Input.propTypes = {
 		label: _react2.default.PropTypes.string
@@ -1244,13 +1279,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	var ListGroup = function (_Photon$Component) {
 		_inherits(ListGroup, _Photon$Component);
 
-		function ListGroup() {
+		function ListGroup(props) {
 			_classCallCheck(this, ListGroup);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(ListGroup).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ListGroup).call(this, props));
+
+			_this._node = _this._node.bind(_this);
+			return _this;
 		}
 
 		_createClass(ListGroup, [{
+			key: '_node',
+			value: function _node(n) {
+				this.node = n;
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				var classes = this.getPtClassSet();
@@ -1258,7 +1301,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 				return _react2.default.createElement(
 					'ul',
-					{ className: className },
+					{ className: className, ref: this._node },
 					this.props.children
 				);
 			}
@@ -1421,10 +1464,17 @@ return /******/ (function(modules) { // webpackBootstrap
 				activeKey: props.activeKey,
 				children: props.children
 			};
+
+			_this._node = _this._node.bind(_this);
 			return _this;
 		}
 
 		_createClass(NavGroup, [{
+			key: '_node',
+			value: function _node(n) {
+				this.node = n;
+			}
+		}, {
 			key: 'renderNav',
 			value: function renderNav(child, index) {
 				var _this2 = this;
@@ -1467,7 +1517,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 				return _react2.default.createElement(
 					'nav',
-					{ className: className },
+					{ className: className, ref: this._node },
 					childNavs
 				);
 			}
@@ -1550,16 +1600,24 @@ return /******/ (function(modules) { // webpackBootstrap
 		}, {
 			key: 'render',
 			value: function render() {
+				var props = Object.assign({}, this.props);
 				var classes = this.getPtClassSet();
-				classes.active = this.props.active;
-				var className = (0, _classnames2.default)(this.props.className, classes);
+				classes.active = props.active;
+				var className = (0, _classnames2.default)(props.className, classes);
 				var icon = this.getIconComponent();
+
+				delete props.eventKey;
+				delete props.ptClass;
+				delete props.glyph;
+				delete props.withText;
+				delete props.active;
+				delete props.text;
 
 				return _react2.default.createElement(
 					'a',
-					_extends({}, this.props, { className: className }),
+					_extends({}, props, { className: className }),
 					icon,
-					this.props.text
+					props.text
 				);
 			}
 		}]);
@@ -1765,14 +1823,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 
 		_createClass(Pane, [{
-			key: 'getDefaultProps',
-			value: function getDefaultProps() {
-				return {
-					ptClass: 'pane',
-					sidebar: false
-				};
-			}
-		}, {
 			key: 'render',
 			value: function render() {
 				var classes = this.getPtClassSet();
@@ -1795,6 +1845,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Pane.propTypes = {
 		sidebar: _react2.default.PropTypes.bool
+	};
+
+	Pane.defaultProps = {
+		ptClass: 'pane',
+		sidebar: false
 	};
 
 /***/ },
@@ -1848,8 +1903,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	PaneGroup.propTypes = {
-		children: _react2.default.PropTypes.node,
-		name: _react2.default.PropTypes.string.isRequired
+		children: _react2.default.PropTypes.node
 	};
 
 /***/ },
@@ -1953,10 +2007,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	var RadioGroup = function (_React$Component) {
 		_inherits(RadioGroup, _React$Component);
 
-		function RadioGroup() {
+		function RadioGroup(props) {
 			_classCallCheck(this, RadioGroup);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(RadioGroup).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RadioGroup).call(this, props));
+
+			_this.state = {
+				checkedIndex: 0
+			};
+			return _this;
 		}
 
 		_createClass(RadioGroup, [{
@@ -2009,10 +2068,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = RadioGroup;
 
-
-	RadioGroup.defaultProps = {
-		checkedIndex: 0
-	};
 
 	RadioGroup.propTypes = {
 		children: _react2.default.PropTypes.node,
@@ -2073,20 +2128,14 @@ return /******/ (function(modules) { // webpackBootstrap
 			};
 
 			// ref function to avoid creating multiple instancein the path of render
-			_this.refTab = _this.refTab.bind(_this);
-			_this.refPane = _this.refPane.bind(_this);
+			_this._node = _this._node.bind(_this);
 			return _this;
 		}
 
 		_createClass(TabGroup, [{
-			key: 'refTab',
-			value: function refTab(tabs) {
-				this.childTabs = tabs;
-			}
-		}, {
-			key: 'refPane',
-			value: function refPane(panes) {
-				this.childPanes = panes;
+			key: '_node',
+			value: function _node(n) {
+				this.node = n;
 			}
 		}, {
 			key: 'renderTab',
@@ -2147,15 +2196,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 				return _react2.default.createElement(
 					'div',
-					null,
+					{ ref: this._node },
 					_react2.default.createElement(
 						'div',
-						{ className: className, ref: this.refTab },
+						{ className: className },
 						childTabs
 					),
 					_react2.default.createElement(
 						'div',
-						{ ref: this.refPane },
+						null,
 						childPane
 					)
 				);
@@ -2239,14 +2288,19 @@ return /******/ (function(modules) { // webpackBootstrap
 		}, {
 			key: 'render',
 			value: function render() {
+				var props = Object.assign({}, this.props);
 				var classes = this.getPtClassSet();
-				classes.active = this.props.active;
-				var className = (0, _classnames2.default)(this.props.className, classes);
+				classes.active = props.active;
+				var className = (0, _classnames2.default)(props.className, classes);
 				var icon = this.getIconComponent();
+
+				delete props.ptClass;
+				delete props.active;
+				delete props.eventKey;
 
 				return _react2.default.createElement(
 					'a',
-					_extends({}, this.props, { className: className }),
+					_extends({}, props, { className: className }),
 					icon,
 					this.props.title
 				);
@@ -2297,18 +2351,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Table = function (_React$Component) {
 		_inherits(Table, _React$Component);
 
-		function Table() {
+		function Table(props) {
 			_classCallCheck(this, Table);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Table).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Table).call(this, props));
+
+			_this._node = _this._node.bind(_this);
+			return _this;
 		}
 
 		_createClass(Table, [{
+			key: "_node",
+			value: function _node(n) {
+				this.node = n;
+			}
+		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
 					"table",
-					{ className: "table-striped" },
+					{ className: "table-striped", ref: this._node },
 					this.props.children
 				);
 			}
@@ -2441,20 +2503,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Toolbar = function (_Photon$Component) {
 		_inherits(Toolbar, _Photon$Component);
 
-		function Toolbar() {
+		function Toolbar(props) {
 			_classCallCheck(this, Toolbar);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Toolbar).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Toolbar).call(this, props));
+
+			_this._node = _this._node.bind(_this);
+			return _this;
 		}
 
 		_createClass(Toolbar, [{
+			key: '_node',
+			value: function _node(n) {
+				this.node = n;
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				var classes = this.getPtClassSet();
 				var className = (0, _classnames2.default)(this.props.className, classes);
 				var title = void 0;
 
-				if (this.title) {
+				if (this.props.title) {
 					title = _react2.default.createElement(
 						'h1',
 						{ className: 'title' },
@@ -2465,7 +2535,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				if (this.props.ptType === 'footer') {
 					return _react2.default.createElement(
 						'footer',
-						{ className: className },
+						{ className: className, ref: this._node },
 						title,
 						this.props.children
 					);
@@ -2473,7 +2543,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 				return _react2.default.createElement(
 					'header',
-					{ className: className },
+					{ className: className, ref: this._node },
 					title,
 					this.props.children
 				);
@@ -2484,6 +2554,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}(Photon.Component);
 
 	exports.default = Toolbar;
+
 
 	Toolbar.defaultProps = {
 		ptClass: 'toolbar',

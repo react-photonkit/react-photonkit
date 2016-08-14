@@ -1,6 +1,13 @@
 import React from 'react';
 
 export default class RadioGroup extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			checkedIndex: 0
+		};
+	}
 	onChange(index) {
 		return this.setState({
 			checkedIndex: index
@@ -38,10 +45,6 @@ export default class RadioGroup extends React.Component {
 		);
 	}
 }
-
-RadioGroup.defaultProps = {
-	checkedIndex: 0
-};
 
 RadioGroup.propTypes = {
 	children: React.PropTypes.node,

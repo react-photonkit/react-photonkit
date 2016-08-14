@@ -18,7 +18,7 @@ export default class Toolbar extends Photon.Component {
 		const className = classNames(this.props.className, classes);
 		let title;
 
-		if (this.title) {
+		if (this.props.title) {
 			title = <h1 className="title">{this.props.title}</h1>;
 		}
 
@@ -39,6 +39,7 @@ export default class Toolbar extends Photon.Component {
 		);
 	}
 }
+
 Toolbar.defaultProps = {
 	ptClass: 'toolbar',
 	ptType: 'header'
