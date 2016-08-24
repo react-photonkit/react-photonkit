@@ -1507,13 +1507,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 				var classes = this.getPtClassSet();
 				var className = (0, _classnames2.default)(this.props.className, classes);
-				var childNavs = void 0;
-
-				if (this.state.children) {
-					childNavs = this.state.children.map(function (child, index) {
-						return _this3.renderNav(child, index);
-					});
-				}
+				var childrens = this.state.children;
+				var childNavs = _react2.default.Children.map(childrens, function (childrens, index) {
+					return _this3.renderNav(childrens, index);
+				});
 
 				return _react2.default.createElement(
 					'nav',
