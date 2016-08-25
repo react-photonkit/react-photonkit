@@ -1239,6 +1239,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Input.propTypes = {
+		type: _react2.default.PropTypes.string,
 		label: _react2.default.PropTypes.string
 	};
 

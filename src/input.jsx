@@ -31,5 +31,6 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
+	type: React.PropTypes.string,
 	label: React.PropTypes.string
 };
