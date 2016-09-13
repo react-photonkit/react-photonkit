@@ -55,6 +55,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "react-sortable-mixin": "0.0.1"
+    "sortablejs": "^1.4.2"
   }
 }

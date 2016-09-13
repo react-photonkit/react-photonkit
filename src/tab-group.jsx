@@ -1,16 +1,12 @@
 import React from 'react';
+// import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
+import Sortable from 'sortablejs';
 
 export default class TabGroup extends Photon.Component {
 	constructor(props) {
 		super(props);
-
-		this.sortableOptions = {
-			ref: 'tabs',
-			model: 'children',
-			disabled: true
-		};
 
 		this.state = {
 			activeKey: props.activeKey,
@@ -22,7 +18,13 @@ export default class TabGroup extends Photon.Component {
 	}
 
 	_node(n) {
-		this.node = n;
+		if (n) {
+			this.node = n;
+			this.sortable = Sortable.create(this.node.querySelector('.tab-group'), {
+				handle: '.tab-group',
+				disabled: !this.props.draggable
+			});
+		}
 	}
 
 	renderTab(child, index) {
@@ -51,9 +53,11 @@ export default class TabGroup extends Photon.Component {
 		return null;
 	}
 
-	componentWillMount() {
-		this.sortableOptions.disabled = !this.props.draggable;
-		return this.sortableOptions.disabled;
+	componentWillUnmount() {
+		if (this.sortable) {
+			this.sortable.destory();
+			this.sortable = null;
+		}
 	}
 
 	render() {

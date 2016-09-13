@@ -22,7 +22,6 @@ export default class NavGroupItem extends Photon.Component {
 		delete props.glyph;
 		delete props.withText;
 		delete props.active;
-		delete props.text;
 
 		return (
 			<a {...props} className={className}>

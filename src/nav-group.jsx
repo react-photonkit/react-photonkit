@@ -1,16 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
+import Sortable from 'sortablejs';
 
 export default class NavGroup extends Photon.Component {
 	constructor(props) {
 		super(props);
-
-		this.sortableOptions = {
-			ref: 'navs',
-			model: 'children',
-			disabled: true
-		};
 
 		this.state = {
 			activeKey: props.activeKey,
@@ -21,7 +16,13 @@ export default class NavGroup extends Photon.Component {
 	}
 
 	_node(n) {
-		this.node = n;
+		if (n) {
+			this.node = n;
+			this.sortable = Sortable.create(n, {
+				handle: '.nav-group',
+				disabled: !this.props.draggable
+			});
+		}
 	}
 
 	renderNav(child, index) {
@@ -41,9 +42,11 @@ export default class NavGroup extends Photon.Component {
 		});
 	}
 
-	componentWillMount() {
-		this.sortableOptions.disabled = !this.props.draggable;
-		return this.sortableOptions.disabled;
+	componentWillUnmount() {
+		if (this.sortable) {
+			this.sortable.destory();
+			this.sortable = null;
+		}
 	}
 
 	render() {
@@ -56,10 +59,9 @@ export default class NavGroup extends Photon.Component {
 				return this.renderNav(child, index);
 			});
 		}
-
 		return (
 			<nav className={className} ref={this._node}>
-				{childNavs}
+					{childNavs}
 			</nav>
 		);
 	}
