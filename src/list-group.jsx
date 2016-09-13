@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
+import Sortable from 'sortablejs';
 
 export default class ListGroup extends Photon.Component {
 	constructor(props) {
@@ -10,7 +11,20 @@ export default class ListGroup extends Photon.Component {
 	}
 
 	_node(n) {
-		this.node = n;
+		if (n) {
+			this.node = n;
+			this.sortable = Sortable.create(n, {
+				handle: '.list-group',
+				disabled: !this.props.draggable
+			});
+		}
+	}
+
+	componentWillUnmount() {
+		if (this.sortable) {
+			this.sortable.destory();
+			this.sortable = null;
+		}
 	}
 
 	render() {
@@ -26,5 +40,10 @@ export default class ListGroup extends Photon.Component {
 }
 
 ListGroup.defaultProps = {
-	ptClass: 'list-group'
+	ptClass: 'list-group',
+	draggable: false
+};
+
+ListGroup.propTypes = {
+	draggable: React.PropTypes.bool
 };

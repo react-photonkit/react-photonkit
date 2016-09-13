@@ -97,11 +97,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _listGroup2 = _interopRequireDefault(_listGroup);
 
-	var _listItem = __webpack_require__(19);
+	var _listItem = __webpack_require__(20);
 
 	var _listItem2 = _interopRequireDefault(_listItem);
 
-	var _navGroup = __webpack_require__(20);
+	var _navGroup = __webpack_require__(21);
 
 	var _navGroup2 = _interopRequireDefault(_navGroup);
 
@@ -1266,6 +1266,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var Photon = _interopRequireWildcard(_photon);
 
+	var _sortablejs = __webpack_require__(19);
+
+	var _sortablejs2 = _interopRequireDefault(_sortablejs);
+
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -1291,7 +1295,21 @@ return /******/ (function(modules) { // webpackBootstrap
 		_createClass(ListGroup, [{
 			key: '_node',
 			value: function _node(n) {
-				this.node = n;
+				if (n) {
+					this.node = n;
+					this.sortable = _sortablejs2.default.create(n, {
+						handle: '.list-group',
+						disabled: !this.props.draggable
+					});
+				}
+			}
+		}, {
+			key: 'componentWillUnmount',
+			value: function componentWillUnmount() {
+				if (this.sortable) {
+					this.sortable.destory();
+					this.sortable = null;
+				}
 			}
 		}, {
 			key: 'render',
@@ -1314,240 +1332,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	ListGroup.defaultProps = {
-		ptClass: 'list-group'
-	};
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(9);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _classnames = __webpack_require__(11);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var _photon = __webpack_require__(13);
-
-	var Photon = _interopRequireWildcard(_photon);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ListItem = function (_Photon$Component) {
-		_inherits(ListItem, _Photon$Component);
-
-		function ListItem() {
-			_classCallCheck(this, ListItem);
-
-			return _possibleConstructorReturn(this, (ListItem.__proto__ || Object.getPrototypeOf(ListItem)).apply(this, arguments));
-		}
-
-		_createClass(ListItem, [{
-			key: 'render',
-			value: function render() {
-				var classes = this.getPtClassSet();
-				classes.active = this.props.active;
-				var className = (0, _classnames2.default)(this.props.className, classes);
-				var img = void 0;
-
-				if (this.props.image) {
-					img = _react2.default.createElement('img', { className: 'img-circle media-object pull-left', src: this.props.image, width: '32', height: '32' });
-				}
-
-				return _react2.default.createElement(
-					'li',
-					{ className: className },
-					img,
-					_react2.default.createElement(
-						'div',
-						{ className: 'media-body' },
-						_react2.default.createElement(
-							'strong',
-							null,
-							this.props.title
-						),
-						_react2.default.createElement(
-							'p',
-							null,
-							this.props.subtitle
-						)
-					)
-				);
-			}
-		}]);
-
-		return ListItem;
-	}(Photon.Component);
-
-	exports.default = ListItem;
-
-
-	ListItem.propTypes = {
-		active: _react2.default.PropTypes.bool,
-		image: _react2.default.PropTypes.string,
-		title: _react2.default.PropTypes.string.isRequired,
-		subtitle: _react2.default.PropTypes.string
-	};
-
-	ListItem.defaultProps = {
-		ptClass: 'list-group-item',
-		active: false
-	};
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(9);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _classnames = __webpack_require__(11);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var _photon = __webpack_require__(13);
-
-	var Photon = _interopRequireWildcard(_photon);
-
-	var _sortablejs = __webpack_require__(21);
-
-	var _sortablejs2 = _interopRequireDefault(_sortablejs);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var NavGroup = function (_Photon$Component) {
-		_inherits(NavGroup, _Photon$Component);
-
-		function NavGroup(props) {
-			_classCallCheck(this, NavGroup);
-
-			var _this = _possibleConstructorReturn(this, (NavGroup.__proto__ || Object.getPrototypeOf(NavGroup)).call(this, props));
-
-			_this.state = {
-				activeKey: props.activeKey,
-				children: props.children
-			};
-
-			_this._node = _this._node.bind(_this);
-			return _this;
-		}
-
-		_createClass(NavGroup, [{
-			key: '_node',
-			value: function _node(n) {
-				if (n) {
-					this.node = n;
-					this.sortable = _sortablejs2.default.create(n, {
-						handle: '.nav-group',
-						disabled: !this.props.draggable
-					});
-				}
-			}
-		}, {
-			key: 'renderNav',
-			value: function renderNav(child, index) {
-				var _this2 = this;
-
-				var active = this.state.activeKey === child.props.eventKey;
-				return _react2.default.cloneElement(child, {
-					active: active,
-					key: 'nav-group-item-' + index,
-					onClick: function onClick() {
-						_this2.setState({
-							activeKey: child.props.eventKey
-						});
-
-						if (_this2.props.onSelect) {
-							return _this2.props.onSelect(child.props.eventKey);
-						}
-					}
-				});
-			}
-		}, {
-			key: 'componentWillUnmount',
-			value: function componentWillUnmount() {
-				if (this.sortable) {
-					this.sortable.destory();
-					this.sortable = null;
-				}
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				var _this3 = this;
-
-				var classes = this.getPtClassSet();
-				var className = (0, _classnames2.default)(this.props.className, classes);
-				var childNavs = void 0;
-
-				if (this.state.children) {
-					childNavs = this.state.children.map(function (child, index) {
-						return _this3.renderNav(child, index);
-					});
-				}
-				return _react2.default.createElement(
-					'nav',
-					{ className: className, ref: this._node },
-					childNavs
-				);
-			}
-		}]);
-
-		return NavGroup;
-	}(Photon.Component);
-
-	exports.default = NavGroup;
-
-
-	NavGroup.defaultProps = {
-		activeKey: '',
-		ptClass: 'nav-group',
+		ptClass: 'list-group',
 		draggable: false
 	};
 
-	NavGroup.propTypes = {
-		activeKey: _react2.default.PropTypes.any,
-		onSelect: _react2.default.PropTypes.func,
+	ListGroup.propTypes = {
 		draggable: _react2.default.PropTypes.bool
 	};
 
 /***/ },
-/* 21 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**!
@@ -2802,6 +2596,235 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(9);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(11);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _photon = __webpack_require__(13);
+
+	var Photon = _interopRequireWildcard(_photon);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ListItem = function (_Photon$Component) {
+		_inherits(ListItem, _Photon$Component);
+
+		function ListItem() {
+			_classCallCheck(this, ListItem);
+
+			return _possibleConstructorReturn(this, (ListItem.__proto__ || Object.getPrototypeOf(ListItem)).apply(this, arguments));
+		}
+
+		_createClass(ListItem, [{
+			key: 'render',
+			value: function render() {
+				var classes = this.getPtClassSet();
+				classes.active = this.props.active;
+				var className = (0, _classnames2.default)(this.props.className, classes);
+				var img = void 0;
+
+				if (this.props.image) {
+					img = _react2.default.createElement('img', { className: 'img-circle media-object pull-left', src: this.props.image, width: '32', height: '32' });
+				}
+
+				return _react2.default.createElement(
+					'li',
+					{ className: className },
+					img,
+					_react2.default.createElement(
+						'div',
+						{ className: 'media-body' },
+						_react2.default.createElement(
+							'strong',
+							null,
+							this.props.title
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							this.props.subtitle
+						)
+					)
+				);
+			}
+		}]);
+
+		return ListItem;
+	}(Photon.Component);
+
+	exports.default = ListItem;
+
+
+	ListItem.propTypes = {
+		active: _react2.default.PropTypes.bool,
+		image: _react2.default.PropTypes.string,
+		title: _react2.default.PropTypes.string.isRequired,
+		subtitle: _react2.default.PropTypes.string
+	};
+
+	ListItem.defaultProps = {
+		ptClass: 'list-group-item',
+		active: false
+	};
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(9);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(11);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _photon = __webpack_require__(13);
+
+	var Photon = _interopRequireWildcard(_photon);
+
+	var _sortablejs = __webpack_require__(19);
+
+	var _sortablejs2 = _interopRequireDefault(_sortablejs);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var NavGroup = function (_Photon$Component) {
+		_inherits(NavGroup, _Photon$Component);
+
+		function NavGroup(props) {
+			_classCallCheck(this, NavGroup);
+
+			var _this = _possibleConstructorReturn(this, (NavGroup.__proto__ || Object.getPrototypeOf(NavGroup)).call(this, props));
+
+			_this.state = {
+				activeKey: props.activeKey,
+				children: props.children
+			};
+
+			_this._node = _this._node.bind(_this);
+			return _this;
+		}
+
+		_createClass(NavGroup, [{
+			key: '_node',
+			value: function _node(n) {
+				if (n) {
+					this.node = n;
+					this.sortable = _sortablejs2.default.create(n, {
+						handle: '.nav-group',
+						disabled: !this.props.draggable
+					});
+				}
+			}
+		}, {
+			key: 'renderNav',
+			value: function renderNav(child, index) {
+				var _this2 = this;
+
+				var active = this.state.activeKey === child.props.eventKey;
+				return _react2.default.cloneElement(child, {
+					active: active,
+					key: 'nav-group-item-' + index,
+					onClick: function onClick() {
+						_this2.setState({
+							activeKey: child.props.eventKey
+						});
+
+						if (_this2.props.onSelect) {
+							return _this2.props.onSelect(child.props.eventKey);
+						}
+					}
+				});
+			}
+		}, {
+			key: 'componentWillUnmount',
+			value: function componentWillUnmount() {
+				if (this.sortable) {
+					this.sortable.destory();
+					this.sortable = null;
+				}
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _this3 = this;
+
+				var classes = this.getPtClassSet();
+				var className = (0, _classnames2.default)(this.props.className, classes);
+				var childNavs = void 0;
+
+				if (this.state.children) {
+					childNavs = this.state.children.map(function (child, index) {
+						return _this3.renderNav(child, index);
+					});
+				}
+				return _react2.default.createElement(
+					'nav',
+					{ className: className, ref: this._node },
+					childNavs
+				);
+			}
+		}]);
+
+		return NavGroup;
+	}(Photon.Component);
+
+	exports.default = NavGroup;
+
+
+	NavGroup.defaultProps = {
+		activeKey: '',
+		ptClass: 'nav-group',
+		draggable: false
+	};
+
+	NavGroup.propTypes = {
+		activeKey: _react2.default.PropTypes.any,
+		onSelect: _react2.default.PropTypes.func,
+		draggable: _react2.default.PropTypes.bool
+	};
+
+/***/ },
 /* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -2871,12 +2894,13 @@ return /******/ (function(modules) { // webpackBootstrap
 				delete props.glyph;
 				delete props.withText;
 				delete props.active;
+				delete props.text;
 
 				return _react2.default.createElement(
 					'a',
 					_extends({}, props, { className: className }),
 					icon,
-					props.text
+					this.props.text
 				);
 			}
 		}]);
@@ -2889,7 +2913,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	NavGroupItem.defaultProps = {
 		ptClass: 'nav-group-item',
-		active: false
+		active: false,
+		text: ''
 	};
 
 	NavGroupItem.propTypes = {
@@ -3357,7 +3382,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var Photon = _interopRequireWildcard(_photon);
 
-	var _sortablejs = __webpack_require__(21);
+	var _sortablejs = __webpack_require__(19);
 
 	var _sortablejs2 = _interopRequireDefault(_sortablejs);
 
@@ -3370,8 +3395,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// import ReactDOM from 'react-dom';
-
 
 	var TabGroup = function (_Photon$Component) {
 		_inherits(TabGroup, _Photon$Component);
