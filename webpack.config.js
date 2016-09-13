@@ -39,7 +39,8 @@ module.exports = {
 	xo: {
 		extends: ["xo", "xo-react"],
 		rules: {
-			"quote-props": ["error", "as-needed"]
+			"quote-props": ["error", "as-needed"],
+			'react/require-optimization': 0
 		}
 	}
 };
