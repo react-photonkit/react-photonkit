@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
 import Sortable from 'sortablejs';
