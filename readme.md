@@ -36,6 +36,14 @@ See [epp (electron application)][epp]
 $ npm test
 ```
 
+## Trouble shooting
+
+* Case: Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+  * Run on shell:
+    ```sh
+    $ sudo xcodebuild -license
+    ```
+  * This will show agreement. Read if you want or go to end of agree and type "agree".
 
 
 
