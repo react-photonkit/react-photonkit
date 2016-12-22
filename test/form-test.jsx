@@ -22,8 +22,10 @@ describe('input', () => {
 
 	it('Should create a element with type', () => {
 		const instance = ReactTestUtils.renderIntoDocument(<Input type="email"/>);
+		const input = instance.node.querySelector('input');
 
 		expect(instance.node.className).to.be('form-group');
+		expect(input.attributes.getNamedItem('type').value).to.be('email');
 	});
 
 	it('Should update with value', () => {
