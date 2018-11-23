@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
@@ -46,5 +47,5 @@ Toolbar.defaultProps = {
 };
 
 Toolbar.propTypes = {
-	title: React.PropTypes.string
+	title: PropTypes.string
 };

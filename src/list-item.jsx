@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
@@ -28,10 +29,10 @@ export default class ListItem extends Photon.Component {
 }
 
 ListItem.propTypes = {
-	active: React.PropTypes.bool,
-	image: React.PropTypes.string,
-	title: React.PropTypes.string.isRequired,
-	subtitle: React.PropTypes.string
+	active: PropTypes.bool,
+	image: PropTypes.string,
+	title: PropTypes.string.isRequired,
+	subtitle: PropTypes.string
 };
 
 ListItem.defaultProps = {

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Icon from './icon.jsx';
@@ -38,7 +39,7 @@ NavGroupItem.defaultProps = {
 };
 
 NavGroupItem.propTypes = {
-	active: React.PropTypes.bool,
-	text: React.PropTypes.string.isRequired,
-	glyph: React.PropTypes.string
+	active: PropTypes.bool,
+	text: PropTypes.string.isRequired,
+	glyph: PropTypes.string
 };

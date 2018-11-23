@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import * as Photon from './photon.jsx';
 
@@ -33,6 +34,6 @@ export default class CheckBox extends Photon.Component {
 }
 
 CheckBox.propTypes = {
-	label: React.PropTypes.string,
-	checked: React.PropTypes.bool
+	label: PropTypes.string,
+	checked: PropTypes.bool
 };

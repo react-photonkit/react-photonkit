@@ -45,8 +45,8 @@
     "karma-webpack": "^1.8.0",
     "mocha": "^3.0.2",
     "photon": "connors/photon#v0.1.2-alpha",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0",
+    "react": "16.0",
+    "react-dom": "16.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "prop-types": "^15.6.2",
     "sortablejs": "^1.4.2"
   }
 }

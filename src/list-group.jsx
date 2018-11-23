@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
@@ -45,5 +46,5 @@ ListGroup.defaultProps = {
 };
 
 ListGroup.propTypes = {
-	draggable: React.PropTypes.bool
+	draggable: PropTypes.bool
 };

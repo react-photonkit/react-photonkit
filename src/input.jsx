@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import * as Photon from './photon.jsx';
 
@@ -31,5 +32,5 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
-	label: React.PropTypes.string
+	label: PropTypes.string
 };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class Window extends React.Component {
@@ -11,5 +12,5 @@ export default class Window extends React.Component {
 }
 
 Window.propTypes = {
-	children: React.PropTypes.node
+	children: PropTypes.node
 };

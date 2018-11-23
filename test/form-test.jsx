@@ -1,6 +1,6 @@
 import expect from 'expect.js';
 import React from 'react';
-import ReactTestUtils from 'react/lib/ReactTestUtils';
+import ReactTestUtils from 'react-dom/test-utils';
 import Input from '../src/input.jsx';
 import CheckBox from '../src/checkbox.jsx';
 

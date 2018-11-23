@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class RadioGroup extends React.Component {
@@ -47,6 +48,6 @@ export default class RadioGroup extends React.Component {
 }
 
 RadioGroup.propTypes = {
-	children: React.PropTypes.node,
-	name: React.PropTypes.string.isRequired
+	children: PropTypes.node,
+	name: PropTypes.string.isRequired
 };

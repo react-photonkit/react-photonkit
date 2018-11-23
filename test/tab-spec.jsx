@@ -1,6 +1,6 @@
 import expect from 'expect.js';
 import React from 'react';
-import ReactTestUtils from 'react/lib/ReactTestUtils';
+import ReactTestUtils from 'react-dom/test-utils';
 import TabGroup from '../src/tab-group.jsx';
 import TabItem from '../src/tab-item.jsx';
 
@@ -39,7 +39,7 @@ describe('tab', () => {
 		done();
 	});
 
-	it('Draggable should be endabled', () => {
+	it('Draggable should be enabled', () => {
 		const tree = (
 			<TabGroup activeKey={1} draggable>
 				<TabItem eventKey={1} title="tab1">contents1</TabItem>
@@ -48,6 +48,6 @@ describe('tab', () => {
 		);
 
 		const instance = ReactTestUtils.renderIntoDocument(tree);
-		expect(instance.sortableOptions.disabled).to.be(false);
+		expect(instance.sortable.options.disabled).to.be(false);
 	});
 });

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
@@ -17,7 +18,7 @@ export default class Pane extends Photon.Component {
 }
 
 Pane.propTypes = {
-	sidebar: React.PropTypes.bool
+	sidebar: PropTypes.bool
 };
 
 Pane.defaultProps = {

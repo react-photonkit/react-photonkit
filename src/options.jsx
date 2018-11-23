@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class Options extends React.Component {
@@ -44,5 +45,5 @@ Options.defaultProps = {
 };
 
 Options.propTypes = {
-	items: React.PropTypes.array
+	items: PropTypes.array
 };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
@@ -96,7 +97,7 @@ TabGroup.defaultProps = {
 };
 
 TabGroup.propTypes = {
-	activeKey: React.PropTypes.any,
-	onSelect: React.PropTypes.func,
-	draggable: React.PropTypes.bool
+	activeKey: PropTypes.any,
+	onSelect: PropTypes.func,
+	draggable: PropTypes.bool
 };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import * as Photon from './photon.jsx';
 
@@ -21,5 +22,5 @@ export default class Radio extends Photon.Component {
 }
 
 Radio.propTypes = {
-	label: React.PropTypes.string
+	label: PropTypes.string
 };

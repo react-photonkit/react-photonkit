@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import * as Photon from './photon.jsx';
@@ -60,8 +61,8 @@ export default class NavGroup extends Photon.Component {
 			});
 		}
 		return (
-			<nav className={className} ref={this._node}>
-					{childNavs}
+			<nav className={className} ref={n => this._node(n)}>
+				{childNavs}
 			</nav>
 		);
 	}
@@ -74,7 +75,7 @@ NavGroup.defaultProps = {
 };
 
 NavGroup.propTypes = {
-	activeKey: React.PropTypes.any,
-	onSelect: React.PropTypes.func,
-	draggable: React.PropTypes.bool
+	activeKey: PropTypes.any,
+	onSelect: PropTypes.func,
+	draggable: PropTypes.bool
 };

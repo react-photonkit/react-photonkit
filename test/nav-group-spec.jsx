@@ -1,6 +1,6 @@
 import expect from 'expect.js';
 import React from 'react';
-import ReactTestUtils from 'react/lib/ReactTestUtils';
+import ReactTestUtils from 'react-dom/test-utils';
 import NavGroup from '../src/nav-group.jsx';
 import NavGroupItem from '../src/nav-group-item.jsx';
 
@@ -46,7 +46,7 @@ describe('navgroup', () => {
 		ReactTestUtils.Simulate.click(items[1]);
 	});
 
-	it('Draggable should be endabled', () => {
+	it('Draggable should be enabled', () => {
 		const tree = (
 			<NavGroup activeKey={1} draggable>
 				<NavGroupItem eventKey={1} glyph="home" text="home"/>
@@ -55,6 +55,6 @@ describe('navgroup', () => {
 		);
 
 		const instance = ReactTestUtils.renderIntoDocument(tree);
-		expect(instance.sortableOptions.disabled).to.be(false);
+		expect(instance.sortable.options.disabled).to.be(false);
 	});
 });

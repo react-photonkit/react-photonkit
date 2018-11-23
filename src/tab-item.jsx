@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Icon from './icon.jsx';
@@ -35,7 +36,7 @@ TabItem.defaultProps = {
 };
 
 TabItem.propTypes = {
-	active: React.PropTypes.bool,
-	title: React.PropTypes.string.isRequired,
-	glyph: React.PropTypes.string
+	active: PropTypes.bool,
+	title: PropTypes.string.isRequired,
+	glyph: PropTypes.string
 };
