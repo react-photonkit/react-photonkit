@@ -61,7 +61,7 @@ export default class NavGroup extends Photon.Component {
 			});
 		}
 		return (
-			<nav className={className} ref={n => this._node(n)}>
+			<nav className={className} ref={this._node}>
 				{childNavs}
 			</nav>
 		);
