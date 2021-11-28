@@ -1,14 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-export default class Window extends React.Component {
-	render() {
-		return (
-			<div className="window">
-				{this.props.children}
-			</div>
-		);
-	}
+export default function Window(props) {
+	return <div className="window">{props.children}</div>;
 }
 
 Window.propTypes = {

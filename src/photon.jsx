@@ -14,13 +14,7 @@ const styleMaps = {
 		'list-group': 'list-group',
 		'list-group-item': 'list-group-item'
 	},
-	STYLES: [
-		'default',
-		'primary',
-		'positive',
-		'negative',
-		'warning'
-	],
+	STYLES: ['default', 'primary', 'positive', 'negative', 'warning'],
 	SIZES: {
 		large: 'large',
 		mini: 'mini',

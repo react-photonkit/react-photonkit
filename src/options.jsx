@@ -20,12 +20,7 @@ export default class Options extends React.Component {
 
 	render() {
 		if (this.props.items.length > 0) {
-			const items = this.props.items.map((item, i) => {
-				const key = `option-${i}`;
-				return (
-					<option key={key}>{item}</option>
-				);
-			});
+			const items = this.props.items.map((item, i) => <option key={`option-${i}`}>{item}</option>);
 
 			return (
 				<select className="form-control" ref={this.refSelectIndex}>
@@ -34,9 +29,7 @@ export default class Options extends React.Component {
 			);
 		}
 
-		return (
-			<span/>
-		);
+		return <span />;
 	}
 }
 

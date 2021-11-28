@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import * as Photon from './photon.jsx';
+import withPhoton from './withPhoton.jsx';
 
-export default class Icon extends Photon.Component {
+class Icon extends React.Component {
 	render() {
 		const props = Object.assign({}, this.props);
-		const classes = this.getPtClassSet();
+		const classes = props.getPtClassSet();
 		classes[`icon-${props.glyph}`] = true;
 		classes['icon-text'] = props.withText;
 		classes['icon-close-tab'] = props.tab;
@@ -17,9 +17,7 @@ export default class Icon extends Photon.Component {
 		delete props.withText;
 		delete props.tab;
 
-		return (
-			<span {...props} className={className}/>
-		);
+		return <span {...props} className={className}/>;
 	}
 }
 
@@ -34,3 +32,5 @@ Icon.propTypes = {
 	withText: PropTypes.bool,
 	tab: PropTypes.bool
 };
+
+export default withPhoton(Icon);

@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/react-photonkit/react-photonkit.git"
+    "url": "git+https://github.com/ihgrant/react-photonkit.git"
   },
   "keywords": [
     "react",
@@ -21,9 +21,9 @@
   "author": "react-photonkit",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/react-photonkit/react-photonkit/issues"
+    "url": "https://github.com/ihgrant/react-photonkit/issues"
   },
-  "homepage": "https://github.com/react-photonkit/react-photonkit#readme",
+  "homepage": "https://github.com/ihgrant/react-photonkit#readme",
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",

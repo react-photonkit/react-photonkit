@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Icon from './icon.jsx';
-import * as Photon from './photon.jsx';
+import withPhoton from './withPhoton.jsx';
 
-export default class Button extends Photon.Component {
+class Button extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -27,7 +27,7 @@ export default class Button extends Photon.Component {
 	render() {
 		const props = Object.assign({}, this.props);
 		const icon = this.getIconComponent();
-		const classes = this.getPtClassSet();
+		const classes = props.getPtClassSet();
 		classes.active = this.props.active;
 		classes['btn-form'] = this.props.form;
 		classes['pull-right'] = this.props.pullRight;
@@ -64,3 +64,5 @@ Button.propTypes = {
 	form: PropTypes.bool,
 	onClick: PropTypes.func
 };
+
+export default withPhoton(Button)
